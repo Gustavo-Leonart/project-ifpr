@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+*{
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+body{
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  font-family: 'Roboto', arial, sans-serif;
+}
+fieldset{
+  border: none;
+}
+hr{
+  color: rgba(0, 0, 255, 0.34);
+}
+.body__container{
+  border: 6px solid #ffffff;
+  border-radius: 8px;
+  border-style: double;
+  margin: 32px;
+  background-color: #0091EA;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.form__sign__container{
+	display: flex;
+	justify-content: center;
+}
+
+.form__sign__container .form__fields{
+	padding: 16px 64px;
+}
+.form__sign__container .form__fields label{
+	padding-right: 32px;
+	align-items: center;
+  color: #ffffff;
+}
+.form__fields .form__fields__input{
+	padding: 8px 32px ;
+}
+.form__fields .form__fields__input input{
+  width: 350px;
+  color: #ffffff;
+	align-items: center;
+	padding: 8px;
+	border-radius: 4px;
+	border: none;
+	border-bottom: 2px solid blue;
+	background-color: rgba(0,0,0,0);
+  cursor: pointer;
+  caret-color: rgba(0, 0, 0, 0.54);
+}
+.form__fields .form__fields__input input:focus{
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  padding: 7px 7px 9px;
+}
+.form__buttons{
+	padding: 8px;
+  margin-top: 40px;
+}
+.form__buttons .form__button__next{
+	border: none;
+	background-color: blue;
+	color: #fff;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 10px 20px 0 rgba(0,0,0,.19);
+	padding: 16px;
+	text-align: center;
+	border-radius: 4px;
+	float: right;
+	font-size: 115%;
+  cursor: pointer;
+}
+
+.form__button__next span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.form__button__next span:after{
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 8px;
+  transition: 0.3s;
+}
+
+.form__button__next:hover span{
+  padding-right: 25px;
+}
+
+.form__button__next:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* SignIn area */
+.body__login__container{
+  text-transform: none;
+  margin: 32px;
+  background: transparent;
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+.form__login__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.19);
+  border-radius: 32px;
+}
+.form__fields__login{
+  color: #333333;
+  padding: 16px;
+}
+
+.form__buttons__login{
+	padding: 8px;
+  margin-left: auto;
+}
+.form__buttons__login .form__button__next{
+	border: none;
+	background-color: blue;
+	color: #fff;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 10px 20px 0 rgba(0,0,0,.19);
+	padding: 16px;
+	border-radius: 4px;
+	font-size: 1.10em;
+  cursor: pointer;
+  }
+.form__fields__login .form__fields__input input{
+  width: 350px;
+  color: #333333;
+  align-items: center;
+  padding: 8PX;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 2px solid blue;
+  background-color: rgba(0,0,0,0);
+  cursor: pointer;
+  caret-color: rgba(0, 0, 0, 0.54);
+}
+.form__fields__login .form__fields__input input:focus{
+  border-radius: 4px;
+  border-top: 1px solid #333;
+  border-right: 1px solid #333;
+  border-left: 1px solid #333;
+  padding: 7px 7px 8px;
+}
+.register{
+  text-align: center;
+  font-weight: lighter;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.19);
+  border-radius: 16px;
+  width: 50%;
+  margin: auto;
+  margin-top: 16px;
+  padding: 8px;
+}
+.register a{
+  color: #0091EA;
+  cursor: pointer;
+}
