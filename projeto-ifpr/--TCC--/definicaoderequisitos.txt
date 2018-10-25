@@ -1,0 +1,73 @@
+- Levantamento de requisitos
+
+manter cliente, produto, funcionario, horario, recursos, fornecedor
+{
+	cadastrar cliente, funcionario, produto, horario, recursos, fornecedor
+	consultar cliente, funcionario, produto, horario, recursos, fornecedor
+	excluir cliente, funcionario, produto, horario, recursos, fornecedor
+	alterar cliente, funcionario, produto, horario, recursos, fornecedor
+}
+
+imprimir nota_fiscal, pedido, produto, cliente, funcionario, horário(ou agendamento), recursos, fornecedor
+
+
+
+
+__________________________________________________________________________________________________________
+
+Tabelas: cliente, funcionario, produtos, recursos, horarios, cargo, forncedor, cidade/UF, pedidos
+__________________________________________________________________________________________________________
+
+
+
+
+-Tipos dos requisitos e tabelas
+
+cliente()
+{
+	cpf bigint(11) pk,
+	rg int(9),  - verificar...
+	nome varchar(100), 
+	telefone char(11),
+	email varchar(50),
+	data_nasc date,
+	preferencias varchar(max),
+	data_pedido int(?) fk,  - verificar...
+	pedido int(11) fk,
+	cidade int fk,
+	uf int fk
+}
+
+funcionario()
+{
+	cpf bigint(11) pk,
+	rg int(9),
+	nome varchar(100),
+	telefone char(11),
+	email varchar(50),
+	data_nasc date,
+	cargo int fk,
+	cidade int fk,
+	uf int fk
+}
+
+cargo()
+{
+	id int pk,
+	cargo varchar(max)
+}
+
+pedidos()
+{
+	id int pk,
+	data_pedido date,
+	descricao varchar(max),
+}
+
+
+
+
+
+
+
+
