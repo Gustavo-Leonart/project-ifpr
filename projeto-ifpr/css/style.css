@@ -33,51 +33,53 @@ margin: 64px 0;
 	/* background-color: #00E676; */
 	background-color: #0091EA;
 	display: flex;
+	height: auto;
+	max-height: 51px;
 }
 .navbar__links{
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	width: 25%;
+	width: 50%;
 	position: relative;
+
 }
 .navbar__links .navbar__item{
 	color: #ffffff;
 	padding: 16px;
 	text-decoration: none;
+	transition: .3s;
 }
 .navbar__links .navbar__item:hover{
 	background-color: #B3E5FC;
-	color: #222222;
+	color: #000000;
+	transition: .3s;
 }
-.navbar__links .navbar__options__user{
+.navbar__options__user{
 	align-items: center;
-	position: absolute;
+	position: relative;
 	right: 0;
-	padding: 16px;
 }
 .navbar__options__user .navbar__item{
 	text-decoration: none;
 	color: #ffffff;
 	padding: 16px;
+	transition: .3s;
 }
 .navbar__options__user .navbar__item:hover{
 	background-color: #B3E5FC;
-	color: #222222;
+	color: #000000;
+	transition: .3s;
 }
-.dropdown__content{
+.dropdown .dropdown__content{
 	display: none;
 	position: absolute;
 	background-color: #0091EA;
 	width: 200px;
 	left: 0;
-	top: 50px;
+	top:35px;
 	box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.54);
 	z-index: 1;
-	padding: 16px 16px;
-}
-.dropdown{
-	width: 25%;
 }
 .dropdown__content a{
 	color: #ffffff;
@@ -88,17 +90,22 @@ margin: 64px 0;
 .dropdown:hover .dropdown__content{
 	display: block;
 }
+.dropdown i{
+	padding-left: 8px;
+}
 .row a{
 	padding: 16px;
+	transition: .3s;
 }
 .row a:hover{
 	background: #B3E5FC;
-	color: #222222
+	color: #000000;
+	transition: .3s;
 }
 .form__search__area{
-	width: 70%;
+	width: 50%;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 }
 .form__search__area input{
@@ -111,11 +118,16 @@ margin: 64px 0;
 	background: transparent;
 	color: #fef1ec;
 	border-radius: 16px;
+	cursor: pointer;
+	transition: all ease-in-out .2s;
 }
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
+.form__search__area input:focus{
+	box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.54);
+	transition: all ease-in-out .2s;
+}
+.form__search__area i{
+	color: #ffffff;
+	cursor: pointer;
 }
 /*--------------------------------------------------------body area--------------------------------------------------------*/
 .body__homepage__container{
@@ -153,6 +165,9 @@ margin: 64px 0;
 	border: 2px solid #0091EA;
 	border-radius: 8px;
 	margin-bottom: 64px;
+}
+.slideshow__container__text:hover{
+	box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.54);
 }
 .text{
 	max-width: 600px;
