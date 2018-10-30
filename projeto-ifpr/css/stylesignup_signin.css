@@ -24,9 +24,12 @@ hr{
 .form__sign__container{
     display: flex;
     justify-content: center;
+    max-width: 600px;
+    width: 100%;
 }
-.form__sign__container .form__fields{
+.body__container .form__fields{
     padding: 16px 64px;
+    width: 100%;
 }
 .form__sign__container .form__fields label{
     padding-right: 32px;
@@ -35,6 +38,7 @@ hr{
 }
 .form__fields .form__fields__input{
     padding: 8px 32px ;
+    width: 100%;
 }
 .form__fields .form__fields__input input{
     width: 350px;
@@ -56,6 +60,8 @@ hr{
 .form__buttons{
     padding: 8px;
     margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
 }
 .form__buttons .form__button__next{
     border: none;
@@ -63,9 +69,7 @@ hr{
     color: #fff;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 10px 20px 0 rgba(0,0,0,.19);
     padding: 16px;
-    text-align: center;
     border-radius: 4px;
-    float: right;
     font-size: 115%;
     cursor: pointer;
 }
@@ -160,4 +164,16 @@ hr{
 .register a{
     color: #0091EA;
     cursor: pointer;
+}
+@media screen and (max-width: 1250px) {
+    .body__container{
+        flex-wrap: wrap;
+        width: 50%;
+        margin: auto;
+    }
+    .form__buttons{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 950px) {
 }
