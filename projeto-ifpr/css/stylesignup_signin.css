@@ -5,6 +5,7 @@ body{
     padding: 0;
     text-transform: capitalize;
     font-family: 'Roboto', arial, sans-serif;
+    box-sizing: border-box;
 }
 fieldset{
     border: none;
@@ -13,59 +14,62 @@ hr{
     color: rgba(0, 0, 255, 0.34);
 }
 .body__container{
-    border: 6px solid #ffffff;
-    border-radius: 8px;
-    border-style: double;
-    margin: 32px;
-    background-color: #0091EA;
+    background: transparent;
     display: flex;
     flex-wrap: nowrap;
+    border: 2px solid;
+    border-color: rgba(0, 0, 0, 0.19);
+    border-radius: 32px;
+    max-width: 1000px;
+    width: 100%;
+    margin:auto;
 }
 .form__sign__container{
+    max-width: 500px;
+    width: 100%;
+}
+.form__fields__container{
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    max-width: 600px;
-    width: 100%;
 }
-.body__container .form__fields{
-    padding: 16px 64px;
-    width: 100%;
+.form__fields{
+    padding: 16px 16px;
+    align-items:center;
 }
-.form__sign__container .form__fields label{
-    padding-right: 32px;
+.form__fields label{
     align-items: center;
-    color: #ffffff;
+    color: #000000;
 }
-.form__fields .form__fields__input{
-    padding: 8px 32px ;
+.form__fields input{
+    display: flex;
+    max-width: 350px;
     width: 100%;
-}
-.form__fields .form__fields__input input{
-    width: 350px;
-    color: #ffffff;
+    color: #000000;
     align-items: center;
     padding: 8px;
     border-radius: 4px;
     border: none;
-    border-bottom: 2px solid #80D8FF;
+    border-bottom: 2px solid #0091EA;
     background-color: rgba(0,0,0,0);
     cursor: pointer;
     caret-color: rgba(0, 0, 0, 0.54);
 }
 .form__fields .form__fields__input input:focus{
     border-radius: 4px;
-    border: 1px solid #ffffff;
-    padding: 7px 7px 9px;
+    border: 2px solid #0091EA;
+    padding: 6px 6px 8px;
 }
 .form__buttons{
-    padding: 8px;
+    padding: 8px 64px;
     margin-top: 40px;
     display: flex;
     justify-content: flex-end;
 }
 .form__buttons .form__button__next{
     border: none;
-    background-color: blue;
+    background-color: #0091EA;
     color: #fff;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 10px 20px 0 rgba(0,0,0,.19);
     padding: 16px;
@@ -86,7 +90,7 @@ hr{
     opacity: 0;
     top: 0;
     right: 8px;
-    transition: 0.3s;
+    transition: .3s;
 }
 .form__button__next:hover span{
     padding-right: 25px;
@@ -95,7 +99,39 @@ hr{
     opacity: 1;
     right: 0;
 }
-/* SignIn area */
+@media screen and (max-width: 1150px) {
+    .body__container{
+        flex-wrap: wrap;
+        width: 70%;
+        margin: auto;
+    }
+    .form__sign__container{
+        margin: auto;
+    }
+    .form__fields__container{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    .form__fields{
+        max-width: 350px;
+        width: 100%;
+    }
+    .form__buttons{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 530px){
+    .form__fields input{
+        margin: 0 16px;
+        width: 90%;
+    }
+    .form__fields label {
+        margin-left: 16px;
+    }
+}
+/*--------------------------------------------------------Sign In--------------------------------------------------------*/
 .body__login__container{
     text-transform: none;
     margin: 32px;
@@ -109,9 +145,10 @@ hr{
     flex-direction: column;
     align-items: center;
     padding: 16px;
-    border: 1px solid;
+    border: 2px solid;
     border-color: rgba(0, 0, 0, 0.19);
     border-radius: 32px;
+    max-width: 400px;
 }
 .form__fields__login{
     color: #333333;
@@ -123,7 +160,7 @@ hr{
 }
 .form__buttons__login .form__button__next{
     border: none;
-    background-color: blue;
+    background-color: #0091EA;
     color: #fff;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 10px 20px 0 rgba(0,0,0,.19);
     padding: 16px;
@@ -135,20 +172,18 @@ hr{
     width: 350px;
     color: #333333;
     align-items: center;
-    padding: 8PX;
+    padding: 8px;
     border-radius: 4px;
     border: none;
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid #0091EA;
     background: transparent;
     cursor: pointer;
     caret-color: rgba(0, 0, 0, 0.54);
 }
 .form__fields__login .form__fields__input input:focus{
     border-radius: 4px;
-    border-top: 1px solid #333;
-    border-right: 1px solid #333;
-    border-left: 1px solid #333;
-    padding: 7px 7px 8px;
+    border: solid 2px #0091EA;
+    padding: 6px 6px 8px;
 }
 .register{
     text-align: center;
@@ -165,15 +200,6 @@ hr{
     color: #0091EA;
     cursor: pointer;
 }
-@media screen and (max-width: 1250px) {
-    .body__container{
-        flex-wrap: wrap;
-        width: 50%;
-        margin: auto;
-    }
-    .form__buttons{
-        justify-content: center;
-    }
-}
-@media screen and (max-width: 950px) {
+.register a:hover{
+    color: #9E9E9E;
 }
