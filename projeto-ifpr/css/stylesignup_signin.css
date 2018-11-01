@@ -83,7 +83,6 @@ hr{
     position: relative;
     transition: 0.5s;
 }
-
 .form__button__next span:after{
     content: '\00bb';
     position: absolute;
