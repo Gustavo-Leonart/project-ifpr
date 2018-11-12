@@ -89,7 +89,7 @@ body{
 .dropdown:hover .dropdown__content{
 	display: block;
 }
-.dropdown i{
+.dropdown span{
 	padding-left: 8px;
 }
 .row a{
