@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
 body{
 	font-family: 'Roboto';
 }
@@ -76,13 +78,14 @@ body{
 .dropdown span{
 	padding-left: 8px;
 }
-.row a{
+.dropdown__content a{
 	padding: 16px;
 	transition: .3s;
 }
-.row a:hover{
+.dropdown__content a:hover{
 	color: #E57373;
 	transition: .3s;
+	text-decoration: none;
 }
 .secondary__dropdown{
 	position:relative;
@@ -148,10 +151,7 @@ body{
 .container__title{
 	text-align: center;
 }
-.table{
-
-}
-tr:hover{
+tr:hover:not(:nth-child(1)){
 	cursor: pointer;
 }
 .search__person__container{
@@ -178,8 +178,8 @@ tr:hover{
 	border-top: 2px solid gray;
 	height: 200px;
 	width: 100%;
-	/* bottom: 0;
-	position: fixed; */
+	bottom: 0;
+	position: fixed;
 }
 .footer__logo__container{
 	width: 100%;
@@ -241,12 +241,9 @@ tr:hover{
 	font-size: 0.75em;
 	background: transparent;
 }
-@media screen and(max-width: 900px){
-	.navbar__links {
-		flex-wrap: wrap;
-	}
+@media screen and (max-width: 900px){
 }
-@media screen and(max-width: 599px){
+@media screen and (max-width: 599px){
 	.slideshow__container{
 		width: 100%;
 		max-width: 300px;
@@ -258,5 +255,8 @@ tr:hover{
 	.footer__container{
 		width: 100%;
 		max-width: 600px;
+	}
+	.search__person__container{
+		justify-content: center;
 	}
 }

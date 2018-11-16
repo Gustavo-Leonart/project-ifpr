@@ -92,13 +92,14 @@ body{
 .dropdown span{
 	padding-left: 8px;
 }
-.row a{
+.dropdown__content a{
 	padding: 16px;
 	transition: .3s;
 }
-.row a:hover{
+.dropdown__content a:hover{
 	color: #E57373;
 	transition: .3s;
+	text-decoration: none;
 }
 .secondary__dropdown{
 	position:relative;
@@ -136,7 +137,7 @@ body{
 	position: absolute;
 	right: 28px;
 }
-.form__search__area{
+/* .form__search__area{
 	width: 50%;
 	display: flex;
 	justify-content: center;
@@ -163,7 +164,7 @@ body{
 .form__search__area i{
 	color: #ffffff;
 	cursor: pointer;
-}
+} */
 /*--------------------------------------------------------body area--------------------------------------------------------*/
 .body__homepage__container{
 	max-width: 1259px;
@@ -208,6 +209,7 @@ body{
 	padding: 16px 32px;
 	text-align: justify;
 	line-height: 170%;
+	text-indent: 40px;
 }
 @-webkit-keyframes fade{
 	from {opacity: .4}
@@ -284,22 +286,29 @@ body{
 	font-size: 0.75em;
 	background: transparent;
 }
-@media screen and(max-width: 900px){
-	.navbar__links {
-		flex-wrap: wrap;
-	}
+
+/*--------------------------------------------------------sobre e contato area--------------------------------------------------------*/
+.well p{
+	margin: 0;
+	line-height: 150%;
+	text-indent: 40px;
 }
-@media screen and(max-width: 700px){
+
+@media screen and (max-width: 900px){
+	/* .navbar__links {
+		flex-wrap: wrap;
+	} */
+}
+@media screen and (max-width: 599px){
 	.slideshow__container{
 		width: 100%;
-		max-width: 300px;
+		margin: 0px 8px;
 	}
 	.slideshow__container__text{
-		width: 10%;
-		max-width: 300px;
+		width: 100%;
+		margin: 0px 8px;
 	}
 	.footer__container{
 		width: 100%;
-		max-width: 600px;
 	}
 }
