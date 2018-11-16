@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+body{
+	font-family: 'Roboto';
+}
 *{
 	box-sizing: border-box;
-}
-body{
-	font-family: 'Roboto', arial, sans-serif;
-	margin: 0 auto;
 }
 /*--------------------------------------------------------header area--------------------------------------------------------*/
 
@@ -141,23 +139,47 @@ body{
 	cursor: pointer;
 	transition: all ease-in-out .2s;
 }
-.form__search__area input:focus{
-	box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.54);
-	transition: all ease-in-out .2s;
-	border-color: #BDBDBD;
-}
+
 .form__search__area i{
 	color: #ffffff;
 	cursor: pointer;
 }
 /*--------------------------------------------------------body area--------------------------------------------------------*/
+.container__title{
+	text-align: center;
+}
+.table{
 
+}
+tr:hover{
+	cursor: pointer;
+}
+.search__person__container{
+	display: flex;
+	justify-content: flex-end;
+}
+.search__person{
+	padding: 16px 0px;
+}
+.search__person input{
+	border: solid 1px rgba(0, 0, 0, 0.19);
+	border-radius: 8px;
+	padding: 4px 8px;
+	cursor: pointer;
+}
+.search__person input:focus{
+	box-shadow: 0px 1px 5px rgba(255, 0, 0, .19);
+	transition: all ease-in-out .2s;
+	border-color: #BDBDBD;
+}
 /*--------------------------------------------------------footer area--------------------------------------------------------*/
 .footer__container{
 	display: flex;
 	border-top: 2px solid gray;
 	height: 200px;
 	width: 100%;
+	/* bottom: 0;
+	position: fixed; */
 }
 .footer__logo__container{
 	width: 100%;
@@ -224,7 +246,7 @@ body{
 		flex-wrap: wrap;
 	}
 }
-@media screen and(max-width: 700px){
+@media screen and(max-width: 599px){
 	.slideshow__container{
 		width: 100%;
 		max-width: 300px;
