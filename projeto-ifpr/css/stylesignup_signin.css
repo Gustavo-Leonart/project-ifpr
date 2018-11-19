@@ -24,19 +24,20 @@ hr{
     width: 100%;
     margin:auto;
 }
+.form__container{
+    width: 100%;
+}
 .form__sign__container{
-    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
     width: 100%;
 }
 .form__fields__container{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 .form__fields{
     padding: 16px 16px;
-    align-items:center;
 }
 .form__fields label{
     align-items: center;
@@ -44,8 +45,7 @@ hr{
 }
 .form__fields input{
     display: flex;
-    max-width: 350px;
-    width: 100%;
+    width: 90%;
     color: #000000;
     align-items: center;
     padding: 8px;
@@ -56,16 +56,17 @@ hr{
     cursor: pointer;
     caret-color: rgba(0, 0, 0, 0.54);
 }
-.form__fields .form__fields__input input:focus{
+.form__fields input:focus{
     border-radius: 4px;
     border: 2px solid #0091EA;
     padding: 6px 6px 8px;
 }
-.form__buttons{
-    padding: 8px 64px;
-    margin-top: 40px;
+.buttons__area{
     display: flex;
     justify-content: flex-end;
+}
+.form__buttons{
+    padding: 8px 48px 8px 0px;
 }
 .form__buttons .form__button__next{
     border: none;
@@ -74,10 +75,10 @@ hr{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 10px 20px 0 rgba(0,0,0,.19);
     padding: 16px;
     border-radius: 4px;
-    font-size: 115%;
+    font-size: 1.1em;
     cursor: pointer;
 }
-.form__button__next span{
+.form__button__next span, .form__button__reset span{
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -95,6 +96,29 @@ hr{
     padding-right: 25px;
 }
 .form__button__next:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.form__button__reset{
+    border: solid 1px #0091EA;
+    border-radius: 4px;
+    font-size: 1.1em;
+    padding: 16px;
+    color: #0091EA;
+    background-color: #ffffff;
+}
+.form__button__reset span:after{
+    content: '\00d7';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 8px;
+    transition: .3s;
+}
+.form__button__reset:hover span{
+    padding-right: 25px;
+}
+.form__button__reset:hover span:after {
     opacity: 1;
     right: 0;
 }
@@ -121,7 +145,7 @@ hr{
         justify-content: center;
     }
 }
-@media screen and (max-width: 530px){
+@media screen and (max-width: 599px){
     .form__fields input{
         margin: 0 16px;
         width: 90%;
