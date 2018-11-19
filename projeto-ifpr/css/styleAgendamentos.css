@@ -151,7 +151,12 @@ body{
 .container__title{
 	text-align: center;
 }
-tr:hover:not(:nth-child(1)){
+.table-responsive{
+	overflow: visible;
+	height: 300px;
+	margin: 32px;
+}
+tr:hover{
 	cursor: pointer;
 }
 .search__person__container{
@@ -179,7 +184,6 @@ tr:hover:not(:nth-child(1)){
 	height: 200px;
 	width: 100%;
 	bottom: 0;
-	position: fixed;
 }
 .footer__logo__container{
 	width: 100%;
