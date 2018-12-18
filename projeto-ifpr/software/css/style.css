@@ -68,13 +68,12 @@ ul, li{
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
 	color: #ffffff;
-	padding: 16px 0px 16px 32px;
+	padding: 16px 32px ;
 }
 .dropdown-menu{
 	background-color: #C62828;
 	color: #ffffff;
 	width: 250px;
-	max-width: 250px;
 	border: none;
 	display: none;
 	padding: 0px;
