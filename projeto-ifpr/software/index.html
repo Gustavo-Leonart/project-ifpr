@@ -42,40 +42,42 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="collapse__navbar">
-                <div class="nav navbar-nav">
-                    <a class="active" href="#">Home</a>
-                    <a href="#">Sobre & Contato</a>
-                    <div class="dropdown">
+                <ul class="nav navbar-nav">
+                    <li><a class="active" href="#"><span class="fas fa-home" style="margin-right:4px;"></span> Home</a></li>
+                    <li><a href="#">Sobre & Contato</a></li>
+                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Usuário <span class="fas fa-caret-down"></span>
                         </a>
-                        <div class="dropdown-menu">
-                            <a href="#">Login</a>
-                            <a href="#">Logout</a>
-                            <a href="#">Registrar-se</a>
-                            <a href="#">Conta</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><span class="fas fa-sign-in-alt" style="margin-right:4px;"></span> Login</a></li>
+                            <li><a href="#"><span class="fas fa-door-open" style="margin-right:4px;"></span> Logout</a></li>
+                            <li><a href="#"><span class="fas fa-user-plus" style="margin-right:4px;"></span> Registrar-se</a></li>
+                            <li><a href="#"><span class="fas fa-user-cog" style="margin-right:4px;"></span> Conta</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Pedidos <span class="fas fa-caret-down"></span>
                         </a>
-                        <div class="dropdown-menu">
-                            <a href="#">Fazer um pedido</a>
-                            <a href="#">Acessar pedido</a>
-                            <a href="#">Alterar pedido</a>
-                            <div class="dropdown-submenu">
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Fazer um pedido</a></li>
+                            <li><a href="#">Acessar pedido</a></li>
+                            <li><a href="#">Alterar pedido</a></li>
+                            <li class="dropdown-submenu">
                                 <a href="#">
-                                    Agendamentos <span class="fas fa-caret-down"></span>
+                                    <span class="fas fa-book" style="margin-right:4px;"></span>
+                                    Agendamentos
+                                    <span class="fas fa-caret-down" style="padding-left:4px;"></span>
                                 </a>
-                                <div class="dropdown-menu">
-                                    <a href="#">Acessar Agentadamentos</a>
-                                    <a href="#">Consultar Agentadamentos</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Acessar Agentadamentos</a></li>
+                                    <li><a href="#">Consultar Agentadamentos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
