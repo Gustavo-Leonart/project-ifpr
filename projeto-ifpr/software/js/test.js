@@ -13,7 +13,7 @@ function showSlides(n){
   var i;
   //console.log(s); //gera um log (texto) da variável "s"
 
-  	for(i = 0; i < s.length; i++){ //let define a variável apenas como local
+  	for(i = 0; i < s.length; i++){ 
     	s[i].style.display = "none";
   	}
   	slideIndex++;

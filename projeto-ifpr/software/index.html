@@ -26,50 +26,51 @@
         }
     </style>
 </head>
-<header>
-    <div class="header__container">
-        <div class="header__inc__name">
-            ...
-        </div>
-    </div>
-</header>
 <body>
-    <nav class="navbar__container">
-        <div class="navbar__links">
-            <a class="navbar__item" href="index.html">Home</a>
-            <a class="navbar__item" href="sobre&contato.html">Sobre e Contato</a>
-            <div class="navbar__options__user">
-                <div class="dropdown">
-                    <a class="navbar__item" href="#">
-                        Usuário<span class="fas fa-angle-down"></span>
-                    </a>
-                    <div class="dropdown__content">
-                        <a href="login.html">Login</a>
-                        <a href="#">Logout</a>
-                        <a href="cadastrar.html">Registrar-se</a>
-                        <a href="account.html">Conta</a>
-                    </div>
-                </div>
+    <header>
+        <div class="header__container">
+            <div class="header__inc__name">
+                ...
             </div>
-            <div class="navbar__options__user">
-                <div class="dropdown">
-                    <a class="navbar__item" href="#">
-                        Pedidos<span class="fas fa-angle-down"></span>
-                    </a>
-                    <div class="dropdown__content">
-                        <a href="login.html">Acessar o Pedido</a>
-                        <a href="#">Fazer um Pedido</a>
-                        <a href="cadastrar.html">Alterar Pedido</a>
-                        <div class="secondary__navbar__options__user">
-                            <div class="secondary__dropdown">
-                                <a class="secondary__navbar__item" href="#">
-                                    Agendametos<i class="fas fa-angle-down"></i>
+        </div>
+    </header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse__navbar" name="button">
+                    <span class="fas fa-bars"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="collapse__navbar">
+                <div class="nav navbar-nav">
+                    <a class="active" href="#">Home</a>
+                    <a href="#">Sobre & Contato</a>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Usuário <span class="fas fa-caret-down"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#">Login</a>
+                            <a href="#">Logout</a>
+                            <a href="#">Registrar-se</a>
+                            <a href="#">Conta</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Pedidos <span class="fas fa-caret-down"></span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#">Fazer um pedido</a>
+                            <a href="#">Acessar pedido</a>
+                            <a href="#">Alterar pedido</a>
+                            <div class="dropdown-submenu">
+                                <a href="#">
+                                    Agendamentos <span class="fas fa-caret-down"></span>
                                 </a>
-                                <div class="secondary__dropdown__content">
-                                    <div class="secondary__row">
-                                        <a href="#">Acessar Agendamentos</a>
-                                        <a href="agendamento.html">Consultar Agendamentos</a>
-                                    </div>
+                                <div class="dropdown-menu">
+                                    <a href="#">Acessar Agentadamentos</a>
+                                    <a href="#">Consultar Agentadamentos</a>
                                 </div>
                             </div>
                         </div>
@@ -77,12 +78,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="form__search__area">
-            <form class="search__in__homepage">
-                <input type="text" placeholder="Pesquisar...">
-                < <i class="glyphicon glyphicon-search"></i>>
-            </form>
-    </div> -->
     </nav>
     <section class="body__homepage__container">
         <div class="slideshow__container">
