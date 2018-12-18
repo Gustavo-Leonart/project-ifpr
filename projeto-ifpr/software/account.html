@@ -18,53 +18,57 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script type="text/javascript" src="js/test.js"></script>
     <style>
+        @import "css/navigationbar.css";
         body{
             font-family: 'Roboto';
             font-size: 1.6em;
         }
     </style>
 <body>
-    <nav class="navbar__container">
-        <div class="navbar__links">
-            <a class="navbar__item" href="index.html">Home</a>
-            <a class="navbar__item" href="sobre&contato.html">Sobre e Contato</a>
-            <div class="navbar__options__user">
-                <div class="dropdown">
-                    <a class="navbar__item" href="#">
-                        Usuário<span class="fas fa-angle-down"></span>
-                    </a>
-                    <div class="dropdown__content">
-                        <a href="login.html">Login</a>
-                        <a href="#">Logout</a>
-                        <a href="cadastrar.html">Registrar-se</a>
-                        <a href="account.html">Conta</a>
-                    </div>
-                </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse__navbar" name="button">
+                    <span class="fas fa-bars"></span>
+                </button>
             </div>
-            <div class="navbar__options__user">
-                <div class="dropdown">
-                    <a class="navbar__item" href="#">
-                        Pedidos<span class="fas fa-angle-down"></span>
-                    </a>
-                    <div class="dropdown__content">
-                        <a href="login.html">Acessar o Pedido</a>
-                        <a href="#">Fazer um Pedido</a>
-                        <a href="cadastrar.html">Alterar Pedido</a>
-                        <div class="secondary__navbar__options__user">
-                            <div class="secondary__dropdown">
-                                <a class="secondary__navbar__item" href="#">
-                                    Agendametos<i class="fas fa-angle-down"></i>
+            <div class="collapse navbar-collapse" id="collapse__navbar">
+                <ul class="nav navbar-nav">
+                    <li><a class="active" href="index.html"><span class="fas fa-home" style="margin-right:4px;"></span> Home</a></li>
+                    <li><a href="sobre&contato.html"><span class="fas fa-address-book" style="margin-right:4px;"></span> Sobre & Contato</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Usuário <span class="fas fa-caret-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="login.html"><span class="fas fa-sign-in-alt" style="margin-right:4px;"></span> Login</a></li>
+                            <li><a href="#"><span class="fas fa-door-open" style="margin-right:4px;"></span> Logout</a></li>
+                            <li><a href="cadastrar.html"><span class="fas fa-user-plus" style="margin-right:4px;"></span> Registrar-se</a></li>
+                            <li><a href="account.html"><span class="fas fa-user-cog" style="margin-right:4px;"></span> Conta</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Pedidos <span class="fas fa-caret-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Fazer um pedido</a></li>
+                            <li><a href="#">Acessar pedido</a></li>
+                            <li><a href="#">Alterar pedido</a></li>
+                            <li class="dropdown-submenu">
+                                <a href="#">
+                                    <span class="fas fa-book" style="margin-right:4px;"></span>
+                                    Agendamentos
+                                    <span class="fas fa-caret-down" style="padding-left:4px;"></span>
                                 </a>
-                                <div class="secondary__dropdown__content">
-                                    <div class="secondary__row">
-                                        <a href="#">Acessar Agendamentos</a>
-                                        <a href="agendamento.html">Consultar Agendamentos</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Acessar Agentadamentos</a></li>
+                                    <li><a href="agendamento.html">Consultar Agentadamentos</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
