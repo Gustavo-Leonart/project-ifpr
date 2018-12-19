@@ -100,11 +100,9 @@ ul, li{
 	line-height: 150%;
 	text-indent: 40px;
 }
+/*--------------------------------------------------------media screen area--------------------------------------------------------*/
 
 @media screen and (min-width: 600px) and (max-width: 900px){
-	.footer__logo__container{
-		width: 100%;
-	}
 }
 @media screen and (max-width: 599px){
 	.slideshow__container{
