@@ -74,7 +74,7 @@ ul, li{
 	margin-bottom: 64px;
 }
 .block__infos:first-of-type{
-	margin-top: 0px; 
+	margin-top: 0px;
 }
 .infos{
 	text-align: justify;
@@ -126,5 +126,8 @@ ul, li{
 	.text{
 		text-indent: 16px;
 		padding: 8px 16px;
+	}
+	.infos__container{
+		width: 100%;
 	}
 }

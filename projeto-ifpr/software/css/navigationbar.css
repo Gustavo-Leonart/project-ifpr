@@ -27,7 +27,7 @@
 	border:none;
 }
 .navbar-right{
-	margin-right: 0px; 
+	margin-right: 0px;
 }
 .navbar{
 	background-image: linear-gradient(to top, #E040FB, #4A148C);
@@ -67,4 +67,7 @@
 	background-image: none;
 	margin: 0px;
 	margin-left: 32px;
+}
+.btn{
+	text-align: inherit;
 }
