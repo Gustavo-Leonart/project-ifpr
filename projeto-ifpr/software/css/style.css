@@ -59,10 +59,10 @@ ul, li{
 	animation-name: fade;
 	animation-duration: 1.5s;
 }
-.descricao__vaga__container{
+.infos__container{
 	width: 60%;
 }
-.bloco__descricao__vaga{
+.block__infos{
     padding: 8px 24px;
 	background-color: #ffffff;
 	margin: 16px 0px;
@@ -70,10 +70,13 @@ ul, li{
 	border: solid .5px #d3d3d3;
 	box-shadow: 2.5px 5px 10px #d3d3d3;
 }
-.bloco__descricao__vaga:last-of-type{
+.block__infos:last-of-type{
 	margin-bottom: 64px;
 }
-.bloco__descricao__vaga__conteudo{
+.block__infos:first-of-type{
+	margin-top: 0px; 
+}
+.infos{
 	text-align: justify;
     word-break: break-all;
     line-height: 150%;
