@@ -51,12 +51,18 @@
 	position: relative;
 	bottom: 0;
 	width: 100%;
+	background: transparent;
+}
+.footer__copyright a{
 	text-align: center;
 	color: #f2f3f5;
 	filter: brightness(35%);
 	font-weight: 120%;
 	font-size: 0.8em;
-	background: transparent;
+}
+.footer__copyright a:hover{
+	text-decoration: underline;
+	color: #f2f3f5;
 }
 @media screen and (min-width: 600px) and (max-width: 900px){
 	.footer__logo__container{
