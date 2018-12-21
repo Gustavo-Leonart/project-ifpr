@@ -1,35 +1,61 @@
-// function mascara(o,f){
-//   a_obj = o;
-//   funcao = f;
-//   setTimeout("execMask()", 1);
-// }
-// function execMask(){
-//   a_obj.value = funcao(a_obj.value);
-// }
-// function maskCel(x){
-//   x = x.replace(/\D/g, "");
-//   x = x.replace(/^(\d{2})(\d)/g, "($1)$2");
-//   x = x.replace(/.(\d)(\d{4})$/, "$1=$2");
-//   return v;
-// }
-// function id( el ){
-//   return document.getElementById( el );
-// }
-// window.onload = function(){
-//   id('celular').onkeypress = function(){
-//     mascara(this, maskCel);
-//   }
-// }
-
-function Mascara(){
-  var x = this;
-  this.celular = function( obj ){
-    obj.value = obj.value;
-    .replace(/\D/g, '')
-    .replace(/^(\d{2})(\d)/g, '($1) $2')
-    .replace(/(\d{4})(\d)/, '$1-$2');
-    setTimeout(function (){
-      object.celular( obj ); }, 1);
-  }
+// Validação de número inteiro
+function maskInteiro(){
+    if(event.keyCode < 48 || event.keyCode > 57){
+        event.returnValue = false;
+        return false;
+    }
+    return true;
 }
-mascara = new Mascara();
+// Formatar genericamente os campos
+function formataCampo(campo, mask, evento){
+    var boolMask;
+    var digitado = evento.keyCode;
+    exp = /\-|\.|\/|\(|\)| /g
+    onlyNumbers = campo.value.toString().replace(exp, "");
+
+    var posicaoCampo = 0;
+    var novoValor = "";
+    var tamanhoMask = onlyNumbers.length;
+
+    if (digitado != 8) {
+        for(i = 0; i <= tamanhoMask; i++){
+            boolMask = ((mask.charAt(i) == "-") || (mask.charAt(i) == ".") || (mask.charAt(i) == "/"))
+            boolMask = boolMask || ((mask.charAt(i) == "(") || (mask.charAt(i) == ")") || (mask.charAt(i) == " "))
+            if (boolMask) {
+                novoValor += mask.charAt(i);
+                tamanhoMask++;
+            }else{
+                novoValor += onlyNumbers.charAt(posicaoCampo);
+                posicaoCampo++;
+            }
+        }
+        campo.value = novoValor;
+        return true;
+    }else{
+        return true;
+    }
+}
+// Funções de mascaramento
+function mascaraRg(rg){
+    if(maskInteiro(rg) == false){
+        event.returnValue = false;
+    }
+    return formataCampo(rg, '00.000.000-0', event);
+}
+function mascaraCelular(cel){
+    if(maskInteiro(cel) == false){
+        event.returnValue = false;
+    }
+    return formataCampo(cel, '(00) 00000-0000', event);
+}
+// validação das mascaras
+function validaCelular(cel){
+    exp = /\(\d{2}\)\ \d{5}\-\d{4}/
+    if(!exp.test(cel.value))
+        alert('Número de celular incorreto!');
+}
+function validaRg(rg){
+    exp = /\d{2}\.\d{3}\.\d{3}\-\d{1}/
+    if(!exp.test(rg.value))
+        alert('Número do RG incorreto!');
+}

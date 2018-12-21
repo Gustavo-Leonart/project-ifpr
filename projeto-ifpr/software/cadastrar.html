@@ -6,16 +6,22 @@
 	<title> Cadastro</title>
 	<link rel="stylesheet" type="text/css" href="css/stylesignup_signin.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
 	<meta charset="utf-8" />
 	<script type="text/javascript" src="js/formmask.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Roboto Font  -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	<!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <style>
         body{
             font-family: 'Roboto';
-            font-size: 1.1em;
+            /* font-size: 1.5em !important; */
             /* margin: 0 auto; */
         }
     </style>
@@ -24,7 +30,7 @@
 	<!-- Infos p/ cadastro -->
 	<h3 style="text-align: center; padding-top: 32px; font-size: 2.2em;">Cadastro</h3>
 	<section class="body__container">
-		<form class="form__container" name="cadastrarNome" action="index.html" method="post">
+		<form class="form__container" name="formSignUp" action="index.html" method="post">
 			<div class="form__sign__container">
 				<div class="form__fields__container">
 					<div class="form__fields">
@@ -51,11 +57,11 @@
 					</div>
 					<div class="form__fields">
 						<label for="exampleInputEmail1">rg</label>
-						<input type="text" placeholder="Ex: 11.111.111-0">
+						<input type="text" name="rg" placeholder="Ex: 11.111.111-0" maxlength="12" onkeypress="mascaraRg(formSignUp.rg)" onblur="validaRg(formSignUp.rg)" >
 					</div>
 					<div class="form__fields">
 						<label for="exampleInputEmail1">celular</label>
-						<input type="text" name="celular" placeholder="Ex:(41) 99999-9999" maxlength="15" onkeypress="mascara.celular( this );">
+						<input type="text" name="cel" placeholder="Ex:(41) 99999-9999" maxlength="15" onkeypress="mascaraCelular(formSignUp.cel)" onblur="validaCelular(formSignUp.cel)">
 					</div>
 				</div>
 			</div>
@@ -70,5 +76,7 @@
 			</div>
 		</form>
 	</section>
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </body>
 </html>

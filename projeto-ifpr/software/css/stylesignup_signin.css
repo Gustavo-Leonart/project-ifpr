@@ -15,17 +15,15 @@ hr{
     color: rgba(0, 0, 255, 0.34);
 }
 .body__container{
-    background: transparent;
+    background: #ffffff;
     display: flex;
     flex-wrap: nowrap;
-    border: 2px solid;
-    border-color: rgba(0, 0, 0, 0.19);
-    border-radius: 32px;
+    /* border-radius: 8px; */
     max-width: 1000px;
     width: 100%;
     margin:auto;
     border: solid .5px #d3d3d3;
-	box-shadow: 0px 0px 8px 2.5px #d3d3d3;
+	box-shadow: 5px 5px 10px #d3d3d3;
 }
 .form__container{
     width: 100%;
