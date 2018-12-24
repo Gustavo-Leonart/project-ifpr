@@ -106,26 +106,15 @@ ul, li{
 }
 /*--------------------------------------------------------media screen area--------------------------------------------------------*/
 
-@media screen and (min-width: 600px) and (max-width: 900px){
-	.slideshow__container__text{
-		justify-content: center;
-		width: 100%;
-		margin-left: 16px;
-		margin-right: 16px;
+@media screen and (min-width: 600px) and (max-width: 959px){
+	.infos__container{
+		width: 90%;
 	}
 }
 @media screen and (max-width: 599px){
-	.slideshow__container{
-		width: 100%;
-		margin: 0px;
-	}
 	.plusSlides{
 		width: 300px;
 		height: 150px;
-	}
-	.text{
-		text-indent: 16px;
-		padding: 8px 16px;
 	}
 	.infos__container{
 		width: 100%;

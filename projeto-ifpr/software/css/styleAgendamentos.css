@@ -66,7 +66,7 @@ tr:hover{
 	border-color: #BDBDBD;
 }
 /*--------------------------------------------------------footer area--------------------------------------------------------*/
-@media screen and (min-width: 600px) and (max-width: 900px){
+@media screen and (min-width: 600px) and (max-width: 959px){
 	.table-responsive{
 		margin: 32px 8px;
 	}

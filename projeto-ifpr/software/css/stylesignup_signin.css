@@ -3,7 +3,6 @@
 body{
     margin: 0;
     padding: 0;
-    text-transform: capitalize;
     font-family: 'Roboto', arial, sans-serif;
     box-sizing: border-box;
     background-color: #f2f3f5 !important;

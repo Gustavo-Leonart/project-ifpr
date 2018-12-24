@@ -52,10 +52,10 @@ function mascaraCelular(cel){
 function validaCelular(cel){
     exp = /\(\d{2}\)\ \d{5}\-\d{4}/
     if(!exp.test(cel.value))
-        alert('Número de celular incorreto!');
+        alert('Número de celular inválido!');
 }
 function validaRg(rg){
     exp = /\d{2}\.\d{3}\.\d{3}\-\d{1}/
     if(!exp.test(rg.value))
-        alert('Número do RG incorreto!');
+        alert('Digite um RG válido!');
 }
