@@ -42,9 +42,13 @@ ul, li{
 	width: 100%;
 	margin: auto;
 }
+.slideshow__container{
+	margin-bottom: 32px
+}
 .imgs__container{
-	width: 100%;
-	padding: 64px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .plusSlides{
 	margin: auto;

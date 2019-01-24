@@ -1,8 +1,9 @@
 //window.alert("hello!");
 var slideIndex = 0;
+showSlides(slideIndex);
 
 $(document).ready(function(n){ //mostra apenas uma imagem do "slide" na tela por vez
-  showSlides(n);
+    showSlides(slideIndex += n);
 });
 
 function forwardSlides(n){
@@ -13,7 +14,7 @@ function showSlides(n){
   var i;
   //console.log(s); //gera um log (texto) da variável "s"
 
-  	for(i = 0; i < s.length; i++){ 
+  	for(i = 0; i < s.length; i++){
     	s[i].style.display = "none";
   	}
   	slideIndex++;
