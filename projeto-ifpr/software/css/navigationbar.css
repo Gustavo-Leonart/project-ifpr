@@ -1,8 +1,13 @@
 /* navigation bar */
 
 .navbar-toggle{
-	color: #fff;
-	border: #fff;
+	color: rgba(0, 0, 0, .54);
+	border: rgba(0, 0, 0, .54);
+	font-size: 1.75em;
+}
+.navbar-toggle:hover,
+.navbar-toggle:focus{
+	background-color: transparent !important;
 }
 .container-fluid{
 	width: 100%;
