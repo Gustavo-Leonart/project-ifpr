@@ -1,0 +1,107 @@
+.dropdown-toggle{
+    display: none;
+    border: none;
+    color: #004c88;
+    font-size: 2em;
+    background-color: transparent;
+}
+.container-fluid{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 60px;
+}
+.navbar{
+    min-height: 60px !important;
+    margin-bottom: 0px !important;
+    border: none !important
+}
+.navbar-header{
+    margin: 0 !important;
+}
+.navbar-nav{
+    margin: 0px !important;
+    position: absolute;
+    right: 0;
+}
+.dropdown-menu{
+    padding: 0!important;
+    border: none !important;
+    box-shadow: none !important;
+    min-width: auto !important;
+    margin: 0px !important;
+}
+.menu__item > a{
+    padding: 21px 12px !important;
+    font-size: .9em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.35) !important;
+    font-weight: 500 !important;
+}
+.menu__item > a.active,
+.menu__item > a.active:hover{
+    color: #ffffff !important;
+    background-color: #004c88 !important;
+    border-radius: 0;
+}
+.menu__item > a:hover{
+    background-color: #f2f3f5 !important;
+    border-radius: 4px;
+}
+@media screen and (min-width: 960px){
+	.dropdown-menu{
+        top: inherit !important;
+        display: flex !important;
+        right: 0 !important;
+        position: inherit !important;
+	}
+    .menu__item > a:hover{
+        border-radius: 0px;
+    }
+}
+@media screen and (max-width: 959px) and (min-width: 600px) {
+    .dropdown-toggle{
+        display: inline-block;
+    }
+    .dropdown-menu{
+        left: auto!important;
+        right: 0 !important;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .54) !important;
+    }
+    .container-fluid{
+        margin: 0 20px;
+    }
+    .dropdown-menu .menu__item > a{
+        padding: 8px 16px !important
+    }
+    .dropdown{
+        display: flex;
+        justify-content: flex-end;
+        flex: auto;
+    }
+}
+@media screen and (max-width: 599px) {
+	.dropdown-toggle{
+        display: inline-block;
+    }
+    .dropdown-menu{
+        left: auto!important;
+        right: 0 !important;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .54) !important;
+    }
+    .dropdown{
+        display: flex;
+        justify-content: flex-end;
+        flex: auto;
+    }
+	 .dropdown-menu .menu__item > a{
+        padding: 8px 16px !important
+    }
+	 .container-fluid{
+        margin: 0 20px;
+    }
+    .navbar-header{
+        width: 100px;
+        overflow: hidden;
+    }
+}
