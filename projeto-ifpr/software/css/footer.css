@@ -40,6 +40,7 @@
 }
 .footer__nav__links a:hover{
 	color: inherit;
+	text-decoration: underline;
 }
 .footer__number{
 	font-size: 1.5em;
