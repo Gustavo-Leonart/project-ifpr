@@ -7,7 +7,6 @@ body{
 	font-family: 'Roboto', arial, sans-serif;
 	margin: 0 auto;
 	background-color: #ffffff !important;
-	/* height: 100vh; */
 }
 a:hover, a:focus{
 	text-decoration: none;
@@ -15,6 +14,29 @@ a:hover, a:focus{
 }
 ul, li{
 	list-style: none;
+}
+.container{
+	height: 100vh;
+}
+.form__button__next span, .form__button__reset span{
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.form__button__next span:after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 8px;
+    transition: .3s;
+}
+.form__button__next:hover span{
+    padding-right: 25px;
+}
+.form__button__next:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 /*--------------------------------------------------------header area--------------------------------------------------------*/
 .header__container{
@@ -66,6 +88,7 @@ ul, li{
 .infos__container{
 	width: 60%;
 	background-color: #e2e2e2;
+	margin: auto;
 	margin-bottom: 64px;
 	padding: 0px 32px 16px;
 	border-radius: 8px;
@@ -74,6 +97,9 @@ ul, li{
 	font-size: 1.2em;
 	color: rgba(0, 0 ,0, .35);
 	text-align: center;
+}
+.infos__title:first-of-type{
+	padding-top: 16px;
 }
 .block__infos{
     padding: 16px 32px;

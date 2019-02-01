@@ -108,12 +108,6 @@ hr{
     background-color: #ffffff;
     cursor: pointer;
 }
-.form__button__next:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 10px 20px 0 rgba(0,0,0,.19);
-}
-.form__button__reset:hover{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2), 0 5px 10px 0 rgba(0,0,0,.19);
-}
 .form__button__reset span:after{
     content: '\00d7';
     position: absolute;
@@ -160,80 +154,4 @@ hr{
     .form__fields label {
         margin-left: 16px;
     }
-}
-/*--------------------------------------------------------Sign In--------------------------------------------------------*/
-.body__login__container{
-    text-transform: none;
-    margin: 32px;
-    background: transparent;
-    max-width: 400px;
-    width: 100%;
-    margin: auto;
-}
-.form__login__container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    border: solid .5px #d3d3d3;
-	box-shadow: 0px 0px 5px 1px #d3d3d3;
-    border-radius: 16px;
-    max-width: 300px;
-    background-color: #ffffff;
-    margin: 0 auto;
-}
-.form__fields__login{
-    color: #333333;
-    padding: 16px;
-}
-.form__buttons__login{
-    padding: 8px;
-    margin-left: auto;
-}
-.form__buttons__login .form__button__next{
-    border: none;
-    background-color: #0091EA;
-    color: #fff;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0 10px 20px 0 rgba(0,0,0,.19);
-    padding: 16px;
-    border-radius: 4px;
-    font-size: 1.10em;
-    cursor: pointer;
-}
-.form__fields__login .form__fields__input input{
-    width: 100%;
-    color: #333333;
-    align-items: center;
-    padding: 8px;
-    border-radius: 4px;
-    border: none;
-    border-bottom: 2px solid #0091EA;
-    background: transparent;
-    cursor: pointer;
-    caret-color: rgba(0, 0, 0, 0.54);
-}
-.form__fields__login .form__fields__input input:focus{
-    border-radius: 4px;
-    padding: 6px 6px 8px;
-    border: solid 2px #0091EA;
-	box-shadow: 0px 0px 5px 1px #d3d3d3;
-}
-.register{
-    text-align: center;
-    font-weight: lighter;
-    border: solid .5px #d3d3d3;
-    box-shadow: 0px 0px 5px 1px #d3d3d3;
-    border-radius: 8px;
-    width: 50%;
-    margin: auto;
-    margin-top: 16px;
-    padding: 8px;
-    background-color: #ffffff;
-}
-.register a{
-    color: #0091EA;
-    cursor: pointer;
-}
-.register a:hover{
-    color: #9E9E9E;
 }
