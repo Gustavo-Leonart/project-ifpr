@@ -53,13 +53,17 @@
 .menu__item.dropdown-submenu{
     position: relative;
 }
-.menu__item > a{
+.menu__item > a,
+.login__button__navbar{
     padding: 19px 20px !important;
     color: rgba(0, 0, 0, 0.35) !important;
     font-weight: 500 !important;
     font-size: 1.1em;
+    background-color: transparent;
+    border: none;
 }
-.menu__item > a:hover{
+.menu__item > a:hover,
+.login__button__navbar:hover{
     background-color: #f2f3f5 !important;
     border-radius: 4px;
 }
@@ -67,6 +71,9 @@
 .menu__item > a.active:hover{
     background-color: #f2f3f5;
     color: rgba(0, 0, 0, 0.54) !important;
+}
+.modal{
+    background-color: rgba(0, 0, 0, 0.87);
 }
 @media screen and (min-width:960px) {
     .dropdown-menu{
