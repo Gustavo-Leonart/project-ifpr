@@ -53,6 +53,10 @@
 .menu__item.dropdown-submenu{
     position: relative;
 }
+.login__button__navbar{
+    width: 100%;
+    text-align:left;
+}
 .menu__item > a,
 .login__button__navbar{
     padding: 19px 20px !important;
@@ -108,7 +112,8 @@
     .container-fluid{
         margin: 0 20px;
     }
-    .dropdown-menu .menu__item > a{
+    .dropdown-menu .menu__item > a,
+    .login__button__navbar{
         padding: 8px 16px !important
     }
     .dropdown{
@@ -137,7 +142,8 @@
         right: 50% !important;
         /* top: 50% !important; */
     }
-	 .dropdown-menu .menu__item > a{
+	 .dropdown-menu .menu__item > a,
+     .login__button__navbar{
         padding: 8px 16px !important
     }
 	 .container-fluid{

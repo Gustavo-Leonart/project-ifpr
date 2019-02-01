@@ -178,7 +178,7 @@ hr{
     border: solid .5px #d3d3d3;
 	box-shadow: 0px 0px 5px 1px #d3d3d3;
     border-radius: 16px;
-    max-width: 400px;
+    max-width: 300px;
     background-color: #ffffff;
     margin: 0 auto;
 }
@@ -201,7 +201,7 @@ hr{
     cursor: pointer;
 }
 .form__fields__login .form__fields__input input{
-    width: 350px;
+    width: 100%;
     color: #333333;
     align-items: center;
     padding: 8px;
