@@ -1,4 +1,4 @@
-.fas, .fa{
+.fas, .fa, .far{
     padding-right: 4px;
 }
 .fa-sign-in-alt{
@@ -16,8 +16,9 @@
 .navbar{
     max-height: 60px !important;
     margin-bottom: 0px !important;
-    border: none !important
+    border: none !important;
     background-color: #ffffff !important;
+    border-radius: 0 !important;
 }
 .navbar-header{
     margin: 0 !important;
@@ -37,6 +38,7 @@
     width: auto !important;
     min-width: auto !important;
     margin: 0px !important;
+    border-radius: 0;
 }
 .dropdown-submenu .dropdown-menu{
     display: none !important;
@@ -44,6 +46,7 @@
     right: auto !important;
     width: auto !important;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .54) !important;
+    border-radius: 4px;
 }
 .dropdown-submenu:hover .dropdown-menu{
     display: block !important;
@@ -64,7 +67,7 @@
 }
 .menu__item > a,
 .button__modal{
-    padding: 19px 20px !important;
+    padding: 20px !important;
     color: rgba(0, 0, 0, 0.35) !important;
     font-weight: 500 !important;
     font-size: 1em;
@@ -74,12 +77,15 @@
 .menu__item > a:hover,
 .button__modal:hover{
     background-color: #f2f3f5 !important;
-    border-radius: 4px;
+    /* border-radius: 4px; */
 }
 .menu__item > a.active,
 .menu__item > a.active:hover{
-    background-color: #f2f3f5;
-    color: rgba(0, 0, 0, 0.54) !important;
+    /* background-color: #f2f3f5; */
+    /* color: rgba(0, 0, 0, 0.54) !important; */
+    color: #fff !important;
+    background-color: #1E88E5 !important;
+    border-radius: 0;
 }
 .modal{
     background-color: rgba(0, 0, 0, 0.35);
@@ -87,7 +93,7 @@
 .fade{
     animation-duration: 0s !important;
 }
-.modal-header{
+.modal-header, .modal-footer{
     background-color: rgba(0, 0, 0, .75);
     color: #ffffff;
 }

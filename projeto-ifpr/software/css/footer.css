@@ -1,7 +1,7 @@
 .footer__container{
 	width: 100%;
 	display: flex;
-	background-color: #333333;
+	background-color: rgba(0, 0, 0, .75);
 	flex-wrap: wrap;
 }
 .footer__logo__container{
@@ -49,18 +49,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-top: 2px solid  rgba(0,0,0,.1);
 	background: transparent;
 }
 .footer__copyright a{
-	color: #f2f3f5;
-	filter: brightness(35%);
-	font-weight: 120%;
+	color: rgba(0, 0, 0, .54);
+	font-weight: 700;
 	font-size: 0.8em;
 }
 .footer__copyright a:hover{
 	text-decoration: underline;
-	color: #f2f3f5;
 }
 @media screen and (min-width: 600px) and (max-width: 959px){
 	.footer__logo__container{

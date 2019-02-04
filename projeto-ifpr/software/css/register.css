@@ -7,13 +7,8 @@ body{
     box-sizing: border-box;
     background-color: #f2f3f5 !important;
 }
-fieldset{
-    border: none;
-}
 .form__sign__container{
-    margin: 0 auto;
     display: flex;
-    flex-wrap: nowrap;
     width: 100%;
 }
 .form__fields__container{
@@ -23,11 +18,11 @@ fieldset{
     margin: 16px;
 }
 .form__fields label{
-    color: #000000;
+    color: rgb(0, 0, 0, .75);
 }
 .form__fields input{
     display: flex;
-    width: 90%;
+    width: 100%;
     color: #333333;
     align-items: center;
     padding: 8px;
@@ -42,9 +37,10 @@ fieldset{
 .buttons__area{
     display: flex;
     justify-content: flex-end;
+    margin: inherit 16px;
 }
 .form__buttons{
-    padding: 8px 48px 8px 0px;
+    margin: 16px;
 }
 .form__buttons .form__button__next{
     border: none;
@@ -69,10 +65,12 @@ fieldset{
     right: 8px;
     transition: .3s;
 }
-.form__button__next:hover span{
-    padding-right: 25px;
+.form__button__next:hover span,
+.form__button__reset:hover span{
+    padding-right: 24px;
 }
-.form__button__next:hover span:after {
+.form__button__next:hover span:after,
+.form__button__reset:hover span:after{
     opacity: 1;
     right: 0;
 }
@@ -93,32 +91,13 @@ fieldset{
     right: 8px;
     transition: .3s;
 }
-.form__button__reset:hover span{
-    padding-right: 25px;
-}
-.form__button__reset:hover span:after {
-    opacity: 1;
-    right: 0;
-}
 @media screen and (max-width: 599px){
-    .form__fields input{
-        margin: 0 16px;
-        width: 90%;
-    }
-    .form__fields label {
-        margin-left: 16px;
-    }
     .form__sign__container{
         flex-direction:column;
     }
     .buttons__area{
-        flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         padding: 0;
-    }
-    .form__buttons{
-        padding: 0;
-        margin: 16px;
     }
 }

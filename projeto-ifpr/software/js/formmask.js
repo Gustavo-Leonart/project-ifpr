@@ -49,13 +49,13 @@ function mascaraCelular(cel){
     return formataCampo(cel, '(00) 00000-0000', event);
 }
 // validação das mascaras
-function validaCelular(cel){
-    exp = /\(\d{2}\)\ \d{5}\-\d{4}/
-    if(!exp.test(cel.value))
-        alert('Número de celular inválido!');
-}
-function validaRg(rg){
-    exp = /\d{2}\.\d{3}\.\d{3}\-\d{1}/
-    if(!exp.test(rg.value))
-        alert('Digite um RG válido!');
-}
+// function validaCelular(cel){
+//     exp = /\(\d{2}\)\ \d{5}\-\d{4}/
+//     if(!exp.test(cel.value))
+//         alert('Digite um Celular válido!');
+// }
+// function validaRg(rg){
+//     exp = /\d{2}\.\d{3}\.\d{3}\-\d{1}/
+//     if(!exp.test(rg.value))
+//         alert('Digite um RG válido!');
+// }
