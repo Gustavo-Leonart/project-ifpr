@@ -1,4 +1,7 @@
-.fas, .fa, .fa-chevron-left{
+.fas, .fa{
+    padding-right: 4px;
+}
+.fa-sign-in-alt{
     padding-left: 4px;
 }
 .container-fluid{
@@ -55,21 +58,21 @@
 .menu__item.dropdown-submenu{
     position: relative;
 }
-.login__button__navbar{
+.button__modal{
     width: 100%;
     text-align:left;
 }
 .menu__item > a,
-.login__button__navbar{
+.button__modal{
     padding: 19px 20px !important;
     color: rgba(0, 0, 0, 0.35) !important;
     font-weight: 500 !important;
-    font-size: 1.1em;
+    font-size: 1em;
     background-color: transparent;
     border: none;
 }
 .menu__item > a:hover,
-.login__button__navbar:hover{
+.button__modal:hover{
     background-color: #f2f3f5 !important;
     border-radius: 4px;
 }
@@ -89,8 +92,12 @@
     color: #ffffff;
 }
 .modal-dialog{
-    top: 20%;
-    margin: 0 auto;
+    margin: 32px auto;
+}
+@media screen and (max-width: 767px) {
+    .modal-dialog{
+        margin: 0 32px;
+    }
 }
 @media screen and (min-width:960px) {
     .dropdown-menu{
@@ -123,7 +130,7 @@
         top: 50% !important;
     }
     .dropdown-menu .menu__item > a,
-    .login__button__navbar{
+    .button__modal{
         padding: 8px 16px !important
     }
     .dropdown{
@@ -156,10 +163,13 @@
         /* top: 50% !important; */
     }
 	 .dropdown-menu .menu__item > a,
-     .login__button__navbar{
+     .button__modal{
         padding: 8px 16px !important
     }
 	 .container-fluid{
         margin: 0;
+    }
+    .modal-dialog{
+        margin: 0 8px;
     }
 }
