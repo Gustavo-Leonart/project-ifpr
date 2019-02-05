@@ -38,7 +38,6 @@
     width: auto !important;
     min-width: auto !important;
     margin: 0px !important;
-    border-radius: 0;
 }
 .dropdown-submenu .dropdown-menu{
     display: none !important;
@@ -46,10 +45,13 @@
     right: auto !important;
     width: auto !important;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .54) !important;
-    border-radius: 4px;
+    border-radius: 8px 0px 8px 8px;
 }
 .dropdown-submenu:hover .dropdown-menu{
     display: block !important;
+}
+.dropdown-submenu .dropdown-menu .menu__item a:hover{
+    border-radius: 8px 0px 8px 8px;
 }
 .dropdown-toggle{
     display: none;
@@ -67,7 +69,7 @@
 }
 .menu__item > a,
 .button__modal{
-    padding: 20px !important;
+    padding: 20px 12px !important;
     color: rgba(0, 0, 0, 0.35) !important;
     font-weight: 500 !important;
     font-size: 1em;
@@ -77,12 +79,9 @@
 .menu__item > a:hover,
 .button__modal:hover{
     background-color: #f2f3f5 !important;
-    /* border-radius: 4px; */
 }
 .menu__item > a.active,
 .menu__item > a.active:hover{
-    /* background-color: #f2f3f5; */
-    /* color: rgba(0, 0, 0, 0.54) !important; */
     color: #fff !important;
     background-color: #1E88E5 !important;
     border-radius: 0;
@@ -102,7 +101,7 @@
 }
 @media screen and (max-width: 767px) {
     .modal-dialog{
-        margin: 0 32px;
+        margin: 32px;
     }
 }
 @media screen and (min-width:960px) {
@@ -117,9 +116,6 @@
     .dropdown-toggle{
         display: none;
     }
-    .fa-chevron-left{
-        transform: rotate(-90deg);
-    }
 }
 @media screen and (max-width: 959px) and (min-width: 600px) {
     .dropdown-toggle{
@@ -131,9 +127,8 @@
         box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .54) !important;
     }
     .dropdown-submenu .dropdown-menu{
-        /* left: 100% !important; */
         right: 100% !important;
-        top: 50% !important;
+        top: 0% !important;
     }
     .dropdown-menu .menu__item > a,
     .button__modal{
@@ -164,9 +159,7 @@
         margin-right: 0px;
     }
     .dropdown-submenu .dropdown-menu{
-        /* left: auto !important; */
         right: 50% !important;
-        /* top: 50% !important; */
     }
 	 .dropdown-menu .menu__item > a,
      .button__modal{
@@ -176,6 +169,9 @@
         margin: 0;
     }
     .modal-dialog{
-        margin: 0 8px;
+        margin: 32px 8px;
+    }
+    .infos__container{
+        padding: 0px 16px 16px !important;
     }
 }
