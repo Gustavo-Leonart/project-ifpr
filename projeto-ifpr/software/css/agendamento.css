@@ -10,6 +10,24 @@ body{
 .container{
 	height: 100vh;
 }
+.tableHead th{
+	text-align: center;
+	position: sticky;
+	top: 0;
+	background-color: #1e88e5;
+	color: #fff;
+	width: 25%;
+}
+.tableBody td + td{
+	border-left: solid 1px rgba(0,0,0,.1) !important;
+}
+.table td{
+	border-bottom: solid 1px rgba(0,0,0,.1) !important;
+	background-color: #fff;
+}
+.table td:hover{
+	background-color: rgba(0,0,0, .01);
+}
 /*--------------------------------------------------------header area--------------------------------------------------------*/
 
 /*--------------------------------------------------------search bar area--------------------------------------------------------*/
@@ -40,13 +58,17 @@ body{
 /*--------------------------------------------------------body area--------------------------------------------------------*/
 .container__title{
 	text-align: center;
+	font-size: 1.5em;
+}
+.table{
+	text-align: center;
 }
 .table-responsive{
-	overflow: visible;
+	overflow: visible ;
 	height: 70%;
 	margin: 32px;
 	margin-bottom: 64px;
-	border: solid .5px #d3d3d3;
+	/* border: solid .5px #333; */
 }
 tr:hover{
 	cursor: pointer;
