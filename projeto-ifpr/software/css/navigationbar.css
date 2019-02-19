@@ -31,6 +31,10 @@
 }
 .dropdown{
     margin-right: 16px;
+    flex: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .dropdown-menu{
     padding: 0!important;
@@ -69,10 +73,10 @@
 }
 .menu__item > a,
 .button__modal{
-    padding: 20px 12px !important;
+    padding: 20px!important;
     color: rgba(0, 0, 0, 0.35) !important;
     font-weight: 500 !important;
-    font-size: 1em;
+    font-size: 1.1em;
     background-color: transparent;
     border: none;
 }
