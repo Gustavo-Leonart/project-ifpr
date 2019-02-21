@@ -73,7 +73,7 @@
 }
 .menu__item > a,
 .button__modal{
-    padding: 20px!important;
+    padding: 19px 20px!important;
     color: rgba(0, 0, 0, 0.35) !important;
     font-weight: 500 !important;
     font-size: 1.1em;

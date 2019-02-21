@@ -6,7 +6,9 @@
 body{
 	font-family: 'Roboto', arial, sans-serif;
 	margin: 0 auto;
-	background-color: #ffffff !important;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 a:hover, a:focus{
 	text-decoration: none;
@@ -86,7 +88,7 @@ ul, li{
 }
 .infos__container{
 	width: 60%;
-	background-color: #e2e2e2;
+	background-color: rgba(255,255,255,.65);
 	margin: auto;
 	margin-bottom: 64px;
 	padding: 0px 32px 16px;

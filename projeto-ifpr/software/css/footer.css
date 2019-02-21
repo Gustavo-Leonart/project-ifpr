@@ -1,7 +1,7 @@
 .footer__container{
 	width: 100%;
 	display: flex;
-	background-color: rgba(0, 0, 0, .75);
+	background-color: #222;
 	flex-wrap: wrap;
 }
 .footer__logo__container{
@@ -50,9 +50,10 @@
 	align-items: center;
 	justify-content: center;
 	background: transparent;
+	background-color: #222;
 }
 .footer__copyright a{
-	color: rgba(0, 0, 0, .54);
+	color: #f2f3f5;
 	font-weight: 700;
 	font-size: 0.8em;
 }
