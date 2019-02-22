@@ -21,7 +21,7 @@ USE `banco` ;
 -- Table `banco`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`cliente` (
-  `id_cliente` INT(10) NOT NULL,
+  `id_cliente` INT(10) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(50) NOT NULL,
   `rg` VARCHAR(12) NOT NULL,
   `cpf` VARCHAR(11) NOT NULL,
@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS `banco`.`cliente` (
   `num_casa` INT(10) NOT NULL,
   `complemento` VARCHAR(20) NULL DEFAULT NULL,
   `telefone` INT(11) NOT NULL,
-  PRIMARY KEY (`id_cliente`))
+  PRIMARY KEY (`id_cliente`)
+  )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -40,7 +41,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `banco`.`fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`fornecedor` (
-  `id_fornecedor` INT(10) NOT NULL,
+  `id_fornecedor` INT(10) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(50) NOT NULL,
   `rg` VARCHAR(12) NOT NULL,
   `cnpj` VARCHAR(18) NOT NULL,
@@ -51,7 +52,8 @@ CREATE TABLE IF NOT EXISTS `banco`.`fornecedor` (
   `num_casa` INT(10) NOT NULL,
   `complemento` VARCHAR(20) NULL DEFAULT NULL,
   `telefone` INT(11) NOT NULL,
-  PRIMARY KEY (`id_fornecedor`))
+  PRIMARY KEY (`id_fornecedor`)
+  )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -60,11 +62,12 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `banco`.`menu`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`menu` (
-  `id_menu` INT(10) NOT NULL,
+  `id_menu` INT(10) NOT NULL AUTO_INCREMENT,
   `des_receita` TEXT NOT NULL,
   `tempo_preparo` INT(11) NOT NULL,
   `data_cadastro` DATETIME NOT NULL,
-  PRIMARY KEY (`id_menu`))
+  PRIMARY KEY (`id_menu`)
+  )
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -73,11 +76,12 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `banco`.`usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`usuario` (
-  `id_usuario` INT(10) NOT NULL,
+  `id_usuario` INT(10) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(50) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
   `senha` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`id_usuario`))
+  PRIMARY KEY (`id_usuario`)
+  )AUTO_INCREMENT = 1
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -86,7 +90,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `banco`.`pedido`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`pedido` (
-  `id_pedido` INT(10) NOT NULL,
+  `id_pedido` INT(10) NOT NULL AUTO_INCREMENT,
   `id_cliente` INT(10) NOT NULL,
   `id_menu` INT(10) NOT NULL,
   `id_usuario` INT(10) NOT NULL,
@@ -121,7 +125,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `banco`.`tipo_produto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`tipo_produto` (
-  `id_tipo_produto` INT(10) NOT NULL,
+  `id_tipo_produto` INT(10) NOT NULL AUTO_INCREMENT,
   `des_tipo_produto` VARCHAR(50) NULL DEFAULT NULL,
   PRIMARY KEY (`id_tipo_produto`))
 ENGINE = InnoDB
@@ -132,7 +136,7 @@ DEFAULT CHARACTER SET = latin1;
 -- Table `banco`.`produto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `banco`.`produto` (
-  `id_produto` INT(10) NOT NULL,
+  `id_produto` INT(10) NOT NULL AUTO_INCREMENT,
   `id_tipo_produto` INT(10) NOT NULL,
   `id_fornecedor` INT(10) NOT NULL,
   `des_produto` VARCHAR(50) NOT NULL,
