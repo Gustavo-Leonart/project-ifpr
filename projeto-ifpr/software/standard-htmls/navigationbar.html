@@ -3,52 +3,44 @@
 <head>
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="css/navigationbar.css">
     <script type="text/javascript" src="js/formmask.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Font awesome -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" > -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="index.html">
-                    <img src="images/emp-name.jpg" alt="NewerBite" style="max-height:60px;border:1px solid #fff;" />
-                    <!-- NewerBite -->
-                </a>
-            </div>
-            <div class="dropdown">
-                <button type="button" name="button" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="fas fa-bars" style="padding:0;"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li class="menu__item"><a href="sobre&contato.html">Sobre</a></li>
-                    <li class="menu__item dropdown-submenu">
-                        <a class="active" href="#">usuário</a>
-                        <ul class="dropdown-menu">
-                            <li class="menu__item"><a href="account.html"><span class="far fa-user-circle"></span> Conta</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu__item dropdown-submenu">
-                        <a href="#">Pedidos</a>
-                        <ul class="dropdown-menu">
-                            <li class="menu__item"><a href="#">Fazer um pedido</a></li>
-                            <li class="menu__item"><a href="#">Acessar pedido</a></li>
-                            <li class="menu__item"><a href="#">Alterar pedido</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu__item dropdown-submenu">
-                        <a href="#">Agendamentos</a>
-                        <ul class="dropdown-menu">
-                            <li class="menu__item"><a href="agendamento.html">Consultar agendamentos</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu__item"><button id="login" class="button__modal">Entrar <span class="fa fa-sign-in-alt" style="font-size:.9em;"></span></button></li>
-                    <li class="menu__item"><a id="cadastrar" style="cursor:pointer;">Registrar-se</a></li>
-                </ul>
-            </div>
+    <div class="container navbar">
+        <div class="navbar_logo">
+            <a href="index.html">
+                <img src="images/emp-name.jpg" alt="NewerBite" style="max-height:60px;">
+            </a>
         </div>
-    </nav>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#login__modal">Entrar</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#cadastrar__modal">Registrar-se</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-target="#dropdown" data-toggle="dropdown">
+            <span class="fas fa-bars"></span>
+        </button>
+        <div class="dropdown" id="dropdown">
+            <ul class="dropdown-menu">
+                <li class="menu__item"><a class="dropdown-item" href="#">Sobre</a></li>
+                <li class="menu__item"><a class="dropdown-item" href="#">Produto</a></li>
+                <li class="dropdown-submenu menu__item">
+                    <a class="dropdown-item dropdown-toggle" href="#">Usuário</a>
+                    <ul class="dropdown-menu">
+                        <li class="menu__item"><a class="dropdown-item" href="#"><span class="fas-fa-user"></span>Conta</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
     <!-- mdoal de login -->
-    <div class="modal fade" id="login__modal" role="dialog">
-       <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="login__modal">
+       <div class="modal-dialog modal-dialog-centered">
            <div class="modal-content">
                <div class="modal-header">
                    <h4 class="modal-title" style="text-align: center; font-size: 2.2em;">Login</h4>

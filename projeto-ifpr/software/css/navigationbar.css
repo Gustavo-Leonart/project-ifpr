@@ -1,181 +1,19 @@
-.fas, .fa, .far{
-    padding-right: 4px;
+.dropdown-toggle::after{
+    content: none !important;
 }
-.fa-sign-in-alt{
-    padding-left: 4px;
-}
-.container-fluid{
+.container.navbar{
+    width: 100% !important;
+    height: auto !important;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-height: 60px;
-    text-transform: capitalize;
-    background-color: #fff;
-    margin: 0 !important;
-}
-.navbar{
-    max-height: 60px !important;
-    margin-bottom: 0px !important;
-    border: none !important;
-    background-color: #ffffff !important;
-    border-radius: 0 !important;
-}
-.navbar-header{
-    margin: 0 !important;
-    padding-left: 32px;
-}
-.navbar-nav{
-    margin: 0px !important;
-    position: absolute;
-    right: 0;
-}
-.dropdown{
-    margin-right: 16px;
-    flex: auto;
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
 }
 .dropdown-menu{
-    padding: 0!important;
-    border: none !important;
-    width: auto !important;
-    min-width: auto !important;
-    margin: 0px !important;
+    transform: none !important;
 }
-.dropdown-submenu .dropdown-menu{
-    display: none !important;
-    position: absolute !important;
-    right: auto !important;
-    width: auto !important;
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .54) !important;
-    border-radius: 8px 0px 8px 8px;
-}
-.dropdown-submenu:hover .dropdown-menu{
-    display: block !important;
-}
-.dropdown-submenu .dropdown-menu .menu__item a:hover{
-    border-radius: 8px 0px 8px 8px;
-}
-.dropdown-toggle{
-    display: none;
-    border: none;
-    color: rgba(0, 0, 0, .35);
-    font-size: 2em;
-    background-color: transparent;
-}
-.menu__item.dropdown-submenu{
-    position: relative;
-}
-.button__modal{
-    width: 100%;
-    text-align:left;
-}
-.menu__item > a,
-.button__modal{
-    padding: 19px 20px!important;
-    color: rgba(0, 0, 0, 0.35) !important;
-    font-weight: 500 !important;
-    font-size: 1.1em;
-    background-color: transparent;
-    border: none;
-}
-.menu__item > a:hover,
-.button__modal:hover{
-    background-color: #f2f3f5 !important;
-}
-.menu__item > a.active,
-.menu__item > a.active:hover{
-    color: #fff !important;
-    background-color: #1E88E5 !important;
-    border-radius: 0;
-}
-.modal{
-    background-color: rgba(0, 0, 0, 0.35);
+.dropdown{
+    display: flex;
+    justify-content: flex-end;
 }
 .fade{
     animation-duration: 0s !important;
-}
-.modal-header, .modal-footer{
-    background-color: rgba(0, 0, 0, .75);
-    color: #ffffff;
-}
-.modal-dialog{
-    margin: 32px auto;
-}
-@media screen and (max-width: 767px) {
-    .modal-dialog{
-        margin: 32px;
-    }
-}
-@media screen and (min-width:960px) {
-    .dropdown-menu{
-        top: inherit !important;
-        display: flex !important;
-        right: 0 !important;
-        position: inherit !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-    }
-    .dropdown-toggle{
-        display: none;
-    }
-}
-@media screen and (max-width: 959px) and (min-width: 600px) {
-    .dropdown-toggle{
-        display: inline-block;
-    }
-    .dropdown-menu{
-        left: auto!important;
-        right: 0 !important;
-        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .54) !important;
-    }
-    .dropdown-submenu .dropdown-menu{
-        right: 100% !important;
-        top: 0% !important;
-    }
-    .dropdown-menu .menu__item > a,
-    .button__modal{
-        padding: 8px 16px !important
-    }
-    .dropdown{
-        display: flex;
-        justify-content: flex-end;
-        flex: auto;
-    }
-}
-@media screen and (max-width: 599px) {
-    .navbar-header{
-        padding-left: 8px;
-    }
-	.dropdown-toggle{
-        display: inline-block;
-    }
-    .dropdown-menu{
-        left: auto!important;
-        right: 0 !important;
-        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, .54) !important;
-    }
-    .dropdown{
-        display: flex;
-        justify-content: flex-end;
-        flex: auto;
-        margin-right: 0px;
-    }
-    .dropdown-submenu .dropdown-menu{
-        right: 50% !important;
-    }
-	 .dropdown-menu .menu__item > a,
-     .button__modal{
-        padding: 8px 16px !important
-    }
-	 .container-fluid{
-        margin: 0;
-    }
-    .modal-dialog{
-        margin: 32px 8px;
-    }
-    .infos__container{
-        padding: 0px 16px 16px !important;
-    }
 }
