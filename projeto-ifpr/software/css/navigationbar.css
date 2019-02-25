@@ -4,10 +4,27 @@
 .container.nav{
     height: auto;
 }
-.dropdown-menu{
-    /* right: 0; */
-    /* left: inherit !important; */
-}
 .fade{
     animation-duration: 0s;
+}
+.dropdown > .dropdown-menu{
+    right: 0;
+}
+.dropdown-item, .btn, .dropdown-toggle{
+    font-weight: 500 !important;
+    color: rgba(0, 0, 0, 0.54) !important;
+}
+.dropdown.dropdown-toggle:hover > .dropdown-menu{
+    display: block !important;
+    left: -186px; !important;
+    right: inherit !important;
+    top: 0 !important;
+    padding: 0px;
+}
+.modal{
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.modal-header{
+    background-color: rgba(0, 0, 0, .75);
+    color: #ffffff;
 }

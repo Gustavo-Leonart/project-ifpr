@@ -3,6 +3,8 @@
 	display: flex;
 	background-color: #222;
 	flex-wrap: wrap;
+	position: absolute;
+	bottom: 0;
 }
 .footer__logo__container{
 	width: 25%;
@@ -45,18 +47,15 @@
 .footer__number{
 	font-size: 1.5em;
 }
-.footer__copyright{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: transparent;
+/* .footer__copyright{
+	border-bottom: 0;
 	background-color: #222;
 }
 .footer__copyright p{
 	color: #f2f3f5;
 	font-weight: 700;
 	font-size: 0.8em;
-}
+} */
 @media screen and (min-width: 600px) and (max-width: 959px){
 	.footer__logo__container{
 		width: 100%;
