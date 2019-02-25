@@ -1,19 +1,13 @@
-.dropdown-toggle::after{
-    content: none !important;
+.navbar{
+    background-color: #fff;
 }
-.container.navbar{
-    width: 100% !important;
-    height: auto !important;
-    display: flex;
-    align-items: center;
+.container.nav{
+    height: auto;
 }
 .dropdown-menu{
-    transform: none !important;
-}
-.dropdown{
-    display: flex;
-    justify-content: flex-end;
+    /* right: 0; */
+    /* left: inherit !important; */
 }
 .fade{
-    animation-duration: 0s !important;
+    animation-duration: 0s;
 }

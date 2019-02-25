@@ -52,13 +52,10 @@
 	background: transparent;
 	background-color: #222;
 }
-.footer__copyright a{
+.footer__copyright p{
 	color: #f2f3f5;
 	font-weight: 700;
 	font-size: 0.8em;
-}
-.footer__copyright a:hover{
-	text-decoration: underline;
 }
 @media screen and (min-width: 600px) and (max-width: 959px){
 	.footer__logo__container{
