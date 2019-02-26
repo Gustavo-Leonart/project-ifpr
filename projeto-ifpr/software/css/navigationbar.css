@@ -10,15 +10,15 @@
 .dropdown > .dropdown-menu{
     right: 0;
 }
-.dropdown-item, .btn, .dropdown-toggle{
+.dropdown-item, .btn{
     font-weight: 500 !important;
     color: rgba(0, 0, 0, 0.54) !important;
 }
-.dropdown.dropdown-toggle:hover > .dropdown-menu{
+.dropdown-submenu:hover>.dropdown-menu{
     display: block !important;
-    left: -186px; !important;
+    left: -186px !important;
     right: inherit !important;
-    top: 0 !important;
+    top: 35% !important;
     padding: 0px;
 }
 .modal{

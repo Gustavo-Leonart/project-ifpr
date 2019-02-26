@@ -36,11 +36,11 @@ function formataCampo(campo, mask, evento){
     }
 }
 // Funções de mascaramento
-function mascaraRg(rg){
-    if(maskInteiro(rg) == false){
+function mascaraPreco(preco){
+    if(maskInteiro(preco) == false){
         event.returnValue = false;
     }
-    return formataCampo(rg, '00.000.000-0', event);
+    return formataCampo(preco, '000.000,0', event);
 }
 function mascaraCelular(cel){
     if(maskInteiro(cel) == false){
