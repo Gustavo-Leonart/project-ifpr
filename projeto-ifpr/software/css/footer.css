@@ -3,6 +3,7 @@
 	display: flex;
 	background-color: #222;
 	flex-wrap: wrap;
+	justify-content: space-around;
 }
 .footer__logo__container{
 	width: 25%;
@@ -21,7 +22,7 @@
 }
 .footer__container__columns{
 	display: flex;
-	flex: auto;
+	/* flex: auto; */
 }
 .footer__column{
 	color: #ffffff;
