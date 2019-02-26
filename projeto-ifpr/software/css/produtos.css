@@ -1,3 +1,7 @@
+.container.produtos{
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
 .btn__submit{
     border: none;
     background-color: #fff;

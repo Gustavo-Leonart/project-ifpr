@@ -17,23 +17,23 @@
     <section id="navbar"></section>
     <section>
         <div class="container produtos">
-            <form class="form__produtos" name="form__produtos" action="produtos.html" method="post">
+            <form class="form__produtos" name="form__produtos" action="produtos.php" method="post">
                 <div class="fields__container">
                     <div class="form-group block__fields">
                         <label name="desc" class="fields__title">Descrição</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="marca" class="fields__title">Marca</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="dtaVali" class="fields__title">Data de Validade</label>
-                        <input class="form-control" type="date">
+                        <input class="form-control" type="date" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="dtaComp" class="fields__title">Data da compra</label>
-                        <input class="form-control" type="date">
+                        <input class="form-control" type="date" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="preco" class="fields__title">Preço</label>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group block__fields">
                         <label name="qtde" class="fields__title">Quantidade</label>
-                        <input class="form-control" type="number">
+                        <input class="form-control" type="number" required>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
@@ -49,10 +49,9 @@
             </form>
         </div>
     </section>
-    <section id="footer"></section>
+    <?php include "standard-htmls/footer.html"; ?>
 </body>
 </html>
 <script>
     $("#navbar").load("standard-htmls/navigationbar.html");
-    $("#footer").load("standard-htmls/footer.html");
 </script>

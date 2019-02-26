@@ -3,8 +3,6 @@
 	display: flex;
 	background-color: #222;
 	flex-wrap: wrap;
-	position: absolute;
-	bottom: 0;
 }
 .footer__logo__container{
 	width: 25%;

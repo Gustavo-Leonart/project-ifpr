@@ -33,7 +33,7 @@
         else {
 		  echo "<section id=\"navbar\"></section>";
 		}
-           
+
     ?>
     <!-- Main content -->
     <section>
@@ -81,7 +81,7 @@
 
 ?>
 <script>
- 
+
     $("#navbar").load("standard-htmls/navigationbarnaologado.php");
     $("#navbar1").load("standard-htmls/navigationbar.php");
     $("#footer").load("standard-htmls/footer.php");
