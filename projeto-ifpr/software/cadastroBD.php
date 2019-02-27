@@ -11,22 +11,22 @@
 		$senha	= md5($_GET['senha']);
 		$queryEmail = mysqli_query($obj_mysqli, "select * from usuario where email = '$email'");
 		if($row = mysqli_fetch_row($queryEmail)){
-			$erro = "Usuario já existe";
+			$erro = "Usuario jÃ¡ existe";
 		}else{
 			$sql = mysqli_query($obj_mysqli, "insert into `usuario` (nome, email, senha)
 										VALUES ('$nome', '$email', '$senha');");
 		}
 	}else if(empty($_GET["nome"])){
-		$erro = "Campo nome obrigatório";
+		$erro = "Campo nome obrigatÃ³rio";
 	}else if(empty($_GET["email"])){
-		$erro = "Campo email obrigatório";
+		$erro = "Campo email obrigatÃ³rio";
 	}else if(empty($_GET["senha"])){
-		$erro = "Campo senha obrigatório";
+		$erro = "Campo senha obrigatÃ³rio";
 	}
 	if($erro == ""){
 		$valida = "Usuario cadastrado com sucesso";
 		header("Location:index.php?valida=$valida");
 	}else{
-		header("Location:index.php?erro=$erro");
+		header("Location:index.php?valida=$erro");
 	}
 ?>

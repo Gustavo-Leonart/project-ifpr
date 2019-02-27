@@ -25,6 +25,13 @@
     </style>
 </head>
 <body>
+  <?php
+    if(!isset($_SESSION)) session_start();
+    if($_SESSION['nome'] == null){
+    echo  "<script type=\"text/javascript\">alert('Você não está logado');</script>";
+    header("Location:sair.php");
+    }
+  ?>
     <!-- Navigation bar -->
     <section id="navbar"></section>
     <!-- Desc -->

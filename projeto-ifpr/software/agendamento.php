@@ -25,6 +25,13 @@
     </style>
 </head>
 <body>
+  <?php
+    if(!isset($_SESSION)) session_start();
+    if($_SESSION['nome'] == null){
+    $valida = "Você precisa estar logado";
+    header("Location:sair.php?valida=$valida");
+    }
+  ?>
     <!-- Navigation bar -->
     <section id="navbar"></section>
     <!-- Agendamentos -->

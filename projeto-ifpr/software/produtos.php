@@ -14,26 +14,33 @@
     <script type="text/javascript" src="js/formmask.js"></script>
 </head>
 <body>
+  <?php
+    if(!isset($_SESSION)) session_start();
+    if($_SESSION['nome'] == null){
+    $valida = "Você precisa estar logado";
+    header("Location:sair.php?valida=$valida");
+    }
+  ?>
     <section id="navbar"></section>
     <section>
         <div class="container produtos">
-            <form class="form__produtos" name="form__produtos" action="produtos.php" method="post">
+            <form class="form__produtos" name="form__produtos" action="produtoBD.php">
                 <div class="fields__container">
                     <div class="form-group block__fields">
                         <label name="desc" class="fields__title">Descrição</label>
-                        <input class="form-control" type="text" required>
+                        <input class="form-control"  name = "des_produto" type="text" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="marca" class="fields__title">Marca</label>
-                        <input class="form-control" type="text" required>
+                        <input class="form-control" name ="marca" type="text" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="dtaVali" class="fields__title">Data de Validade</label>
-                        <input class="form-control" type="date" required>
+                        <input class="form-control" name = "data_validade" type="date" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="dtaComp" class="fields__title">Data da compra</label>
-                        <input class="form-control" type="date" required>
+                        <input class="form-control" name = "data_compra" type="date" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="preco" class="fields__title">Preço</label>
@@ -41,7 +48,7 @@
                     </div>
                     <div class="form-group block__fields">
                         <label name="qtde" class="fields__title">Quantidade</label>
-                        <input class="form-control" type="number" required>
+                        <input class="form-control" name= "quantidade" type="number" required>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
@@ -53,5 +60,5 @@
 </body>
 </html>
 <script>
-    $("#navbar").load("standard-htmls/navigationbar.html");
+    $("#navbar").load("standard-htmls/navigationbar.php");
 </script>

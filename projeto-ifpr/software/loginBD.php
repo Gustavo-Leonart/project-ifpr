@@ -23,7 +23,7 @@
   if($valida){
     header("Location:index.php");
   }else{
-    header("Location:index.php?erro=$erro");
+    header("Location:index.php?valida=$erro");
   }
   //date_default_timezone_set('America/Sao_Paulo');
   //echo date('d/m/Y  H:i:s');
