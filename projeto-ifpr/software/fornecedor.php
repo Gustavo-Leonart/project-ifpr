@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/btns_style.css">
     <script type="text/javascript" src="js/formmask.js"></script>
 </head>
 <body>
