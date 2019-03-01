@@ -3,7 +3,6 @@
 <head>
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/register.css" />
-    <link rel="stylesheet" href="css/navigationbar.css">
     <script type="text/javascript" src="js/formmask.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -25,7 +24,6 @@
                <button class="btn" type="button" name="button" data-toggle="modal" data-target="#login__modal">
                    Entrar
                </button>
-               </ul>
            </div>
         </div>
     </nav>

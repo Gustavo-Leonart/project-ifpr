@@ -3,7 +3,6 @@
 <head>
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/register.css" />
-    <link rel="stylesheet" href="css/navigationbar.css" />
     <script type="text/javascript" src="js/formmask.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,11 +11,9 @@
     <!-- Font awesome -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" > -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/navbar.css" />
 </head>
 <body>
-
-
-
     <nav class="navbar">
         <div class="container nav">
             <div class="emp__logo">
@@ -25,24 +22,25 @@
                 </a>
             </div>
             <div class="dropdown">
+                <span style="margin-right:16px;color:rgba(0,0,0,.54);">
+                    <?php
+                      if(!isset($_SESSION)) session_start();
+                      echo 'Olá, '.$_SESSION['nome'];
+                    ?>
+                </span>
 
-                <?php
-                  if(!isset($_SESSION)) session_start();
-                  echo 'Olá, '.$_SESSION['nome'];
-                ?>
-
+                </li>
                 <button class="btn" type="button" name="button" data-toggle="dropdown">
                     <span class="fas fa-bars"></span>
                 </button>
                 <ul class="dropdown-menu">
-
                     <li class="menu__item"><a class="dropdown-item" data-toggle="modal" data-target="#cadastrar__modal">Registrar</a></li>
                     <li class="dropdown-submenu menu__item" >
                         <a href="#" class="dropdown-toggle dropdown-item">Produtos</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="produtos.php">Cadastrar Produtos</a>
-                            <a class="dropdown-item" href="#">Consultar Produtos</a>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="produtos.php">Cadastrar Produtos</a></li>
+                            <li><a class="dropdown-item" href="#">Consultar Produtos</a></li>
+                        </ul>
                     </li>
                     <li class="menu__item"><a class="dropdown-item" href="agendamento.php">Agendamentos</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="#">Sobre</a></li>
