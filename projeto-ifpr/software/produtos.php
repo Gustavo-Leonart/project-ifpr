@@ -31,6 +31,35 @@
                         <input class="form-control"  name = "des_produto" type="text" required>
                     </div>
                     <div class="form-group block__fields">
+                        <label name="desc" class="fields__title">fornecedor</label>
+                        <?php
+                        if (!isset($_SESSION)){ session_start();}
+                        $conexao = new mysqli("localhost", "root", "", "banco");
+                        $busca = mysqli_query($conexao, "select id_fornecedor, nome from fornecedor order by nome");
+                        ?>
+                        <select class = "form-control" name="fornecedor"  required>
+                        <?php while($ver = mysqli_fetch_row($busca))  { ?>
+                        <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
+                      <?php } ?>
+                      </select
+                    </div>
+
+                    <div class="form-group block__fields">
+                        <label name="desc" class="fields__title">Tipo Produto</label>
+                        <?php
+                        if (!isset($_SESSION)){ session_start();}
+                        $conexao = new mysqli("localhost", "root", "", "banco");
+                        $busca = mysqli_query($conexao, "select id_tipo_produto, des_tipo_produto from tipo_produto order by des_tipo_produto");
+                        ?>
+                        <select class = "form-control" name="id_tipo_produto"  required>
+                        <?php while($ver = mysqli_fetch_row($busca))  { ?>
+                        <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
+                      <?php } ?>
+                      </select
+                    </div>
+
+
+                    <div class="form-group block__fields">
                         <label name="marca" class="fields__title">Marca</label>
                         <input class="form-control" name ="marca" type="text" required>
                     </div>
