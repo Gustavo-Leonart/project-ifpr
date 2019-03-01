@@ -14,12 +14,15 @@
     font-weight: 500 !important;
     color: rgba(0, 0, 0, 0.54) !important;
 }
-.dropdown-submenu:hover>.dropdown-menu{
+.dropdown-submenu > .dropdown-menu{
     display: block !important;
     left: -186px !important;
     right: inherit !important;
-    top: 35% !important;
+    top: 0 !important;
     padding: 0px;
+}
+.dropdown-item{
+    padding: 16px 32px;
 }
 .modal{
     background-color: rgba(0, 0, 0, 0.35);

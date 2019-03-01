@@ -23,7 +23,10 @@
     <?php
         if(isset($_GET['valida'])){
           $valida = $_GET['valida'];
-          echo "<script type=\"text/javascript\">alert('$valida');</script>";
+          echo "<div class=\"alert alert-danger\" style=\"font-size:1.5em;\">
+                    email ou senha <strong>inválidos</strong>!
+                    <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
+                </div>";
         }
      ?>
     <?php
