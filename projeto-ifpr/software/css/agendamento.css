@@ -1,4 +1,3 @@
-@import "footer.css";
 body{
 	font-family: 'Roboto';
 	height: 100vh;
@@ -10,13 +9,16 @@ body{
 .container{
 	height: 100vh;
 }
+.table-responsive{
+	margin: 32px 0 64px !important;
+}
 .tableHead th{
 	text-align: center;
 	position: sticky;
 	top: 0;
 	background-color: #1e88e5;
 	color: #fff;
-	width: 25%;
+	width: auto;
 }
 .tableBody td + td{
 	border-left: solid 1px rgba(0,0,0,.1) !important;

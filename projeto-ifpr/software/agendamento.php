@@ -8,8 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/agendamento.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <!-- Font awesome -->
@@ -203,6 +201,6 @@
         );
     });
     // Arquivos HTML externos
-    $("#navbar").load("standard-htmls/navigationbar.html");
+    $("#navbar").load("standard-htmls/navigationbar.php");
     $("#footer").load("standard-htmls/footer.html");
 </script>
