@@ -10,39 +10,61 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-    <!-- <link rel="stylesheet" href="css/produtos.css"> -->
+    <link rel="stylesheet" href="css/forms_style.css">
     <link rel="stylesheet" href="css/btns_style.css">
     <script type="text/javascript" src="js/formmask.js"></script>
 </head>
 <body>
     <section id="navbar"></section>
     <section>
-        <div class="container produtos">
+        <div class="container pedido">
             <form class="form__produtos" name="form__produtos" action="produtos.php" method="post">
                 <div class="fields__container">
+                    <h4>Cadastro de Pedidos</h4>
                     <div class="form-group block__fields">
-                        <label name="desc" class="fields__title">Descrição</label>
-                        <input class="form-control" type="text" required>
+                        <label name="cliente" class="fields__title">Cliente</label>
+                        <?php
+                        if (!isset($_SESSION)){ session_start();}
+                        $conexao = new mysqli("localhost", "root", "", "banco");
+                        $busca = mysqli_query($conexao, "select id_cliente, nome from cliente order by nome");
+                        ?>
+                        <select class = "form-control" name="cliente"  required>
+                        <?php while($ver = mysqli_fetch_row($busca))  { ?>
+                        <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
+                      <?php } ?>
+                    </select>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="marca" class="fields__title">Marca</label>
-                        <input class="form-control" type="text" required>
+                        <label name="menu" class="fields__title">Menu</label>
+                        <?php
+                        if (!isset($_SESSION)){ session_start();}
+                        $conexao = new mysqli("localhost", "root", "", "banco");
+                        $busca = mysqli_query($conexao, "select id_menu, des_receita from menu order by des_receita");
+                        ?>
+                        <select class = "form-control" name="menu"  required>
+                        <?php while($ver = mysqli_fetch_row($busca))  { ?>
+                        <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
+                      <?php } ?>
+                    </select>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="dtaVali" class="fields__title">Data de Validade</label>
+                        <label name="dtaCad" class="fields__title">Data de Cadastro</label>
                         <input class="form-control" type="date" required>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="dtaComp" class="fields__title">Data da compra</label>
+                        <label name="dtaEnt" class="fields__title">Data da Entrega</label>
                         <input class="form-control" type="date" required>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="preco" class="fields__title">Preço</label>
-                        <input class="form-control" name="preco" type="text" onkeypress="mascaraPreco(.form__produtos.preco)">
+                        <label name="valor" class="fields__title">Valor</label>
+                        <input class="form-control" name="valor" type="text" onkeypress="mascaraPreco(.form__produtos.preco)">
                     </div>
                     <div class="form-group block__fields">
-                        <label name="qtde" class="fields__title">Quantidade</label>
-                        <input class="form-control" type="number" required>
+                        <label name="qtde" class="fields__title">Status do Pedido</label>
+                        <select class="form-control" name="">
+                            <option value="0">Aguardando entrega</option>
+                            <option value="1">Pedido entregue</option>
+                        </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
@@ -54,5 +76,5 @@
 </body>
 </html>
 <script>
-    $("#navbar").load("standard-htmls/navigationbar.html");
+    $("#navbar").load("standard-htmls/navigationbar.php");
 </script>

@@ -11,15 +11,16 @@
     <!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/btns_style.css">
+    <link rel="stylesheet" href="css/forms_style.css">
     <script type="text/javascript" src="js/formmask.js"></script>
 </head>
 <body>
     <section id="navbar"></section>
     <section>
-        <div class="container produtos">
+        <div class="container fornecedor">
             <form class="form__produtos" name="form__produtos" action="fornecedor.php">
                 <div class="fields__container">
-                    <h4 style="font-weight:500;text-align:center;margin-bottom:32px;color:rgba(0,0,0,.54);">Cadastro de Fornecedores</h4>
+                    <h4>Cadastro de Fornecedores</h4>
                     <div class="form-group block__fields">
                         <label name="nome" class="fields__title">Nome</label>
                         <input class="form-control" type="text" required>
@@ -51,15 +52,18 @@
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>
+                <?php if(isset($_GET['valida'])){
+                  $valida = $_GET['valida'];
+                  echo "<div class=\"alert alert-danger\" style=\"font-size:1.5em;\">
+                            email ou senha <strong>inválidos</strong>!
+                            <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
+                        </div>";
+                } ?>
             </form>
-            <!-- <div class="alert alert-success">
-                  Fornecedor cadastrado com <strong>Sucesso</strong>!
-                  <button class="close" type="button" data-dismiss="alert">&times;</button>
-            </div> -->
     </section>
     <?php include "standard-htmls/footer.html"; ?>
 </body>
 </html>
 <script>
-    $("#navbar").load("standard-htmls/navigationbar.html");
+    $("#navbar").load("standard-htmls/navigationbar.php");
 </script>

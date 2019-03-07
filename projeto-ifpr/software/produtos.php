@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/forms_style.css">
     <link rel="stylesheet" href="css/btns_style.css">
     <script type="text/javascript" src="js/formmask.js"></script>
 </head>
@@ -27,6 +27,7 @@
         <div class="container produtos">
             <form class="form__produtos" name="form__produtos" action="produtoBD.php">
                 <div class="fields__container">
+                    <h4>Cadastro de Produtos</h4>
                     <div class="form-group block__fields">
                         <label name="desc" class="fields__title">Descrição</label>
                         <input class="form-control"  name = "des_produto" type="text" required>
@@ -42,7 +43,7 @@
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
                         <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
                       <?php } ?>
-                      </select
+                    </select>
                     </div>
 
                     <div class="form-group block__fields">
@@ -56,7 +57,7 @@
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
                         <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
                       <?php } ?>
-                      </select
+                    </select>
                     </div>
 
 
