@@ -8,8 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <!-- Font awesome -->
@@ -36,13 +34,13 @@
     <section id="navbar"></section>
     <!-- Desc -->
     <section style="background-color:#f2f3f5;">
-        <div class="container">
+        <div class="container cards__block">
             <h4 class="title__sobre">Sobre</h4>
-            <div class="well">
+            <div class="card">
                 <p>breve descrição sobre a empresa.</p>
             </div>
             <h4 class="title__contato">Contato</h4>
-            <div class="well">
+            <div class="card">
                 <p>0000 000 000</p>
                 <p>(41)99999-9999</p>
             </div>
@@ -57,6 +55,6 @@
 </body>
 </html>
 <script>
-    $("#navbar").load("standard-htmls/navigationbar.html");
+    $("#navbar").load("standard-htmls/navigationbar.php");
     $("#footer").load("standard-htmls/footer.html");
 </script>

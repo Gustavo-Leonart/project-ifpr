@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
-    @import "css/navigationbar.css";
         body{
             font-family: 'Roboto';
             font-size: 1.6em;
@@ -44,11 +43,11 @@
             <!-- Infos -->
             <h4 class="container__title">Agendamentos</h4>
             <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table">
                     <thead class="tableHead">
                         <tr>
                             <th>Nome</th>
-                            <th>Data / Hora</th>
+                            <th>Data de Entrega</th>
                             <th>Encomenda</th>
                             <th>Status</th>
                         </tr>
@@ -59,18 +58,30 @@
                             $conexao = new mysqli("localhost", "root", "", "banco");
                             $sql = mysqli_query($conexao,
                             "SELECT c.id_cliente, c.nome,
-                                p.id_cliente, p.data_entrega, p.status_pedido,
+                                p.id_cliente, DATE_FORMAT(p.data_entrega, '%d/%m/%Y') as data_entrega , p.status_pedido,
                                 m.id_menu, m.des_receita
                             FROM cliente c
                                 JOIN pedido p ON c.id_cliente = p.id_cliente
-                                JOIN menu m ON m.id_menu = p.id_menu ");
+                                JOIN menu m ON m.id_menu = p.id_menu
+                                ORDER BY data_entrega");
                             while ($exibe = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
                                     <td>".$exibe['nome']."</td>
                                     <td>".$exibe['data_entrega']."</td>
-                                    <td>".$exibe['des_receita']."</td>
-                                    <td>".$exibe['status_pedido']."</td>
-                                </tr>";
+                                    <td>".$exibe['des_receita']."</td>";
+                                    if($exibe['status_pedido'] == 0)
+                                        echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega</td>";
+
+                                    elseif($exibe['status_pedido'] == 1)
+                                        echo "<td style=\"color:#375743;background-color:#d4edda;\">Pedido Entregue</td>";
+
+                                    elseif($exibe['status_pedido'] == 2)
+                                        echo "<td style=\"color:#856404;background-color:#fff3cd;\">Realizando Pedido</td>";
+
+                                echo "<td style=\"background:transparent !important;border:none !important;\">
+                                        <a class=\"btn btn-outline-primary text-primary fas fa-edit\" href=\"editAgen.php\"> editar</a>
+                                    </td>";
+                            echo "</tr>";
                             }
                          ?>
                         <!-- </tr> -->

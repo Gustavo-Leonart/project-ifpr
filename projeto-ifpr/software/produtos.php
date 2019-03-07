@@ -84,6 +84,13 @@
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>
+                <?php if(isset($_GET['valida'])){
+                  $valida = $_GET['valida'];
+                  echo "<div class=\"alert alert-success\">
+                            Produto cadastrado com <strong>sucesso</strong>!
+                            <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
+                        </div>";
+                } ?>
             </form>
         </div>
     </section>

@@ -10,3 +10,6 @@
     margin: 32px auto;
     color:rgba(0,0,0,.54);
 }
+.alert{
+    margin: 32px auto !important;
+}

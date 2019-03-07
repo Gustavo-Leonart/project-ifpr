@@ -22,13 +22,12 @@
     <!-- Navigation bar -->
     <?php
         if(isset($_GET['valida'])){
-          $valida = $_GET['valida'];
-          echo "<div class=\"alert alert-danger\" style=\"font-size:1.5em;\">
-                    email ou senha <strong>inválidos</strong>!
+            $valida = $_GET['valida'];
+            echo "<div class=\"alert alert-danger\" style=\"font-size:1.35em;\">
+                    Email ou senha <strong>inválidos</strong>!
                     <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
                 </div>";
-        }
-     ?>
+        } ?>
     <?php
         if(!isset($_SESSION)) session_start();
         if(isset($_SESSION['nome'])){

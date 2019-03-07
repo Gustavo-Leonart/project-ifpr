@@ -19,6 +19,7 @@ body{
 	background-color: #1e88e5;
 	color: #fff;
 	width: auto;
+	cursor: default;
 }
 .tableBody td + td{
 	border-left: solid 1px rgba(0,0,0,.1) !important;
@@ -26,10 +27,9 @@ body{
 .table td{
 	border-bottom: solid 1px rgba(0,0,0,.1) !important;
 	background-color: #fff;
+	cursor: default;
 }
-.table td:hover{
-	background-color: rgba(0,0,0, .01);
-}
+
 /*--------------------------------------------------------header area--------------------------------------------------------*/
 
 /*--------------------------------------------------------search bar area--------------------------------------------------------*/

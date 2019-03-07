@@ -18,7 +18,7 @@
     <section id="navbar"></section>
     <section>
         <div class="container pedido">
-            <form class="form__produtos" name="form__produtos" action="produtos.php" method="post">
+            <form class="form__produtos" name="form__produtos" action="pedidoBD.php" method="post">
                 <div class="fields__container">
                     <h4>Cadastro de Pedidos</h4>
                     <div class="form-group block__fields">
@@ -64,11 +64,19 @@
                         <select class="form-control" name="">
                             <option value="0">Aguardando entrega</option>
                             <option value="1">Pedido entregue</option>
+                            <option value="2">Pedido entregue</option>
                         </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>
+                <?php if(isset($_GET['valida'])){
+                  $valida = $_GET['valida'];
+                  echo "<div class=\"alert alert-success\">
+                            Pedido cadastrado com <strong>sucesso</strong>!
+                            <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
+                        </div>";
+                } ?>
             </form>
         </div>
     </section>

@@ -18,7 +18,7 @@
     <section id="navbar"></section>
     <section>
         <div class="container fornecedor">
-            <form class="form__produtos" name="form__produtos" action="fornecedor.php">
+            <form class="form__produtos" name="form__produtos" action="fornecedorBD.php">
                 <div class="fields__container">
                     <h4>Cadastro de Fornecedores</h4>
                     <div class="form-group block__fields">
@@ -54,8 +54,8 @@
                 </div>
                 <?php if(isset($_GET['valida'])){
                   $valida = $_GET['valida'];
-                  echo "<div class=\"alert alert-danger\" style=\"font-size:1.5em;\">
-                            email ou senha <strong>inválidos</strong>!
+                  echo "<div class=\"alert alert-success\">
+                            Fornecedor cadastrado com <strong>sucesso</strong>!
                             <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
                         </div>";
                 } ?>

@@ -127,13 +127,19 @@ ul, li{
 /*--------------------------------------------------------footer area--------------------------------------------------------*/
 
 /*--------------------------------------------------------sobre e contato area--------------------------------------------------------*/
-.well{
-	background-color: #ffffff !important;
+.cards__block{
+	margin-top: 32px;
+	margin-bottom: 32px;
 }
-.well p{
+.card{
+	background-color: #ffffff !important;
+	padding: 32px 16px;
+}
+.card p{
 	margin: 0;
 	line-height: 150%;
 	text-indent: 40px;
+	font-size: 1.25em;
 }
 /*--------------------------------------------------------media screen area--------------------------------------------------------*/
 
