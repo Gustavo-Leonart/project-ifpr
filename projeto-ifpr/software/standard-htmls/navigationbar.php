@@ -43,7 +43,9 @@
                         </ul>
                     </li>
                     <li class="menu__item"><a class="dropdown-item" href="agendamento.php">Agendamentos</a></li>
-                    <li class="menu__item"><a class="dropdown-item" href="#">Sobre</a></li>
+                    <li class="menu__item"><a class="dropdown-item" href="fornecedor.php">Fornecedores</a></li>
+                    <li class="menu__item"><a class="dropdown-item" href="pedido.php">Pedidos</a></li>
+                    <li class="menu__item"><a class="dropdown-item" href="sobre&contato.php">Sobre</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="sair.php">Sair</a></li>
                 </ul>
             </div>

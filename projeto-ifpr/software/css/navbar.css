@@ -32,8 +32,7 @@
     background-color: rgba(0, 0, 0, 0.35);
 }
 .modal-header{
-    background-color: rgba(0, 0, 0, .75);
-    color: #ffffff;
+    color: rgba(0, 0, 0, .75);
 }
 @media screen and (max-width: 599px){
     .dropdown-submenu:hover > .dropdown-menu{

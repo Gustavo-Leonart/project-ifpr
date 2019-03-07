@@ -26,8 +26,8 @@
   <?php
     if(!isset($_SESSION)) session_start();
     if($_SESSION['nome'] == null){
-    $valida = "Você precisa estar logado";
-    header("Location:sair.php?valida=$valida");
+        $valida = "Você precisa estar logado";
+        header("Location:sair.php?valida=$valida");
     }
   ?>
     <!-- Navigation bar -->
@@ -54,126 +54,26 @@
                         </tr>
                     </thead>
                     <tbody class="tableBody">
-                        <tr>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                        </tr>
-                        <tr>
-                            <td>b</td>
-                            <td>b</td>
-                            <td>b</td>
-                            <td>b</td>
-                        </tr>
-                        <tr>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                        </tr>
-                        <tr>
-                            <td>d</td>
-                            <td>d</td>
-                            <td>d</td>
-                            <td>d</td>
-                        </tr>
-                        <tr>
-                            <td>e</td>
-                            <td>e</td>
-                            <td>e</td>
-                            <td>e</td>
-                        </tr>
-                        <tr>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                        </tr>
-                        <tr>
-                            <td>b</td>
-                            <td>b</td>
-                            <td>b</td>
-                            <td>b</td>
-                        </tr>
-                        <tr>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                        </tr>
-                        <tr>
-                            <td>d</td>
-                            <td>d</td>
-                            <td>d</td>
-                            <td>d</td>
-                        </tr>
-                        <tr>
-                            <td>e</td>
-                            <td>e</td>
-                            <td>e</td>
-                            <td>e</td>
-                        </tr>
-                        <tr>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                        </tr>
-                        <tr>
-                            <td>b</td>
-                            <td>b</td>
-                            <td>b</td>
-                            <td>b</td>
-                        </tr>
-                        <tr>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                        </tr>
-                        <tr>
-                            <td>d</td>
-                            <td>d</td>
-                            <td>d</td>
-                            <td>d</td>
-                        </tr>
-                        <tr>
-                            <td>e</td>
-                            <td>e</td>
-                            <td>e</td>
-                            <td>e</td>
-                        </tr>
-                        <tr>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                            <td>a</td>
-                        </tr>
-                        <tr>
-                            <td>b</td>
-                            <td>b</td>
-                            <td>b</td>
-                            <td>b</td>
-                        </tr>
-                        <tr>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                            <td>c</td>
-                        </tr>
-                        <tr>
-                            <td>d</td>
-                            <td>d</td>
-                            <td>d</td>
-                            <td>d</td>
-                        </tr>
-                        <tr>
-                            <td>e</td>
-                            <td>e</td>
-                            <td>e</td>
-                            <td>e</td>
-                        </tr>
+                        <!-- <tr> -->
+                        <?php
+                            $conexao = new mysqli("localhost", "root", "", "banco");
+                            $sql = mysqli_query($conexao,
+                            "SELECT c.id_cliente, c.nome,
+                                p.id_cliente, p.data_entrega, p.status_pedido,
+                                m.id_menu, m.des_receita
+                            FROM cliente c
+                                JOIN pedido p ON c.id_cliente = p.id_cliente
+                                JOIN menu m ON m.id_menu = p.id_menu ");
+                            while ($exibe = mysqli_fetch_assoc($sql)) {
+                                echo "<tr>
+                                    <td>".$exibe['nome']."</td>
+                                    <td>".$exibe['data_entrega']."</td>
+                                    <td>".$exibe['des_receita']."</td>
+                                    <td>".$exibe['status_pedido']."</td>
+                                </tr>";
+                            }
+                         ?>
+                        <!-- </tr> -->
                     </tbody>
                 </table>
             </div>
