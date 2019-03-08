@@ -20,16 +20,13 @@
     display: block !important;
     left: -186px !important;
     right: inherit !important;
-    top: 20% !important;
+    top: 12% !important;
     padding: 0px;
 }
 .dropdown-item{
     width: inherit !important;
     padding-top: 16px;
     padding-bottom: 16px;
-}
-.dropdown-item:hover{
-    cursor: pointer !important;
 }
 .modal{
     background-color: rgba(0, 0, 0, 0.35);

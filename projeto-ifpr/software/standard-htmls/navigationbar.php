@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <link rel="stylesheet" href="css/login.css" />
-    <link rel="stylesheet" href="css/register.css" />
     <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="css/login.css" />
     <script type="text/javascript" src="js/formmask.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -34,7 +34,7 @@
                     <span class="fas fa-bars"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li class="menu__item"><a class="dropdown-item" data-toggle="modal" data-target="#cadastrar__modal">Registrar usuário</a></li>
+                    <li class="menu__item"><a href="#"class="dropdown-item" data-toggle="modal" data-target="#cadastrar__modal">Registrar usuário</a></li>
                     <li class="dropdown-submenu menu__item" >
                         <a href="#" class="dropdown-toggle dropdown-item">Produtos</a>
                         <ul class="dropdown-menu">
@@ -45,6 +45,7 @@
                     <li class="menu__item"><a class="dropdown-item" href="agendamento.php">Agendamentos</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="fornecedor.php">Fornecedores</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="cliente.php">Clientes</a></li>
+                    <li class="menu__item"><a class="dropdown-item" href="menu.php">Receita</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="pedido.php">Pedidos</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="sobre&contato.php">Sobre</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="sair.php">Sair</a></li>
