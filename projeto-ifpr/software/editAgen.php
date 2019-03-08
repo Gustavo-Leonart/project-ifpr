@@ -17,20 +17,6 @@
     <section id="navbar"></section>
     <section>
         <?php
-        $conexao = new mysqli("localhost", "root", "", "banco");
-        $db = @mysqli_select_db("banco", $conexao);
-
-        $sql = "SELECT COUNT(*) AS total FROM pedido WHERE id_pedido >= 1";
-        $result = @mysqli_query($sql, $conexao);
-        mysqli_free_result($result);
-
-        $sql = "SELECT * FROM pedido WHERE id_pedido >= 1";
-        $result = @mysqli_query($sql, $conexao);
-        while ($row = mysqli_fetch_array($result)) {
-            $id_pedido     = $row['id_pedido'];
-            $encomenda     = $row['des_receita'];
-            $data_entrega  = $row['data_entrega'];
-            $status_pedido = $row['status_pedido'];
         ?>
         <div class="container pedido">
             <form class="form__produtos" name="form__produtos" action="agendamento.php" method="post">
