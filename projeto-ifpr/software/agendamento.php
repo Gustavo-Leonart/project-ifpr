@@ -47,8 +47,8 @@
                     <thead class="tableHead">
                         <tr>
                             <th>Nome</th>
-                            <th>Data de Entrega</th>
                             <th>Encomenda</th>
+                            <th>Data de Entrega</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -67,8 +67,8 @@
                             while ($exibe = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
                                     <td>".$exibe['nome']."</td>
-                                    <td>".$exibe['data_entrega']."</td>
-                                    <td>".$exibe['des_receita']."</td>";
+                                    <td>".$exibe['des_receita']."</td>
+                                    <td>".$exibe['data_entrega']."</td>";
                                     if($exibe['status_pedido'] == 0)
                                         echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega</td>";
 
@@ -76,7 +76,7 @@
                                         echo "<td style=\"color:#375743;background-color:#d4edda;\">Pedido Entregue</td>";
 
                                     elseif($exibe['status_pedido'] == 2)
-                                        echo "<td style=\"color:#856404;background-color:#fff3cd;\">Realizando Pedido</td>";
+                                        echo "<td style=\"color:#856404;background-color:#fff3cd;\">Pedido em andamento</td>";
 
                                 echo "<td style=\"background:transparent !important;border:none !important;\">
                                         <a class=\"btn btn-outline-primary text-primary fas fa-edit\" href=\"editAgen.php\"> editar</a>

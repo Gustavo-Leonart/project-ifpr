@@ -28,6 +28,9 @@
     padding-top: 16px;
     padding-bottom: 16px;
 }
+.dropdown-item:hover{
+    cursor: pointer !important;
+}
 .modal{
     background-color: rgba(0, 0, 0, 0.35);
 }

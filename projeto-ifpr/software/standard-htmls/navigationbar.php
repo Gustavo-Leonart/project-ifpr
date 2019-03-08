@@ -34,7 +34,7 @@
                     <span class="fas fa-bars"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li class="menu__item"><a class="dropdown-item" data-toggle="modal" data-target="#cadastrar__modal">Registrar</a></li>
+                    <li class="menu__item"><a class="dropdown-item" data-toggle="modal" data-target="#cadastrar__modal">Registrar usuário</a></li>
                     <li class="dropdown-submenu menu__item" >
                         <a href="#" class="dropdown-toggle dropdown-item">Produtos</a>
                         <ul class="dropdown-menu">
@@ -44,6 +44,7 @@
                     </li>
                     <li class="menu__item"><a class="dropdown-item" href="agendamento.php">Agendamentos</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="fornecedor.php">Fornecedores</a></li>
+                    <li class="menu__item"><a class="dropdown-item" href="cliente.php">Clientes</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="pedido.php">Pedidos</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="sobre&contato.php">Sobre</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="sair.php">Sair</a></li>
