@@ -20,8 +20,13 @@
             /* margin: 0 auto; */
         }
     </style>
+    <script type="text/javascript">
+        function Att() {
+            window.location.reload();
+        }
+    </script>
 </head>
-<body>
+<body onload="setTimeout('Att()', 300000);">
   <?php
     if(!isset($_SESSION)) session_start();
     if($_SESSION['nome'] == null){
@@ -33,7 +38,7 @@
     <section id="navbar"></section>
     <!-- Agendamentos -->
     <section>
-        <div class="container">
+        <div class="container" style="max-width:1359px;">
             <div class="search__person__container">
                 <form class="search__person">
                     <input id="myInput" type="text" placeholder="Pesquisar agendamento...">
@@ -47,9 +52,11 @@
                     <thead class="tableHead">
                         <tr>
                             <th>Nome</th>
+                            <th>Contato</th>
                             <th>Encomenda</th>
                             <th>Data de Entrega</th>
                             <th>Status</th>
+                            <th>Edição</th>
                         </tr>
                     </thead>
                     <tbody class="tableBody">
@@ -57,7 +64,7 @@
                         <?php
                             $conexao = new mysqli("localhost", "root", "", "banco");
                             $sql = mysqli_query($conexao,
-                            "SELECT c.id_cliente, c.nome,
+                            "SELECT c.id_cliente, c.nome, c.telefone,
                                 p.id_cliente, DATE_FORMAT(p.data_entrega, '%d/%m/%Y') as data_entrega , p.status_pedido,
                                 m.id_menu, m.des_receita
                             FROM cliente c
@@ -67,6 +74,7 @@
                             while ($exibe = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
                                     <td>".$exibe['nome']."</td>
+                                    <td>".$exibe['telefone']."</td>
                                     <td>".$exibe['des_receita']."</td>
                                     <td>".$exibe['data_entrega']."</td>";
                                     if($exibe['status_pedido'] == 0)

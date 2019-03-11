@@ -58,7 +58,6 @@
                 } ?>
             </form>
         </div>
-        <?php } ?>
     </section>
     <?php include "standard-htmls/footer.html"; ?>
 </body>
