@@ -19,7 +19,7 @@ function formataCampo(campo, mask, evento){
 
     if (digitado != 8) {
         for(i = 0; i <= tamanhoMask; i++){
-            boolMask = ((mask.charAt(i) == "-") || (mask.charAt(i) == ".") || (mask.charAt(i) == "/"))
+            boolMask = ((mask.charAt(i) == "-") || (mask.charAt(i) == ".") || (mask.charAt(i) == "/") || (mask.charAt(i) == ","))
             boolMask = boolMask || ((mask.charAt(i) == "(") || (mask.charAt(i) == ")") || (mask.charAt(i) == " "))
             if (boolMask) {
                 novoValor += mask.charAt(i);
@@ -60,6 +60,12 @@ function mascaraCelular(cel){
     }
     return formataCampo(cel, '(00) 00000-0000', event);
 }
+// function mascaraPreco(preco){
+//     if(maskInteiro(preco) == false){
+//         event.returnValue = false;
+//     }
+//     return formataCampo(preco, '0.000.00', event);
+// }
 // validação das mascaras
 // function validaCelular(cel){
 //     exp = /\(\d{2}\)\ \d{5}\-\d{4}/

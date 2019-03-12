@@ -50,7 +50,7 @@
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
                         <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
                       <?php } ?>
-                      </select
+                    </select>
                     </div>
 
                     <div class="form-group block__fields">
@@ -64,7 +64,7 @@
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
                         <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
                       <?php } ?>
-                      </select
+                    </select>
                     </div>
 
 
@@ -81,8 +81,13 @@
                         <input class="form-control" name = "data_validade" type="date" required>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="preco" class="fields__title">Preço</label>
-                        <input class="form-control" name="preco" type="text" onkeypress="mascaraPreco(.form__produtos.preco)">
+                        <label name="valor" class="fields__title">Preço</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">R$</span>
+                            </div>
+                            <input class="form-control" name="preco" type="text" onblur="mascaraPreco(form__produtos.preco);" maxlength="8">
+                        </div>
                     </div>
                     <div class="form-group block__fields">
                         <label name="qtde" class="fields__title">Quantidade</label>

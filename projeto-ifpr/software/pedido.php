@@ -61,7 +61,7 @@
                             <div class="input-group-prepend">
                               <span class="input-group-text">R$</span>
                             </div>
-                            <input class="form-control" name="des_receita" type="text">
+                            <input class="form-control" name="valor" type="text" onblur="mascaraPreco(form__produtos.preco);" maxlength="8">
                         </div>
                     </div>
                     <div class="form-group block__fields">

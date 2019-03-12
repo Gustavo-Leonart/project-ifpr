@@ -38,8 +38,9 @@
                     <li class="dropdown-submenu menu__item" >
                         <a href="#" class="dropdown-toggle dropdown-item">Produtos</a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tipo_produto.php">Novos produtos</a></li>
                             <li><a class="dropdown-item" href="produtos.php">Cadastrar Produtos</a></li>
-                            <li><a class="dropdown-item" href="#">Consultar Produtos</a></li>
+                            <li><a class="dropdown-item" href="visualizarproduto.php">Consultar Produtos</a></li>
                         </ul>
                     </li>
                     <li class="menu__item"><a class="dropdown-item" href="agendamento.php">Agendamentos</a></li>
