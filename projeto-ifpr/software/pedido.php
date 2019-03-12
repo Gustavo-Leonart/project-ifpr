@@ -57,14 +57,19 @@
                     </div>
                     <div class="form-group block__fields">
                         <label name="valor" class="fields__title">Valor</label>
-                        <input class="form-control" name="valor" type="text" onkeypress="mascaraPreco(.form__produtos.preco)">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">R$</span>
+                            </div>
+                            <input class="form-control" name="des_receita" type="text">
+                        </div>
                     </div>
                     <div class="form-group block__fields">
                         <label name="qtde" class="fields__title">Status do Pedido</label>
                         <select class="form-control" name="">
                             <option value="0">Aguardando entrega</option>
                             <option value="1">Pedido entregue</option>
-                            <option value="2">Pedido entregue</option>
+                            <option value="2">Em andamento</option>
                         </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>

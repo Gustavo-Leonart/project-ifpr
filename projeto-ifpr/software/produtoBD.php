@@ -5,12 +5,12 @@
 	$des_produto	 = "";
 	$marca = "";
 	$preco	 = "";
-  $data_validade	 = date("Y-m-d");
-  $data_compra	 = date("Y-m-d");
+  $data_validade	 = "";
+  $data_compra	 = "";
   $fornecedor = "";
   $quantidade	 = "";
   $id_tipo_produto = "";
-	if(isset($_GET["des_produto"])&& isset($_GET["marca"])&& isset($_GET["preço"])&& isset($_GET["data_validade"])&& isset($_GET["data_compra"])&& isset($_GET["quantidade"])&& isset($_GET["fornecedor"])&& isset($_GET["id_tipo_produto"])){
+	if(isset($_GET["des_produto"])&& isset($_GET["marca"])&& isset($_GET["preco"])&& isset($_GET["data_validade"])&& isset($_GET["data_compra"])&& isset($_GET["quantidade"])&& isset($_GET["fornecedor"])&& isset($_GET["id_tipo_produto"])){
 		$des_produto	= $_GET['des_produto'];
 		$marca	= $_GET['marca'];
 		$preco	= $_GET['preco'];

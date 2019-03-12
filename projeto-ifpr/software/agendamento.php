@@ -59,11 +59,11 @@
                             <th>Edição</th>
                         </tr>
                     </thead>
-                    <tbody class="tableBody">
+                    <tbody name="table" class="tableBody">
                         <!-- <tr> -->
                         <?php
-                            $conexao = new mysqli("localhost", "root", "", "banco");
-                            $sql = mysqli_query($conexao,
+                            include "conexao.php";
+                           $sql = mysqli_query($conexao,
                             "SELECT c.id_cliente, c.nome, c.telefone,
                                 p.id_cliente, DATE_FORMAT(p.data_entrega, '%d/%m/%Y') as data_entrega , p.status_pedido,
                                 m.id_menu, m.des_receita
@@ -84,15 +84,17 @@
                                         echo "<td style=\"color:#375743;background-color:#d4edda;\">Pedido Entregue</td>";
 
                                     elseif($exibe['status_pedido'] == 2)
-                                        echo "<td style=\"color:#856404;background-color:#fff3cd;\">Pedido em andamento</td>";
+                                        echo "<td style=\"color:#856404;background-color:#fff3cd;\">Em andamento</td>";
 
-                                echo "<td style=\"background:transparent !important;border:none !important;\">
-                                        <a class=\"btn btn-outline-primary text-primary fas fa-edit\" href=\"editAgen.php\"> editar</a>
-                                    </td>";
-                            echo "</tr>";
+                                    elseif($exibe['status_pedido'] == 3)
+                                        echo "<td style=\"color:#721c24;background-color:#f8d7da;\">Cancelado</td>";
+
+                                    echo "<td style=\"background:transparent !important;border:none !important;\">
+                                            <a class=\"btn btn-outline-primary text-primary fas fa-edit\" href=\"editAgen.php\"> editar</a>
+                                        </td>";
+                                echo "</tr>";
                             }
                          ?>
-                        <!-- </tr> -->
                     </tbody>
                 </table>
             </div>

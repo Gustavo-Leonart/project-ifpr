@@ -28,6 +28,13 @@
             <form class="form__produtos" name="form__produtos" action="produtoBD.php">
                 <div class="fields__container">
                     <h4>Cadastro de Produtos</h4>
+                    <?php if(isset($_GET['valida'])){
+                      $valida = $_GET['valida'];
+                      echo "<div class=\"alert alert-success\">
+                                Produto cadastrado com <strong>sucesso</strong>!
+                                <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
+                            </div>";
+                    } ?>
                     <div class="form-group block__fields">
                         <label name="desc" class="fields__title">Descrição</label>
                         <input class="form-control"  name = "des_produto" type="text" required>
@@ -43,7 +50,7 @@
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
                         <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
                       <?php } ?>
-                    </select>
+                      </select
                     </div>
 
                     <div class="form-group block__fields">
@@ -57,7 +64,7 @@
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
                         <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
                       <?php } ?>
-                    </select>
+                      </select
                     </div>
 
 
@@ -66,12 +73,12 @@
                         <input class="form-control" name ="marca" type="text" required>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="dtaVali" class="fields__title">Data de Validade</label>
-                        <input class="form-control" name = "data_validade" type="date" required>
-                    </div>
-                    <div class="form-group block__fields">
                         <label name="dtaComp" class="fields__title">Data da compra</label>
                         <input class="form-control" name = "data_compra" type="date" required>
+                    </div>
+                    <div class="form-group block__fields">
+                        <label name="dtaVali" class="fields__title">Data de Validade</label>
+                        <input class="form-control" name = "data_validade" type="date" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="preco" class="fields__title">Preço</label>
@@ -84,13 +91,6 @@
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>
-                <?php if(isset($_GET['valida'])){
-                  $valida = $_GET['valida'];
-                  echo "<div class=\"alert alert-success\">
-                            Produto cadastrado com <strong>sucesso</strong>!
-                            <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
-                        </div>";
-                } ?>
             </form>
         </div>
     </section>

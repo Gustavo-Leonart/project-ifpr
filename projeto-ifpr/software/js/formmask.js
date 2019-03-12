@@ -36,11 +36,23 @@ function formataCampo(campo, mask, evento){
     }
 }
 // Funções de mascaramento
-function mascaraPreco(preco){
-    if(maskInteiro(preco) == false){
+function mascaraRG(rg){
+    if(maskInteiro(rg) == false){
         event.returnValue = false;
     }
-    return formataCampo(preco, '000.000,0', event);
+    return formataCampo(rg, '00.000.000-0', event);
+}
+function mascaraCPF(cpf){
+    if(maskInteiro(cpf) == false){
+        event.returnValue = false;
+    }
+    return formataCampo(cpf, '000.000.000-00', event);
+}
+function mascaraCEP(cep){
+    if(maskInteiro(cep) == false){
+        event.returnValue = false;
+    }
+    return formataCampo(cep, '00.000-000', event);
 }
 function mascaraCelular(cel){
     if(maskInteiro(cel) == false){

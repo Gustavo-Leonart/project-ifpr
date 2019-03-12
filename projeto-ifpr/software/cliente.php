@@ -20,18 +20,18 @@
         <div class="container fornecedor">
             <form class="form__produtos" name="form__produtos" action="fornecedorBD.php">
                 <div class="fields__container">
-                    <h4>Cadastro de Fornecedores</h4>
+                    <h4>Cadastro de Clientes</h4>
                     <div class="form-group block__fields">
                         <label name="nome" class="fields__title">Nome Completo</label>
                         <input class="form-control" type="text" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="rg" class="fields__title">RG</label>
-                        <input class="form-control" type="text" required>
+                        <input class="form-control" name="rg" type="text" required onblur="mascaraRG(form__produtos.rg);" maxlength="9">
                     </div>
                     <div class="form-group block__fields">
                         <label name="cpf" class="fields__title">CPF</label>
-                        <input class="form-control" type="text" required>
+                        <input class="form-control" name="cpf" type="text" required onblur="mascaraCPF(form__produtos.cpf);" maxlength="11">
                     </div>
                     <div class="form-group block__fields">
                         <label name="dtanasc" class="fields__title">Data de Nascimento</label>
@@ -43,10 +43,10 @@
                     </div>
                     <div class="form-group block__fields">
                         <label name="cep" class="fields__title">CEP</label>
-                        <input class="form-control" type="text" required>
+                        <input class="form-control" name="cep" type="text" required onblur="mascaraCEP(form__produtos.cep);" maxlength="8">
                     </div>
                     <div class="form-group block__fields">
-                        <label name="num" class="fields__title">Numéro</label>
+                        <label name="num" class="fields__title">Número</label>
                         <input class="form-control" type="text">
                     </div>
                     <div class="form-group block__fields">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group block__fields">
                         <label name="telefone" class="fields__title">Telefone</label>
-                        <input class="form-control" type="text" required>
+                        <input name="cel"class="form-control" type="text" required onblur="mascaraCelular(form__produtos.cel)" maxlength="11">
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>

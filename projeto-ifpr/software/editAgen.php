@@ -44,7 +44,8 @@
                         <select class="form-control" value="<?php echo $row["status_pedido"]; ?>">
                             <option value="0">Aguardando entrega</option>
                             <option value="1">Pedido entregue</option>
-                            <option value="2">Pedido em andamento</option>
+                            <option value="2">Em andamento</option>
+                            <option value="3">Cancelado</option>
                         </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Salvar</button>
