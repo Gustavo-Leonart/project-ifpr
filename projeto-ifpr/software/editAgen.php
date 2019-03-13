@@ -27,7 +27,7 @@
                         <?php
                         if (!isset($_SESSION)){ session_start();}
                         $conexao = new mysqli("localhost", "root", "", "banco");
-                        $busca = mysqli_query($conexao, "select id_menu, des_receita from menu order by des_receita");
+                        $busca = mysqli_query($conexao, "select id_menu, nome_receita from menu order by nome_receita");
                         ?>
                         <select class = "form-control" name="cliente"  required>
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
@@ -37,11 +37,11 @@
                     </div>
                     <div class="form-group block__fields">
                         <label name="dtaEnt" class="fields__title">Data da Entrega</label>
-                        <input class="form-control" type="date" value="<?php echo $row["data_entrega"]; ?>" required>
+                        <input class="form-control" type="date" value="" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="qtde" class="fields__title">Status do Pedido</label>
-                        <select class="form-control" value="<?php echo $row["status_pedido"]; ?>">
+                        <select class="form-control" value="">
                             <option value="0">Aguardando entrega</option>
                             <option value="1">Pedido entregue</option>
                             <option value="2">Em andamento</option>
@@ -49,6 +49,7 @@
                         </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Salvar</button>
+                    <button class="btn__submit" type="reset" name="button">Limpar</button>
                 </div>
                 <?php if(isset($_GET['valida'])){
                   $valida = $_GET['valida'];

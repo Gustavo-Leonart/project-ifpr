@@ -68,6 +68,7 @@
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>
             </form>
+        </div>
     </section>
     <?php include "standard-htmls/footer.html"; ?>
 </body>

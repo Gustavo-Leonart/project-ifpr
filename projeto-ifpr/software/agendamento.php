@@ -24,9 +24,10 @@
         function Att() {
             window.location.reload();
         }
+
     </script>
 </head>
-<body onload="setTimeout('Att()', 300000);">
+<body onload="setTimeout(Att, 60000);">
   <?php
     if(!isset($_SESSION)) session_start();
     if($_SESSION['nome'] == null){
@@ -47,11 +48,11 @@
             </div>
             <!-- Infos -->
             <h4 class="container__title">Agendamentos</h4>
-            <div class="table-responsive">
+            <div class="table-responsive" id="tableAgenda">
                 <table class="table">
                     <thead class="tableHead">
                         <tr>
-                            <th>Nome</th>
+                            <th></th>
                             <th>Contato</th>
                             <th>Encomenda</th>
                             <th>Data de Entrega</th>
@@ -66,7 +67,7 @@
                            $sql = mysqli_query($conexao,
                             "SELECT c.id_cliente, c.nome, c.telefone,
                                 p.id_cliente, DATE_FORMAT(p.data_entrega, '%d/%m/%Y') as data_entrega , p.status_pedido,
-                                m.id_menu, m.des_receita
+                                m.id_menu, m.nome_receita
                             FROM cliente c
                                 JOIN pedido p ON c.id_cliente = p.id_cliente
                                 JOIN menu m ON m.id_menu = p.id_menu
@@ -75,19 +76,19 @@
                                 echo "<tr>
                                     <td>".$exibe['nome']."</td>
                                     <td>".$exibe['telefone']."</td>
-                                    <td>".$exibe['des_receita']."</td>
+                                    <td>".$exibe['nome_receita']."</td>
                                     <td>".$exibe['data_entrega']."</td>";
                                     if($exibe['status_pedido'] == 0)
-                                        echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega</td>";
+                                        echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega <span class=\"spinner-grow\"></span></td>";
 
                                     elseif($exibe['status_pedido'] == 1)
-                                        echo "<td style=\"color:#375743;background-color:#d4edda;\">Pedido Entregue</td>";
+                                        echo "<td style=\"color:#375743;background-color:#d4edda;\">Pedido Entregue <span class=\"fas fa-check\"></span></td>";
 
                                     elseif($exibe['status_pedido'] == 2)
-                                        echo "<td style=\"color:#856404;background-color:#fff3cd;\">Em andamento</td>";
+                                        echo "<td style=\"color:#856404;background-color:#fff3cd;\">Em andamento <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
 
                                     elseif($exibe['status_pedido'] == 3)
-                                        echo "<td style=\"color:#721c24;background-color:#f8d7da;\">Cancelado</td>";
+                                        echo "<td style=\"color:#721c24;background-color:#f8d7da;\">Cancelado <span class=\"fas fa-times\"></span></td>";
 
                                     echo "<td style=\"background:transparent !important;border:none !important;\">
                                             <a class=\"btn btn-outline-primary text-primary fas fa-edit\" href=\"editAgen.php\"> editar</a>
