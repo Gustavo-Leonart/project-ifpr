@@ -87,10 +87,10 @@
                     <div class="form-group block__fields">
                         <label name="status_pedido" class="fields__title">Status do Pedido</label>
                         <select class="form-control" name="status_pedido">
-                            <option value="0">Aguardando entrega</option>
-                            <option value="1">Pedido entregue</option>
-                            <option value="2">Em andamento</option>
-                            <option value="2">Cancelado</option>
+                            <option value="1">Aguardando entrega</option>
+                            <option value="2">Pedido entregue</option>
+                            <option value="3">Em andamento</option>
+                            <option value="4">Cancelado</option>
                         </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>

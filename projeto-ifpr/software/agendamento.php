@@ -78,22 +78,23 @@
                                     <td>".$exibe['telefone']."</td>
                                     <td>".$exibe['nome_receita']."</td>
                                     <td>".$exibe['data_entrega']."</td>";
-                                    if($exibe['status_pedido'] == 0)
+                                    if($exibe['status_pedido'] == 1)
                                         echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
 
-                                    elseif($exibe['status_pedido'] == 1)
+                                    elseif($exibe['status_pedido'] == 2)
                                         echo "<td style=\"color:#375743;background-color:#d4edda;\">Pedido Entregue <span class=\"fas fa-check\"></span></td>";
 
-                                    elseif($exibe['status_pedido'] == 2)
+                                    elseif($exibe['status_pedido'] == 3)
                                         echo "<td style=\"color:#856404;background-color:#fff3cd;\">Em andamento <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
 
-                                    elseif($exibe['status_pedido'] == 3)
+                                    elseif($exibe['status_pedido'] == 4)
                                         echo "<td style=\"color:#721c24;background-color:#f8d7da;\">Cancelado <span class=\"fas fa-times\"></span></td>";
 
-                                    echo "<td style=\"background:transparent !important;border:none !important;\">
-                                            <a class=\"btn btn-outline-primary text-primary fas fa-edit\" href=\"editAgen.php\"> editar</a>
-                                        </td>";
+                                    echo '<td style="background:transparent !important;border:none !important;">
+                                            <a class="btn btn-outline-primary text-primary fas fa-edit" href="editAgen.php?id_cliente='.$exibe["id_cliente"].'"> editar</a>
+                                        </td>';
                                 echo "</tr>";
+
                             }
                          ?>
                     </tbody>

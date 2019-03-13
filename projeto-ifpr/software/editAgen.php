@@ -15,37 +15,51 @@
 </head>
 <body>
     <section id="navbar"></section>
-    <section>
+    <section style="height:100vh;">
         <?php
+            include "conexao.php";
+            $id = $_GET["id_cliente"];
+            $sql = mysqli_query($conexao, "SELECT m.id_menu, m.nome_receita,
+                DATE_FORMAT(p.data_entrega, '%d/%m/%Y'), p.status_pedido, sp.desc_status
+            FROM pedido p
+            JOIN menu m ON p.id_menu = m.id_menu
+            JOIN status_pedido sp ON p.status_pedido = sp.id_status_pedido
+            WHERE id_cliente = $id");
+
+            while ($edit = mysqli_fetch_row($sql)) {
+
+
         ?>
         <div class="container pedido">
             <form class="form__produtos" name="form__produtos" action="agendamento.php" method="post">
                 <div class="fields__container">
                     <h4>Edição de Pedidos</h4>
                     <div class="form-group block__fields">
-                        <label name="cliente" class="fields__title">Encomenda</label>
+                        <label name="nome_receita" class="fields__title">Encomenda</label>
                         <?php
                         if (!isset($_SESSION)){ session_start();}
                         $conexao = new mysqli("localhost", "root", "", "banco");
                         $busca = mysqli_query($conexao, "select id_menu, nome_receita from menu order by nome_receita");
                         ?>
-                        <select class = "form-control" name="cliente"  required>
-                        <?php while($ver = mysqli_fetch_row($busca))  { ?>
-                        <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
-                      <?php } ?>
-                    </select>
+                        <select class = "form-control" name="nome_receita" required>
+                            <option value="<?php echo $edit[0]; ?>"><?php echo $edit[1]; ?></option>
+                            <?php while($ver = mysqli_fetch_row($busca))  { ?>
+                            <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="form-group block__fields">
                         <label name="dtaEnt" class="fields__title">Data da Entrega</label>
-                        <input class="form-control" type="date" value="" required>
+                        <input class="form-control" type="date" value="<?php echo $edit[2]; ?>" required>
                     </div>
                     <div class="form-group block__fields">
                         <label name="qtde" class="fields__title">Status do Pedido</label>
                         <select class="form-control" value="">
-                            <option value="0">Aguardando entrega</option>
-                            <option value="1">Pedido entregue</option>
-                            <option value="2">Em andamento</option>
-                            <option value="3">Cancelado</option>
+                            <option value="<?php echo $edit[3]; ?>"><?php echo $edit[4]; ?></option>
+                            <option value="1">Aguardando entrega</option>
+                            <option value="2">Pedido entregue</option>
+                            <option value="3">Em andamento</option>
+                            <option value="4">Cancelado</option>
                         </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Salvar</button>
@@ -60,6 +74,7 @@
                 } ?>
             </form>
         </div>
+        <?php } ?>
     </section>
     <?php include "standard-htmls/footer.html"; ?>
 </body>
