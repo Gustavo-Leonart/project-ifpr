@@ -52,7 +52,7 @@
                 <table class="table">
                     <thead class="tableHead">
                         <tr>
-                            <th></th>
+                            <th>Nome</th>
                             <th>Contato</th>
                             <th>Encomenda</th>
                             <th>Data de Entrega</th>
@@ -79,7 +79,7 @@
                                     <td>".$exibe['nome_receita']."</td>
                                     <td>".$exibe['data_entrega']."</td>";
                                     if($exibe['status_pedido'] == 0)
-                                        echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega <span class=\"spinner-grow\"></span></td>";
+                                        echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
 
                                     elseif($exibe['status_pedido'] == 1)
                                         echo "<td style=\"color:#375743;background-color:#d4edda;\">Pedido Entregue <span class=\"fas fa-check\"></span></td>";
