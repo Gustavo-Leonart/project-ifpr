@@ -66,7 +66,7 @@
                             include "conexao.php";
                            $sql = mysqli_query($conexao,
                             "SELECT c.id_cliente, c.nome, c.telefone,
-                                p.id_cliente, DATE_FORMAT(p.data_entrega, '%d/%m/%Y') as data_entrega , p.status_pedido,
+                                p.id_pedido, DATE_FORMAT(p.data_entrega, '%d/%m/%Y') as data_entrega , p.status_pedido,
                                 m.id_menu, m.nome_receita
                             FROM cliente c
                                 JOIN pedido p ON c.id_cliente = p.id_cliente
@@ -91,7 +91,7 @@
                                         echo "<td style=\"color:#721c24;background-color:#f8d7da;\">Cancelado <span class=\"fas fa-times\"></span></td>";
 
                                     echo '<td style="background:transparent !important;border:none !important;">
-                                            <a class="btn btn-outline-primary text-primary fas fa-edit" href="editAgen.php?id_cliente='.$exibe["id_cliente"].'"> editar</a>
+                                            <a class="btn btn-outline-primary text-primary fas fa-edit" href="editAgen.php?id_pedido='.$exibe["id_pedido"].'"> editar</a>
                                         </td>';
                                 echo "</tr>";
 
