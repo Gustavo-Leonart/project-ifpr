@@ -60,6 +60,12 @@ function mascaraCelular(cel){
     }
     return formataCampo(cel, '(00) 00000-0000', event);
 }
+function mascaraCNPJ(cnpj){
+    if(maskInteiro(cnpj) == false){
+        event.returnValue = false;
+    }
+    return formataCampo(cnpj, '00.000.000/0000-00', event);
+}
 // function mascaraPreco(preco){
 //     if(maskInteiro(preco) == false){
 //         event.returnValue = false;

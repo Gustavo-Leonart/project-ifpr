@@ -12,7 +12,7 @@
 	$num_casa	 = "";
 	$complemento = "";
     $telefone    = "";
-    
+
 	if(isset($_GET["nome"])&& isset($_GET["rg"])&& isset($_GET["cnpj"])&& isset($_GET["cpf"])
     && isset($_GET["dataNasc"])&& isset($_GET["email"])&& isset($_GET["cep"])&& isset($_GET["num_casa"])&& isset($_GET["complemento"])&& isset($_GET["telefone"])){
 		$nome        = $_GET['nome'];
@@ -28,7 +28,7 @@
 
 
 		$sql = mysqli_query($obj_mysqli, "insert into `fornecedor` (nome, rg, cnpj, cpf, dataNasc, email, cep, num_casa, complemento, telefone)
-		VALUES ('$nome', $rg, $cnpj, $cpf, '$dataNasc', '$email', $cep, $num_casa, '$complemento', $telefone);");
+		VALUES ('$nome', '$rg', '$cnpj', '$cpf', '$dataNasc', '$email', '$cep', $num_casa, '$complemento', '$telefone');");
 	}else if(empty($_GET["nome"])){
 		$erro = "Campo obrigatório";
 	}else if(empty($_GET["rg"])){

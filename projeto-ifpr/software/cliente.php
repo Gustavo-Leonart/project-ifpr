@@ -38,24 +38,24 @@
                     </div>
                     <div class="form-group">
                         <label name="telefone" class="fields__title">Telefone</label>
-                        <input name="telefone"class="form-control" type="text" required  maxlength="11">
+                        <input name="telefone"class="form-control" type="text" required  maxlength="15" onkeypress="mascaraCelular(form__produtos.telefone)">
                     </div>
                     <div class="form-group form-inline">
                         <div class="input-group">
                             <div class="input-group-append">
-                              <span class="input-group-text text-dark">RG</span>
+                                <label for="rg">RG</label>
                             </div>
-                            <input class="form-control" name="rg" type="text" required maxlength="9">
+                            <input class="form-control" name="rg" type="text" required maxlength="12" onkeypress="mascaraRG(form__produtos.rg)">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
-                              <span class="input-group-text text-dark">CPF</span>
+                                <label for="cpf">CPF</label>
                             </div>
-                            <input class="form-control " name="cpf" type="text" required  maxlength="11">
+                            <input class="form-control " name="cpf" type="text" required  maxlength="14" onkeypress="mascaraCPF(form__produtos.cpf)">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
-                              <span class="input-group-text text-dark">Data de Nascimento</span>
+                                <label for="dataNasc">Data de Nascimento</label>
                             </div>
                             <input name="dataNasc" class="form-control" type="date" required>
                         </div>
@@ -63,19 +63,19 @@
                     <div class="form-group form-inline">
                         <div class="input-group">
                             <div class="input-group-append">
-                              <span class="input-group-text text-dark">CEP</span>
+                                <label for="cep">CEP</label>
                             </div>
-                            <input class="form-control" name="cep" type="text" required  maxlength="8">
+                            <input class="form-control" name="cep" type="text" required  maxlength="10" onkeypress="mascaraCEP(form__produtos.cep)">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
-                              <span class="input-group-text text-dark">Número</span>
+                                <label for="num_casa">Número</label>
                             </div>
-                            <input name="num_casa" class="form-control" type="text">
+                            <input name="num_casa" class="form-control" type="text" maxlength="5">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
-                              <span class="input-group-text text-dark">Complemento</span>
+                                <label for="complemento">Complemento</label>
                             </div>
                             <input name="complemento" class="form-control" type="text">
                         </div>

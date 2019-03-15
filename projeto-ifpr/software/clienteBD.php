@@ -24,7 +24,7 @@
         $telefone    = $_GET['telefone'];
 
 		$sql = mysqli_query($obj_mysqli, "insert into `cliente` (nome, rg, cpf, dataNasc, email, cep, num_casa, complemento, telefone)
-		VALUES ('$nome', $rg, $cpf, '$dataNasc', '$email', $cep, $num_casa, '$complemento', $telefone);");
+		VALUES ('$nome', '$rg', '$cpf', '$dataNasc', '$email', '$cep', $num_casa, '$complemento', '$telefone');");
 	}else if(empty($_GET["nome"])){
 		$erro = "Campo obrigatório";
 	}else if(empty($_GET["rg"])){

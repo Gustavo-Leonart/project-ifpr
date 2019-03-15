@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-between;
 }
-.input-group-text{
+.form-inline .input-group-text{
     background: transparent !important;
     border: none !important;
     padding-left: 0px !important;
@@ -29,4 +29,8 @@
 }
 .form-inline .form-control{
     width: 100% !important;
+}
+.input-group-append label,
+.input-group-prepend label{
+    padding: .375rem .75rem .375em 0;
 }

@@ -67,21 +67,24 @@
                       <?php } ?>
                     </select>
                     </div>
-                    <div class="form-group block__fields">
-                        <label name="dtaCad" class="fields__title">Data de Cadastro</label>
-                        <input name="data_cadastro" class="form-control" type="date" required>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="dtaEnt" class="fields__title">Data da Entrega</label>
-                        <input name="data_entrega" class="form-control" type="date" required>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="valor" class="fields__title">Valor</label>
+                    <div class="form-group form-inline">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="data_cadastro">Data de Cadastro</label>
+                            </div>
+                            <input name="data_cadastro" class="form-control" type="date" required>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="data_entrega">Data de Entrega</label>
+                            </div>
+                            <input name="data_entrega" class="form-control" type="date" required>
+                        </div>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                              <span class="input-group-text">R$</span>
+                                <label for="valor">Valor</label>
                             </div>
-                            <input class="form-control" name="valor" type="text" onblur="mascaraPreco(form__produtos.preco);" maxlength="8">
+                            <input class="form-control" name="valor" type="text" maxlength="8">
                         </div>
                     </div>
                     <div class="form-group block__fields">
@@ -90,7 +93,7 @@
                             <option value="0">Aguardando entrega</option>
                             <option value="1">Pedido entregue</option>
                             <option value="2">Em andamento</option>
-                            <option value="2">Cancelado</option>
+                            <option value="3">Cancelado</option>
                         </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
