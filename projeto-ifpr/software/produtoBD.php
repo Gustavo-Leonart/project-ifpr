@@ -1,7 +1,6 @@
 <?php
-	$obj_mysqli = new mysqli("localhost", "root", "", "banco");
+	include "conexao.php";
 	$erro = "";
-	mysqli_set_charset($obj_mysqli, 'utf8');
 	$des_produto	 = "";
 	$marca           = "";
 	$preco	         = "";
@@ -19,7 +18,7 @@
 	    $quantidade    = $_GET['quantidade'];
 	    $fornecedor    = $_GET['fornecedor'];
 	    $id_tipo_produto = $_GET['id_tipo_produto'];
-		$sql = mysqli_query($obj_mysqli, "insert into `produto` (id_tipo_produto,id_fornecedor,des_produto, marca, preco, data_validade, data_compra, quantidade)
+		$sql = mysqli_query($conexao , "insert into `produto` (id_tipo_produto,id_fornecedor,des_produto, marca, preco, data_validade, data_compra, quantidade)
 		VALUES ($id_tipo_produto,$fornecedor,'$des_produto', '$marca', $preco, '$data_validade', '$data_compra' , $quantidade);");
 	}else if(empty($_GET["des_produto"])){
 		$erro = "Campo obrigatório";

@@ -1,7 +1,6 @@
 <?php
-	$obj_mysqli = new mysqli("localhost", "root", "", "banco");
+	include "conexao.php";
 	$erro = "";
-	mysqli_set_charset($obj_mysqli, 'utf8');
     $id_cliente    = "";
     $id_menu       = "";
     $id_usuario    = "";
@@ -19,7 +18,7 @@
         $valor         = $_GET["valor"];
         $status_pedido = $_GET["status_pedido"];
 
-		$sql = mysqli_query($obj_mysqli, "insert into `pedido` (id_cliente, id_menu, id_usuario, data_cadastro, data_entrega, valor, status_pedido)
+		$sql = mysqli_query($conexao , "insert into `pedido` (id_cliente, id_menu, id_usuario, data_cadastro, data_entrega, valor, status_pedido)
 		VALUES ($id_cliente, $id_menu, $id_usuario, '$data_cadastro', '$data_entrega', '$valor', $status_pedido);");
 	}else if(empty($_GET["id_cliente"])){
 		$erro = "Campo cliente obrigatório";

@@ -1,7 +1,6 @@
 <?php
-	$obj_mysqli = new mysqli("localhost", "root", "", "banco");
+	include "conexao.php";
 	$erro = "";
-	mysqli_set_charset($obj_mysqli, 'utf8');
 	$nome	     = "";
 	$rg          = "";
     $cnpj	     = "";
@@ -27,7 +26,7 @@
         $telefone    = $_GET['telefone'];
 
 
-		$sql = mysqli_query($obj_mysqli, "insert into `fornecedor` (nome, rg, cnpj, cpf, dataNasc, email, cep, num_casa, complemento, telefone)
+		$sql = mysqli_query($conexao , "insert into `fornecedor` (nome, rg, cnpj, cpf, dataNasc, email, cep, num_casa, complemento, telefone)
 		VALUES ('$nome', '$rg', '$cnpj', '$cpf', '$dataNasc', '$email', '$cep', $num_casa, '$complemento', '$telefone');");
 	}else if(empty($_GET["nome"])){
 		$erro = "Campo obrigatório";
