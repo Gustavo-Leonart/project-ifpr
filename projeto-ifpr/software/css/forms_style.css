@@ -1,5 +1,6 @@
 .container.produtos,
 .container.fornecedor,
+.container.cliente,
 .container.pedido{
     margin-top: 32px;
     margin-bottom: 32px;
@@ -12,4 +13,20 @@
 }
 .alert{
     margin: 32px auto !important;
+}
+.form-inline{
+    display: flex;
+    justify-content: space-between;
+}
+.input-group-text{
+    background: transparent !important;
+    border: none !important;
+    padding-left: 0px !important;
+    padding-right: .75rem;
+}
+.form-inline .input-group{
+    flex-direction: column;
+}
+.form-inline .form-control{
+    width: 100% !important;
 }

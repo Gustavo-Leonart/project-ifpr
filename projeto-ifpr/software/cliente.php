@@ -17,7 +17,7 @@
 <body>
     <section id="navbar"></section>
     <section>
-        <div class="container fornecedor">
+        <div class="container cliente">
             <form class="form__produtos" name="form__produtos" action="clienteBD.php">
                 <div class="fields__container">
                     <?php if(isset($_GET['valida'])){
@@ -28,41 +28,57 @@
                             </div>";
                     } ?>
                     <h4>Cadastro de Clientes</h4>
-                    <div class="form-group block__fields">
+                    <div class="form-group">
                         <label name="nome" class="fields__title">Nome Completo</label>
                         <input name="nome" class="form-control" type="text" required>
                     </div>
-                    <div class="form-group block__fields">
-                        <label name="rg" class="fields__title">RG</label>
-                        <input class="form-control" name="rg" type="text" required maxlength="9">
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="cpf" class="fields__title">CPF</label>
-                        <input class="form-control" name="cpf" type="text" required  maxlength="11">
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="dtanasc" class="fields__title">Data de Nascimento</label>
-                        <input name="dataNasc" class="form-control" type="date" required>
-                    </div>
-                    <div class="form-group block__fields">
+                    <div class="form-group">
                         <label name="email" class="fields__title">Email</label>
                         <input name="email" class="form-control" type="email" required>
                     </div>
-                    <div class="form-group block__fields">
-                        <label name="cep" class="fields__title">CEP</label>
-                        <input class="form-control" name="cep" type="text" required  maxlength="8">
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="num" class="fields__title">Número</label>
-                        <input name="num_casa" class="form-control" type="text">
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="comp" class="fields__title">Complemento</label>
-                        <input name="complemento" class="form-control" type="text">
-                    </div>
-                    <div class="form-group block__fields">
+                    <div class="form-group">
                         <label name="telefone" class="fields__title">Telefone</label>
                         <input name="telefone"class="form-control" type="text" required  maxlength="11">
+                    </div>
+                    <div class="form-group form-inline">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                              <span class="input-group-text text-dark">RG</span>
+                            </div>
+                            <input class="form-control" name="rg" type="text" required maxlength="9">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                              <span class="input-group-text text-dark">CPF</span>
+                            </div>
+                            <input class="form-control " name="cpf" type="text" required  maxlength="11">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                              <span class="input-group-text text-dark">Data de Nascimento</span>
+                            </div>
+                            <input name="dataNasc" class="form-control" type="date" required>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                              <span class="input-group-text text-dark">CEP</span>
+                            </div>
+                            <input class="form-control" name="cep" type="text" required  maxlength="8">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                              <span class="input-group-text text-dark">Número</span>
+                            </div>
+                            <input name="num_casa" class="form-control" type="text">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                              <span class="input-group-text text-dark">Complemento</span>
+                            </div>
+                            <input name="complemento" class="form-control" type="text">
+                        </div>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
