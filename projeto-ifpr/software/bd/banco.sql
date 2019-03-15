@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Mar-2019 às 20:31
+-- Generation Time: 15-Mar-2019 às 21:35
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.2.12
 
@@ -31,14 +31,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `cliente` (
   `id_cliente` int(10) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `rg` varchar(12) NOT NULL,
-  `cpf` varchar(11) NOT NULL,
+  `rg` char(12) NOT NULL,
+  `cpf` char(15) NOT NULL,
   `dataNasc` date NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `cep` int(10) DEFAULT NULL,
+  `cep` char(11) DEFAULT NULL,
   `num_casa` int(10) NOT NULL,
   `complemento` varchar(20) DEFAULT NULL,
-  `telefone` bigint(12) NOT NULL
+  `telefone` char(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -46,13 +46,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome`, `rg`, `cpf`, `dataNasc`, `email`, `cep`, `num_casa`, `complemento`, `telefone`) VALUES
-(1, 'Gustavo Leonart', '123', '123', '1991-01-01', 'guto@gmail.com', 12123123, 1, '1', 123456789),
-(2, 'Miguel Theodoro do Santos', '1', '1', '1991-02-02', 'miguel@gmail.com', 123456, 12, '12', 123456798),
-(3, '?', '111111111', '11111111111', '2019-03-20', 'c@b.a', 12121212, 1, 'nha', 2147483647),
-(4, 'a', '121212121', '12121122121', '2019-03-13', 'c@b.a', 11111111, 1, 'nha', 2147483647),
-(5, 'Um nome', '122212222', '33333333333', '2019-03-30', 'nha@a', 11124356, 343, 'a', 2147483647),
-(6, 'ozil ', '127098989', '67667676767', '2019-03-12', 'a@c.v', 12333333, 3333, 'advbgh', 2147483647),
-(7, '?', '122437677', '99999999999', '2019-03-20', 'asas@asasad', 12121212, 1212, 'adas', 12121212121);
+(7, 'Marccus Zavadzki', '12.345.678-9', '099.857.219-50', '2019-03-15', 'asghd@yegegguy', '12.121-212', 3333, 'nha', '(41) 98765-4321');
 
 -- --------------------------------------------------------
 
@@ -63,15 +57,15 @@ INSERT INTO `cliente` (`id_cliente`, `nome`, `rg`, `cpf`, `dataNasc`, `email`, `
 CREATE TABLE `fornecedor` (
   `id_fornecedor` int(10) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `rg` varchar(12) NOT NULL,
-  `cnpj` varchar(18) NOT NULL,
-  `cpf` varchar(11) NOT NULL,
+  `rg` char(12) NOT NULL,
+  `cnpj` char(18) DEFAULT NULL,
+  `cpf` char(14) NOT NULL,
   `dataNasc` date NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `cep` int(10) DEFAULT NULL,
+  `cep` char(10) NOT NULL,
   `num_casa` int(10) NOT NULL,
   `complemento` varchar(20) DEFAULT NULL,
-  `telefone` int(11) NOT NULL
+  `telefone` char(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -79,10 +73,8 @@ CREATE TABLE `fornecedor` (
 --
 
 INSERT INTO `fornecedor` (`id_fornecedor`, `nome`, `rg`, `cnpj`, `cpf`, `dataNasc`, `email`, `cep`, `num_casa`, `complemento`, `telefone`) VALUES
-(1, 'Rio verde', '31231231', '3123123', '12312412', '2019-02-17', 'theopdoro@gmail.com', 12313, 21, 'afas', 31233456),
-(2, 'Condor', '1231231', '3123123', '3123131', '2019-09-12', 'sdad@ghaa.com', 123123, 123, 'casadfas', 12312312),
-(3, 'carrefur', '1231231', '3123123', '3123131', '2019-09-12', 'sdad@ghaa.com', 123123, 123, 'casadfas', 12312312),
-(6, 'hjsjasji', '877878787', '78787878787', '78787878787', '7878-08-07', '787878787878787878@78.78', 78787878, 7878, 'a', 2147483647);
+(8, 'Marccus Zavadzki', '12.345.678-0', '11.111.111/1111-11', '121.212.125-50', '2019-03-15', 'marc@gmail.com', '12.345-678', 12233, '?', '(41) 99999-5555'),
+(9, 'Victor Amorim distribuidora', '91.291.387-0', '', '123.123.123-12', '2019-03-15', 'ozil@yahoo.com', '12.121-121', 12312, 'Não tenho certeza', '(41) 99999-9999');
 
 -- --------------------------------------------------------
 
@@ -103,8 +95,9 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id_menu`, `nome_receita`, `des_receita`, `tempo_preparo`, `data_cadastro`) VALUES
-(1, 'Bolo de enxofre com aipo', 'sla', 50, '2019-03-07 00:00:00'),
-(4, 'Barra de cereal', 'qualquer coisa', 1, '2019-03-13 00:00:00');
+(4, 'Barra de cereal', 'qualquer coisa', 1, '2019-03-13 00:00:00'),
+(5, 'teste1', 'teste1', 1, '2019-03-14 00:00:00'),
+(6, 'test2', 'teste2', 2, '2019-03-14 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -120,7 +113,7 @@ CREATE TABLE `pedido` (
   `data_cadastro` datetime DEFAULT NULL,
   `data_entrega` datetime DEFAULT NULL,
   `valor` double DEFAULT NULL,
-  `status_pedido` tinyint(1) DEFAULT NULL
+  `status_pedido` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -128,11 +121,7 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id_pedido`, `id_cliente`, `id_menu`, `id_usuario`, `data_cadastro`, `data_entrega`, `valor`, `status_pedido`) VALUES
-(1, 1, 1, 4, '2019-03-07 00:00:00', '2019-03-07 00:00:00', 1230, 1),
-(2, 2, 1, 3, '2019-03-07 00:00:00', '2019-03-28 00:00:00', 12345, 3),
-(3, 1, 1, 7, '2019-03-07 00:00:00', '2019-03-09 00:00:00', 123, 2),
-(4, 6, 1, 7, '2019-03-13 00:00:00', '2019-03-28 00:00:00', 12.09, 2),
-(5, 4, 4, 3, '2019-03-13 00:00:00', '2019-03-13 00:00:00', 1, 0);
+(10, 7, 6, 4, '2019-03-15 00:00:00', '2019-03-29 00:00:00', 45, 3);
 
 -- --------------------------------------------------------
 
@@ -144,7 +133,7 @@ CREATE TABLE `produto` (
   `id_produto` int(10) NOT NULL,
   `id_tipo_produto` int(10) NOT NULL,
   `id_fornecedor` int(10) NOT NULL,
-  `des_produto` varchar(50) NOT NULL,
+  `des_produto` varchar(100) NOT NULL,
   `marca` varchar(50) NOT NULL,
   `preco` double NOT NULL,
   `data_validade` date DEFAULT NULL,
@@ -157,8 +146,28 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`id_produto`, `id_tipo_produto`, `id_fornecedor`, `des_produto`, `marca`, `preco`, `data_validade`, `data_compra`, `quantidade`) VALUES
-(3, 4, 1, 'tirrol', 'tirrol', 1280.81, '2018-01-26', '2018-01-26', 8),
-(5, 4, 1, 'nutella', 'nutella', 15000, '2019-03-02', '2019-03-12', 1);
+(8, 10, 8, 'sdysisdghisdhisd', 'asbuhasd', 12334, '2019-04-04', '2019-03-15', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `status_pedido`
+--
+
+CREATE TABLE `status_pedido` (
+  `id_status_pedido` int(11) UNSIGNED NOT NULL,
+  `desc_status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `status_pedido`
+--
+
+INSERT INTO `status_pedido` (`id_status_pedido`, `desc_status`) VALUES
+(1, 'Aguardando entrega'),
+(2, 'Pedido entregue'),
+(3, 'Em andamento'),
+(4, 'Cancelado');
 
 -- --------------------------------------------------------
 
@@ -237,7 +246,8 @@ ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id_pedido`),
   ADD KEY `fk_pedido_cliente1_idx` (`id_cliente`),
   ADD KEY `fk_pedido_menu1_idx` (`id_menu`),
-  ADD KEY `fk_pedido_usuario1_idx` (`id_usuario`);
+  ADD KEY `fk_pedido_usuario1_idx` (`id_usuario`),
+  ADD KEY `fk_pedido_status` (`status_pedido`);
 
 --
 -- Indexes for table `produto`
@@ -246,6 +256,12 @@ ALTER TABLE `produto`
   ADD PRIMARY KEY (`id_produto`),
   ADD KEY `fk_produto_fornecedor_idx` (`id_fornecedor`),
   ADD KEY `fk_produto_tipo_produto1_idx` (`id_tipo_produto`);
+
+--
+-- Indexes for table `status_pedido`
+--
+ALTER TABLE `status_pedido`
+  ADD PRIMARY KEY (`id_status_pedido`);
 
 --
 -- Indexes for table `tipo_produto`
@@ -273,25 +289,31 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT for table `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `id_fornecedor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_fornecedor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_menu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pedido` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id_produto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_produto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `status_pedido`
+--
+ALTER TABLE `status_pedido`
+  MODIFY `id_status_pedido` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tipo_produto`
@@ -315,6 +337,7 @@ ALTER TABLE `usuario`
 ALTER TABLE `pedido`
   ADD CONSTRAINT `fk_pedido_cliente1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_pedido_menu1` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id_menu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_pedido_status` FOREIGN KEY (`status_pedido`) REFERENCES `status_pedido` (`id_status_pedido`),
   ADD CONSTRAINT `fk_pedido_usuario1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
