@@ -27,7 +27,6 @@
         <div class="container produtos">
             <form class="form__produtos" name="form__produtos" action="produtoBD.php">
                 <div class="fields__container">
-                    <h4>Cadastro de Produtos</h4>
                     <?php if(isset($_GET['valida'])){
                       $valida = $_GET['valida'];
                       echo "<div class=\"alert alert-success\">
@@ -35,6 +34,7 @@
                                 <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
                             </div>";
                     } ?>
+                    <h4>Cadastro de Produtos</h4>
                     <div class="form-group block__fields">
                         <label name="desc" class="fields__title">Descrição</label>
                         <input class="form-control"  name = "des_produto" type="text" required>
@@ -52,7 +52,6 @@
                       <?php } ?>
                     </select>
                     </div>
-
                     <div class="form-group block__fields">
                         <label name="desc" class="fields__title">Tipo Produto</label>
                         <?php
@@ -66,32 +65,39 @@
                       <?php } ?>
                     </select>
                     </div>
-
-
-                    <div class="form-group block__fields">
-                        <label name="marca" class="fields__title">Marca</label>
-                        <input class="form-control" name ="marca" type="text" required>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="dtaComp" class="fields__title">Data da compra</label>
-                        <input class="form-control" name = "data_compra" type="date" required>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="dtaVali" class="fields__title">Data de Validade</label>
-                        <input class="form-control" name = "data_validade" type="date" required>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="valor" class="fields__title">Preço</label>
+                    <div class="form-group form-inline">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text">R$</span>
+                            <div class="input-group-append">
+                                <label name="dtaComp" class="fields__title">Data da compra</label>
+                            </div>
+                            <input class="form-control" name = "data_compra" type="date" required>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label name="dtaVali" class="fields__title">Data de Validade</label>
+                            </div>
+                            <input class="form-control" name = "data_validade" type="date" required>
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label name="marca" class="fields__title">Marca</label>
+                            </div>
+                            <input class="form-control" name ="marca" type="text" required>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label name="qtde" class="fields__title">Quantidade</label>
+                            </div>
+                            <input class="form-control" name= "quantidade" type="number" required>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label name="valor" class="fields__title">Preço</label>
                             </div>
                             <input class="form-control" name="preco" type="text" onblur="mascaraPreco(form__produtos.preco);" maxlength="8">
                         </div>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="qtde" class="fields__title">Quantidade</label>
-                        <input class="form-control" name= "quantidade" type="number" required>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
