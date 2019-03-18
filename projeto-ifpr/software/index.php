@@ -21,14 +21,6 @@
 <body style="background-color:#ECEFF1 !important;">
     <!-- Navigation bar -->
     <?php
-        if(isset($_GET['valida'])){
-            $valida = $_GET['valida'];
-            echo "<div class=\"alert alert-danger\" style=\"font-size:1.35em;\">
-                    Email ou senha <strong>inválidos</strong>!
-                    <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
-                </div>";
-        } ?>
-    <?php
         if(!isset($_SESSION)) session_start();
         if(isset($_SESSION['nome'])){
             echo "<section id=\"navbar\"></section>";

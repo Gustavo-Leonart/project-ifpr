@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="css/forms_style.css">
 </head>
 <body>
+    <?php
+      if(!isset($_SESSION)) session_start();
+      if($_SESSION['nome'] == null){
+      $valida = "Você precisa estar logado";
+      header("Location:sair.php?valida=$valida");
+      }
+    ?>
     <section id="navbar"></section>
     <section style="height:100vh;">
         <?php

@@ -17,6 +17,13 @@
 <body>
     <section id="navbar"></section>
     <section>
+        <?php
+          if(!isset($_SESSION)) session_start();
+          if($_SESSION['nome'] == null){
+          $valida = "Você precisa estar logado";
+          header("Location:sair.php?valida=$valida");
+          }
+        ?>
         <div class="container pedido">
             <form class="form__produtos" name="form__produtos" action="menuBD.php">
                 <div class="fields__container">

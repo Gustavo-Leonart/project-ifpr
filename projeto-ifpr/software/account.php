@@ -26,13 +26,13 @@
     </style>
 </head>
 <body>
-  <?php
-    if(!isset($_SESSION)) session_start();
-    if($_SESSION['nome'] == null){
-    echo  "<script type=\"text/javascript\">alert('Você não está logado');</script>";
-    header("Location:sair.php");
-    }
-  ?>
+    <?php
+      if(!isset($_SESSION)) session_start();
+      if($_SESSION['nome'] == null){
+      $valida = "Você precisa estar logado";
+      header("Location:sair.php?valida=$valida");
+      }
+    ?>
     <!-- Navigation bar -->
     <section id="navbar"></section>
     <!-- Infos -->

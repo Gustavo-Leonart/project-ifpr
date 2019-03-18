@@ -15,7 +15,7 @@
       $_SESSION['senha']			= $ver[3];
       $valida = true;
     }else{
-      $erro = "Email e/ou senha invalido(s)";
+        $erro = "Email e/ou senha invalido(s)";
     }
   }else{
     $erro = "Email e/ou senha nao preenchidos.";

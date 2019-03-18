@@ -38,7 +38,6 @@
   		$erro = "Campo de id_produto obrigatório";
   	}
 	if($erro == ""){
-
 		$valida = $valida." "."Produto cadastrado com sucesso";
 		header("Location:produtos.php?valida=$valida");
 	}else{
