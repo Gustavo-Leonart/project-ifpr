@@ -49,6 +49,18 @@
                <p class="infos">
                </p>
            </div>
+           <h1 class="infos__title">Ações</h1>
+           <div class="block__infos">
+               <p class="infos">
+                   <ul class="infos__links">
+                       <li><a href="pedido.php">Adicionar um pedido</a></li>
+                       <li><a href="agendamento.php">Ver pedidos agendados</a></li>
+                       <li><a href="menu.php">Adicionar receitas</a></li>
+                       <li><a href="produtos.php">Adicionar novos produtos</a></li>
+                       <li><a href="produtos.php">Adicionar tipo de produto</a></li>
+                   </ul>
+               </p>
+           </div>
        </div>
    </section>
     <!-- Rodapé -->

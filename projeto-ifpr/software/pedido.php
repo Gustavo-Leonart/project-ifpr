@@ -23,7 +23,7 @@
       }
     ?>
     <section id="navbar"></section>
-    <section>
+    <section style="height:100vh;">
         <div class="container pedido">
             <form class="form__produtos" name="form__produtos" action="pedidoBD.php">
                 <div class="fields__container">
@@ -44,22 +44,9 @@
                         ?>
                         <select class = "form-control" name="id_cliente"  required>
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
-                        <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
-                      <?php } ?>
-                    </select>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="cliente" class="fields__title">Usuário que cadastrou</label>
-                        <?php
-                        if (!isset($_SESSION)){ session_start();}
-                        $conexao = new mysqli("localhost", "root", "", "banco");
-                        $busca = mysqli_query($conexao, "select id_usuario, nome from usuario order by nome");
-                        ?>
-                        <select class = "form-control" name="id_usuario"  >
-                        <?php while($ver = mysqli_fetch_row($busca))  { ?>
-                        <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
-                      <?php } ?>
-                    </select>
+                            <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
+                          <?php } ?>
+                        </select>
                     </div>
                     <div class="form-group block__fields">
                         <label name="menu" class="fields__title">Menu</label>
@@ -70,9 +57,9 @@
                         ?>
                         <select class = "form-control" name="id_menu"  required>
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
-                        <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
-                      <?php } ?>
-                    </select>
+                            <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
+                          <?php } ?>
+                        </select>
                     </div>
                     <div class="form-group form-inline">
                         <div class="input-group">
@@ -93,15 +80,6 @@
                             </div>
                             <input class="form-control" name="valor" type="text" maxlength="8">
                         </div>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="status_pedido" class="fields__title">Status do Pedido</label>
-                        <select class="form-control" name="status_pedido">
-                            <option value="0">Aguardando entrega</option>
-                            <option value="1">Pedido entregue</option>
-                            <option value="2">Em andamento</option>
-                            <option value="3">Cancelado</option>
-                        </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>

@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Home - Seja Bem-Vindo!</title>
+    <title>Sobre a empresa</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
@@ -13,14 +13,6 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style>
-        @import "css/navigationbar.css";
-        body{
-            font-family: 'Roboto';
-            font-size: 1.6em;
-            /* margin: 0 auto; */
-        }
-    </style>
 </head>
 <body>
   <?php
@@ -35,14 +27,18 @@
     <!-- Desc -->
     <section style="background-color:#f2f3f5;">
         <div class="container cards__block">
-            <h4 class="title__sobre">Sobre</h4>
+            <h4 class="title__card">Sobre</h4>
             <div class="card">
-                <p>breve descrição sobre a empresa.</p>
+                <p>A empresa NewerBite é voltada ao desenvolvimento de sistemas de informática.</p>
+                <p>Nosso software surgiu com a ideia do Professor Richard Jojima Nagamato(IFPR - Campus Colombo), a qual
+                uma confeitaria necessitaria de um software que ajudasse no gerenciamento desse estabelecimento.</p>
+                <p>Este software foi o primeiro a ser desenvolvido, profissionalmente, pela empresa!</p>
             </div>
-            <h4 class="title__contato">Contato</h4>
+            <h4 class="title__card">Contato</h4>
             <div class="card">
-                <p>0000 000 000</p>
-                <p>(41)99999-9999</p>
+                <p>(41) 98854-7002 / (41) 99999-9999</p>
+                <p>Ou também, por Email:</p>
+                <p>gusta.leonart@gmail.com / theodoronowas@gmail.com</p>
             </div>
         </div>
     </section>
