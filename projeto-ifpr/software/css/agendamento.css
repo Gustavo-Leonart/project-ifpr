@@ -29,35 +29,9 @@ body{
 	background-color: #fff;
 	cursor: default;
 }
-
-/*--------------------------------------------------------header area--------------------------------------------------------*/
-
-/*--------------------------------------------------------search bar area--------------------------------------------------------*/
-.form__search__area{
-	width: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+td a.btn + a.btn{
+	margin-left: 8px;
 }
-.form__search__area input{
-	border: 2px solid #ffffff;
-	font-weight: lighter;
-	text-indent: 16px;
-	padding-right: 16px;
-	width: 100%;
-	height: 40px;
-	background: transparent;
-	color: #fef1ec;
-	border-radius: 8px;
-	cursor: pointer;
-	transition: all ease-in-out .2s;
-}
-
-.form__search__area i{
-	color: #ffffff;
-	cursor: pointer;
-}
-/*--------------------------------------------------------body area--------------------------------------------------------*/
 .container__title{
 	text-align: center;
 	font-size: 1.5em;
@@ -71,9 +45,6 @@ body{
 	margin: 32px;
 	margin-bottom: 64px;
 	/* border: solid .5px #333; */
-}
-tr:hover{
-	cursor: pointer;
 }
 .search__person__container{
 	display: flex;
@@ -93,7 +64,6 @@ tr:hover{
 	transition: all ease-in-out .2s;
 	border-color: #BDBDBD;
 }
-/*--------------------------------------------------------footer area--------------------------------------------------------*/
 @media screen and (min-width: 600px) and (max-width: 959px){
 	.table-responsive{
 		margin: 32px 8px;

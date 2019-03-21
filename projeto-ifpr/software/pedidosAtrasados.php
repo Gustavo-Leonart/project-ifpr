@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Agendametos</title>
+    <title>Pedidos Atrasados</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/agendamento.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
@@ -46,18 +46,15 @@
                 </form>
             </div>
             <!-- Infos -->
-            <h4 class="container__title">Agendamentos</h4>
-            <a class="btn btn-info text-light" href="pedidosAtrasados.php">Ver pedidos atrasados</a>
+            <h4 class="container__title">Pedidos Atrasados</h4>
+            <a class="btn btn-info text-light" href="agendamento.php">Voltar a Agendamentos</a>
             <div class="table-responsive" id="tableAgenda">
                 <table class="table">
                     <thead class="tableHead">
                         <tr>
                             <th>Nome</th>
-                            <th>Contato</th>
-                            <th>Encomenda</th>
                             <th>Data de Entrega</th>
                             <th>Status</th>
-                            <th>Edição</th>
                         </tr>
                     </thead>
                     <tbody name="table" class="tableBody">
@@ -73,35 +70,16 @@
                                 JOIN menu m ON m.id_menu = p.id_menu
                                 ORDER BY data_entrega");
                             while ($exibe = mysqli_fetch_assoc($sql)) {
-                                echo "<tr>
-                                    <td>".$exibe['nome']."</td>
-                                    <td>".$exibe['telefone']."</td>
-                                    <td>".$exibe['nome_receita']."</td>
-                                    <td>".$exibe['data_entrega']."</td>";
-                                    if($exibe['status_pedido'] == 1)
-                                        echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
+                                if ($exibe["data_entrega"] < date("d/m/Y")) {
+                                    echo "<tr>
+                                        <td>".$exibe['nome']."</td>
+                                        <td  style=\"color:#721c24;background-color:#f8d7da;\">".$exibe['data_entrega']."</td>";
+                                        if($exibe['status_pedido'] == 1)
+                                            echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
 
-                                    elseif($exibe['status_pedido'] == 2)
-                                        echo "<td style=\"color:#375743;background-color:#d4edda;\">Pedido Entregue <span class=\"fas fa-check\"></span></td>";
-
-                                    elseif($exibe['status_pedido'] == 3)
-                                        echo "<td style=\"color:#856404;background-color:#fff3cd;\">Em andamento <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
-
-                                    elseif($exibe['status_pedido'] == 4)
-                                        echo "<td style=\"color:#721c24;background-color:#f8d7da;\">Cancelado <span class=\"fas fa-times\"></span></td>";
-
-                                    echo '<td style="background:transparent !important;border:none !important;">
-                                            <a class="btn btn-outline-primary text-primary fas fa-edit" href="editAgen.php?id_pedido='.$exibe["id_pedido"].'"> editar</a>';
-                                            if ($exibe['status_pedido'] == 2 || $exibe['status_pedido'] == 4) {
-                                                echo '<a class="btn btn-outline-danger text-danger fas fa-times-circle" href="delete.php?id_pedido='.$exibe["id_pedido"].'"> Excluir</a>';
-                                            }
-                                    echo '</td>';
-                                echo "</tr>";
-                                // exibe um alerta caso a data_entrega esteja menor que a atual
-                                if ($exibe["data_entrega"] < getdate() && $exibe["status_pedido"] == 1 ||
-                                $exibe["data_entrega"] < getdate() && $exibe["status_pedido"] == 3) {
-                                    echo '<script type="text/javascript">window.alert("Há pedidos atrasados");';
-                                    echo 'javascript:window.onload="agendamento.php"</script>';
+                                        elseif($exibe['status_pedido'] == 3)
+                                            echo "<td style=\"color:#856404;background-color:#fff3cd;\">Em andamento <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
+                                    echo "</tr>";
                                 }
                             }
                          ?>

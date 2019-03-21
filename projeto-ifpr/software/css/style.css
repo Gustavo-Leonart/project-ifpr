@@ -16,6 +16,10 @@ a:hover, a:focus{
 ul, li{
 	list-style: none;
 }
+.infos__links{
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
 .infos__links, .infos__links > li{
 	list-style: inherit !important;
 	color: rgba(0, 0, 0, 0.16);

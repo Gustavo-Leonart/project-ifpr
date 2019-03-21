@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/register.css" />
     <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/footer.css">
     <script type="text/javascript" src="js/formmask.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -56,41 +57,15 @@
         </div>
     </nav>
 
-    <!-- mdoal de login -->
-    <div class="modal fade" id="login__modal">
-       <div class="modal-dialog modal-dialog-centered">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <h4 class="modal-title" style="text-align: center; font-size: 2.2em;">Login</h4>
-               </div>
-               <div class="modal-body">
-                   <form class="form__login__container" action="index.html" method="post">
-                       <div class="form__fields__login">
-                           <label for="login">Email</label>
-                           <div class="form__fields__input">
-                               <input type="text" name="login" placeholder="Insira seu email..." required>
-                           </div>
-                       </div>
-                       <div class="form__fields__login">
-                           <label for="password">Senha</label>
-                           <div class="form__fields__input">
-                               <input type="password" name="password" value="" placeholder="Insira sua senha..." required>
-                           </div>
-                       </div>
-                       <div class="form__buttons__login">
-                           <button type="submit" class="form__button__next"><span> Continuar</span></button>
-                       </div>
-                   </form>
-               </div>
-           </div>
-       </div>
-   </div>
    <!-- Modal de cadastro -->
    <div class="modal fade" id="cadastrar__modal" role="dialog">
          <div class="modal-dialog modal-dialog-centered" role="document">
              <div class="modal-content">
                  <div class="modal-header">
                      <h4 class="modal-title" style="text-align: center; font-size: 2.2em;">Cadastro</h4>
+                     <button class="close" type="button" data-dismiss="modal">
+                         &times;
+                     </button>
                  </div>
                  <div class="modal-body">
                    <form name="formSignUp" action="cadastroBD.php">
@@ -134,9 +109,6 @@
 </body>
 </html>
 <script type="text/javascript">
-    $("#login").click(function(){
-        $("#login__modal").modal();
-    });
     $("#cadastrar").click(function(){
         $("#cadastrar__modal").modal();
     });

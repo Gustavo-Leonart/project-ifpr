@@ -57,7 +57,7 @@
                        <li><a href="agendamento.php">Ver pedidos agendados</a></li>
                        <li><a href="menu.php">Adicionar receitas</a></li>
                        <li><a href="produtos.php">Adicionar novos produtos</a></li>
-                       <li><a href="produtos.php">Adicionar tipo de produto</a></li>
+                       <li><a href="produtos.php">Adicionar tipos de produto</a></li>
                    </ul>
                </p>
            </div>

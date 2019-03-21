@@ -34,3 +34,13 @@
 .input-group-prepend label{
     padding: .375rem .75rem .375em 0;
 }
+
+@media screen and (max-width:599px) {
+    .input-group.data_entrega{
+        display: flex;
+        flex-direction: column;
+    }
+    .input-group.data_entrega .form-control{
+        width: 100%;
+    }
+}

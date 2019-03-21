@@ -66,6 +66,12 @@ function mascaraCNPJ(cnpj){
     }
     return formataCampo(cnpj, '00.000.000/0000-00', event);
 }
+function mascaraData(data){
+    if(maskInteiro(data) == false){
+        event.returnValue = false;
+    }
+    return formataCampo(data, '00/00/0000', event);
+}
 // function mascaraPreco(preco){
 //     if(maskInteiro(preco) == false){
 //         event.returnValue = false;
