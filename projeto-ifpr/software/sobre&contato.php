@@ -36,9 +36,9 @@
             </div>
             <h4 class="title__card">Contato</h4>
             <div class="card">
-                <p>(41) 98854-7002 / (41) 99999-9999</p>
+                <p>(41) 98854-7002 / (41) 99509-9457 / (41) 99222-8938</p>
                 <p>Ou também, por Email:</p>
-                <p>gusta.leonart@gmail.com / theodoronowas@gmail.com</p>
+                <p>gusta.leonart@gmail.com / theodoronowas@gmail.com / cavallilucasmateus@gmail.com</p>
             </div>
         </div>
     </section>

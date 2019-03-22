@@ -51,7 +51,7 @@
                     <li class="menu__item"><a class="dropdown-item" href="menu.php">Receita</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="pedido.php">Pedidos</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="sobre&contato.php">Sobre</a></li>
-                    <li class="menu__item"><a class="dropdown-item" href="sair.php">Sair</a></li>
+                    <li class="menu__item"><a class="dropdown-item" href="sair.php">Sair <span class="fas fa-sign-out-alt"></span></a></li>
                 </ul>
             </div>
         </div>

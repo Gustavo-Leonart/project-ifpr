@@ -47,7 +47,7 @@
             </div>
             <!-- Infos -->
             <h4 class="container__title">Agendamentos</h4>
-            <a class="btn btn-info text-light" href="pedidosAtrasados.php">Ver pedidos atrasados</a>
+            <a class="" href="pedidosAtrasados.php"></a>
             <div class="table-responsive" id="tableAgenda">
                 <table class="table">
                     <thead class="tableHead">
@@ -63,7 +63,7 @@
                     <tbody name="table" class="tableBody">
                         <!-- <tr> -->
                         <?php
-                            include "conexao.php";
+                        include "conexao.php";
                             $sql = mysqli_query($conexao,
                             "SELECT c.id_cliente, c.nome, c.telefone,
                                 p.id_pedido, DATE_FORMAT(p.data_entrega, '%d/%m/%Y') as data_entrega , p.status_pedido,
@@ -72,6 +72,7 @@
                                 JOIN pedido p ON c.id_cliente = p.id_cliente
                                 JOIN menu m ON m.id_menu = p.id_menu
                                 ORDER BY data_entrega");
+
                             while ($exibe = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
                                     <td>".$exibe['nome']."</td>
@@ -98,11 +99,6 @@
                                     echo '</td>';
                                 echo "</tr>";
                                 // exibe um alerta caso a data_entrega esteja menor que a atual
-                                if ($exibe["data_entrega"] < getdate() && $exibe["status_pedido"] == 1 ||
-                                $exibe["data_entrega"] < getdate() && $exibe["status_pedido"] == 3) {
-                                    echo '<script type="text/javascript">window.alert("Há pedidos atrasados");';
-                                    echo 'javascript:window.onload="agendamento.php"</script>';
-                                }
                             }
                          ?>
                     </tbody>
@@ -119,6 +115,9 @@
 </body>
 </html>
 <script type="text/javascript">
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
     $(document).ready(function(){
         $("#myInput").on("keyup",
             function(){
