@@ -34,7 +34,6 @@
 .input-group-prepend label{
     padding: .375rem .75rem .375em 0;
 }
-
 @media screen and (max-width:599px) {
     .input-group.data_entrega{
         display: flex;

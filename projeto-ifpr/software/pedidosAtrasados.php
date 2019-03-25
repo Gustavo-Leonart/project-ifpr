@@ -53,8 +53,11 @@
                     <thead class="tableHead">
                         <tr>
                             <th>Nome</th>
+                            <th>Contato</th>
+                            <th>Encomenda</th>
                             <th>Data de Entrega</th>
                             <th>Status</th>
+                            <th>Edição</th>
                         </tr>
                     </thead>
                     <tbody name="table" class="tableBody">
@@ -72,13 +75,20 @@
                             while ($exibe = mysqli_fetch_assoc($sql)) {
                                 if ($exibe["data_entrega"] < date("d/m/Y")) {
                                     echo "<tr>
-                                        <td>".$exibe['nome']."</td>
+                                    <td>".$exibe['nome']."</td>
+                                    <td>".$exibe['telefone']."</td>
+                                    <td>".$exibe['nome_receita']."</td>
                                         <td  style=\"color:#721c24;background-color:#f8d7da;\">".$exibe['data_entrega']."</td>";
                                         if($exibe['status_pedido'] == 1)
                                             echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
 
                                         elseif($exibe['status_pedido'] == 3)
                                             echo "<td style=\"color:#856404;background-color:#fff3cd;\">Em andamento <span class=\"spinner-grow spinner-grow-sm\"></span></td>";
+
+                                        echo '<td style="background:transparent !important;border:none !important;">
+                                                <a class="btn btn-outline-primary text-primary fas fa-edit" href="editAgen.php?id_pedido='.$exibe["id_pedido"].'"> editar</a>
+                                                <a class="btn btn-outline-danger text-danger fas fa-times-circle" href="delete.php?id_pedido='.$exibe["id_pedido"].'"> Excluir</a>';
+                                        echo '</td>';
                                     echo "</tr>";
                                 }
                             }

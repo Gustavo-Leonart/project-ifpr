@@ -37,7 +37,7 @@
 @media screen and (max-width: 599px){
     .dropdown-submenu:hover > .dropdown-menu{
         left: -50% !important;
-        top: 35% !important;
+        top: 22% !important;
     }
     .emp__logo img{
         width: 100px

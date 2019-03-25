@@ -16,6 +16,7 @@
 </head>
 <body>
   <?php
+    include "conexao.php";
     if(!isset($_SESSION)) session_start();
     if($_SESSION['nome'] == null){
     $valida = "Você precisa estar logado";
@@ -43,7 +44,6 @@
                         <label name="desc" class="fields__title">fornecedor</label>
                         <?php
                         if (!isset($_SESSION)){ session_start();}
-                        $conexao = new mysqli("localhost", "root", "", "banco");
                         $busca = mysqli_query($conexao, "select id_fornecedor, nome from fornecedor order by nome");
                         ?>
                         <select class = "form-control" name="fornecedor"  required>
@@ -56,7 +56,6 @@
                         <label name="desc" class="fields__title">Tipo Produto</label>
                         <?php
                         if (!isset($_SESSION)){ session_start();}
-                        $conexao = new mysqli("localhost", "root", "", "banco");
                         $busca = mysqli_query($conexao, "select id_tipo_produto, des_tipo_produto from tipo_produto order by des_tipo_produto");
                         ?>
                         <select class = "form-control" name="id_tipo_produto"  required>

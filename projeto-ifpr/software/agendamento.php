@@ -12,14 +12,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style>
-        body{
-            font-family: 'Roboto';
-            font-size: 1.6em;
-            /* margin: 0 auto; */
-        }
-    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
     <script type="text/javascript">
         function Att() {
             window.location.reload();
@@ -72,7 +65,6 @@
                                 JOIN pedido p ON c.id_cliente = p.id_cliente
                                 JOIN menu m ON m.id_menu = p.id_menu
                                 ORDER BY data_entrega");
-
                             while ($exibe = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
                                     <td>".$exibe['nome']."</td>
@@ -98,7 +90,21 @@
                                             }
                                     echo '</td>';
                                 echo "</tr>";
-                                // exibe um alerta caso a data_entrega esteja menor que a atual
+                            }
+                            $sql2 = mysqli_query($conexao, "SELECT data_entrega, status_pedido FROM pedido WHERE data_entrega < now();");
+                            $atraso = mysqli_fetch_assoc($sql2);
+                            if($atraso["data_entrega"] && $atraso["status_pedido"] == 1 ||
+                            $atraso["data_entrega"] && $atraso["status_pedido"] == 3){
+                                echo '<div class="alert alert-info fade show" style="width:25% !important;">
+                                    <div class="alert__header">
+                                        <strong class="text-secondary" style="font-size:1.1em;"">Há pedidos atrasados!</strong>
+                                        <button type="button" class="close" data-dismiss="alert">&times;</strong>
+                                    </div>
+                                    <hr>
+                                    <div class="alert__body">
+                                        <a class="text-info" href="pedidosAtrasados.php">Visualizar pedidos</a>
+                                    </div>
+                                </div>';
                             }
                          ?>
                     </tbody>
@@ -115,9 +121,6 @@
 </body>
 </html>
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
-    });
     $(document).ready(function(){
         $("#myInput").on("keyup",
             function(){

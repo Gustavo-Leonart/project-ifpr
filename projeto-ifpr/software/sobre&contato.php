@@ -26,12 +26,12 @@
     <section id="navbar"></section>
     <!-- Desc -->
     <section style="background-color:#f2f3f5;">
-        <div class="container cards__block">
+        <div class="container cards__block" style="height:auto !important;">
             <h4 class="title__card">Sobre</h4>
             <div class="card">
-                <p>A empresa NewerBite é voltada ao desenvolvimento de sistemas de informática.</p>
-                <p>Nosso software surgiu com a ideia do Professor Richard Jojima Nagamato(IFPR - Campus Colombo), a qual
-                uma confeitaria necessitaria de um software que ajudasse no gerenciamento desse estabelecimento.</p>
+                <p>A empresa NewerBite é voltada ao desenvolvimento de sistemas de gerenciamento.</p>
+                <p>Nosso software surgiu, juntamente, com a ideia do Professor Richard Jojima Nagamato(IFPR - Campus Colombo), a qual
+                uma confeitaria necessitaria de um sistema objetivando a assistência no gerenciamento geral do estabelecimento.</p>
                 <p>Este software foi o primeiro a ser desenvolvido, profissionalmente, pela empresa!</p>
             </div>
             <h4 class="title__card">Contato</h4>
