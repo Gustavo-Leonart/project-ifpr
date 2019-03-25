@@ -43,7 +43,7 @@
                     <h4>Edição de Pedidos</h4>
                     <div class="form-inline">
                         <div class="form-group">
-                            <label for="id_pedido">ID de agendamento</label>
+                            <label for="id_pedido">ID de Agendamento</label>
                             <input class="form-control" type="int" name="id_pedido" value="<?php echo $id;?>" readonly>
                         </div>
                     </div>

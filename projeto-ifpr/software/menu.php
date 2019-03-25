@@ -35,27 +35,33 @@
                             </div>";
                     } ?>
                     <h4>Cadastro de Receitas</h4>
-                    <div class="form-group block__fields">
-                        <label name="nome_receita" class="fields__title">Nome da receita</label>
-                        <input name="nome_receita" class="form-control">
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="des_receita" class="fields__title">Descrição da receita</label>
-                        <textarea name="des_receita" class="form-control" rows="8" cols="80"></textarea>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="des_receita" class="fields__title">Tempo de preparo</label>
+                    <div class="form-group form-inline">
                         <div class="input-group">
-                            <input name="tempo_preparo" class="form-control" name="des_receita" type="text">
                             <div class="input-group-append">
-                              <span class="input-group-text">Horas</span>
+                                <label name="nome_receita" class="fields__title">Nome da Receita</label>
+                            </div>
+                            <input name="nome_receita" class="form-control">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="data_cadastro">Data de Cadastro</label>
+                            </div>
+                            <input name="data_cadastro" class="form-control" type="date" required>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label name="des_receita" class="fields__title">Tempo de Preparo</label>
+                            </div>
+                            <div class="input-group">
+                                <input name="tempo_preparo" class="form-control" name="des_receita" type="text">
                             </div>
                         </div>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="dtaCad" class="fields__title">Data de Cadastro</label>
-                        <input name="data_cadastro" class="form-control" type="date" required>
+                        <label name="des_receita" class="fields__title">Descrição da Receita</label>
+                        <textarea name="des_receita" class="form-control" rows="8" cols="80"></textarea>
                     </div>
+                    
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>

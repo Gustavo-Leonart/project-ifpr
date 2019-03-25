@@ -36,7 +36,7 @@
                             </div>";
                     } ?>
                     <div class="form-group block__fields">
-                        <label name="desc" class="fields__title">Tipo do produto</label>
+                        <label name="desc" class="fields__title">Tipo do Produto</label>
                         <input class="form-control"  name = "des_tipo_produto" type="text" required>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>

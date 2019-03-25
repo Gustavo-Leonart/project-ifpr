@@ -42,7 +42,7 @@
                 </form>
             </div>
             <!-- Infos -->
-            <h4 class="container__title">Produtos cadastrados</h4>
+            <h4 class="container__title">Produtos Cadastrados</h4>
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead class="tableHead">

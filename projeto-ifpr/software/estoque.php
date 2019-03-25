@@ -51,7 +51,7 @@
                             <input class="form-control"  name = "des_produto" type="text" required>
                         </div>
                         <div class="form-group block__fields">
-                            <label name="desc" class="fields__title">fornecedor</label>
+                            <label name="desc" class="fields__title">Fornecedor</label>
                             <?php
                             if (!isset($_SESSION)){ session_start();}
                             $conexao = new mysqli("localhost", "root", "", "banco");
@@ -84,7 +84,7 @@
                         <div class="form-group form-inline">
                             <div class="input-group">
                                 <div class="input-group-append">
-                                    <label name="dtaComp" class="fields__title">Data da compra</label>
+                                    <label name="dtaComp" class="fields__title">Data da Compra</label>
                                 </div>
                                 <input class="form-control" name = "data_compra" type="date" required>
                             </div>
