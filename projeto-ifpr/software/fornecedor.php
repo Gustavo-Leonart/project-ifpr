@@ -7,19 +7,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                crossorigin="anonymous"></script>
     <!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/btns_style.css">
     <link rel="stylesheet" href="css/forms_style.css">
+    <!-- mascaramento do fromulario -->
     <script type="text/javascript" src="js/formmask.js"></script>
+    <!-- verificação de cep e preenchimento -->
+    <script type="text/javascript" src="js/preechimentoCep.js"></script>
 </head>
 <body>
     <?php
       if(!isset($_SESSION)) session_start();
       if($_SESSION['nome'] == null){
-      $valida = "Você precisa estar logado";
-      header("Location:sair.php?valida=$valida");
+          $valida = "Você precisa estar logado";
+          header("Location:sair.php?valida=$valida");
       }
     ?>
     <section id="navbar"></section>
@@ -66,13 +71,45 @@
                             </div>
                             <input class="form-control" name="cnpj" type="text" maxlength="18" onkeypress="mascaraCNPJ(form__produtos.cnpj);">
                         </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="dataNasc">Data de Nascimento</label>
+                            </div>
+                            <input name="dataNasc" class="form-control" type="date">
+                        </div>
                     </div>
                     <div class="form-group form-inline">
                         <div class="input-group">
                             <div class="input-group-append">
                                 <label for="cep">CEP</label>
                             </div>
-                            <input class="form-control" name="cep" type="text" required  maxlength="10" onkeypress="mascaraCEP(form__produtos.cep)">
+                            <input class="form-control" name="cep" type="text" id="cep" required  maxlength="10" onkeypress="mascaraCEP(form__produtos.cep);" >
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="Cidade">Cidade</label>
+                            </div>
+                            <input class="form-control" id="cidade" name="cidade" required  maxlength="30">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="Rua">Rua</label>
+                            </div>
+                            <input class="form-control" name="rua" type="text" id="rua">
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="uf">Estado</label>
+                            </div>
+                            <input class="form-control" name="uf" type="text" id="uf">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="bairro">Bairro</label>
+                            </div>
+                            <input class="form-control" name="bairro" type="text" id="bairro">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
@@ -80,19 +117,13 @@
                             </div>
                             <input name="num_casa" class="form-control" type="text" maxlength="5">
                         </div>
+                    </div>
+                    <div class="form-group form-inline">
                         <div class="input-group">
                             <div class="input-group-append">
                                 <label for="complemento">Complemento</label>
                             </div>
                             <input name="complemento" class="form-control" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group form-inline">
-                        <div class="input-group">
-                            <div class="input-group-append">
-                                <label for="dataNasc">Data de Nascimento</label>
-                            </div>
-                            <input name="dataNasc" class="form-control" type="date">
                         </div>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
@@ -104,6 +135,6 @@
     <?php include "standard-htmls/footer.html"; ?>
 </body>
 </html>
-<script>
+<script type="text/javascript">
     $("#navbar").load("standard-htmls/navigationbar.php");
 </script>

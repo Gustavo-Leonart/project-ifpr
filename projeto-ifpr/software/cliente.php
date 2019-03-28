@@ -12,14 +12,17 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/btns_style.css">
     <link rel="stylesheet" href="css/forms_style.css">
+    <!-- mascaramento do fromulario -->
     <script type="text/javascript" src="js/formmask.js"></script>
+    <!-- verificação de cep e preenchimento -->
+    <script type="text/javascript" src="js/preechimentoCep.js"></script>
 </head>
 <body>
     <?php
       if(!isset($_SESSION)) session_start();
       if($_SESSION['nome'] == null){
-      $valida = "Você precisa estar logado";
-      header("Location:sair.php?valida=$valida");
+          $valida = "Você precisa estar logado";
+          header("Location:sair.php?valida=$valida");
       }
     ?>
     <section id="navbar"></section>
@@ -72,7 +75,33 @@
                             <div class="input-group-append">
                                 <label for="cep">CEP</label>
                             </div>
-                            <input class="form-control" name="cep" type="text" required  maxlength="10" onkeypress="mascaraCEP(form__produtos.cep)">
+                            <input class="form-control" name="cep" type="text" id="cep" required  maxlength="10" onkeypress="mascaraCEP(form__produtos.cep);" >
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="Cidade">Cidade</label>
+                            </div>
+                            <input class="form-control" id="cidade" name="cidade" required  maxlength="30">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="Rua">Rua</label>
+                            </div>
+                            <input class="form-control" name="rua" type="text" id="rua">
+                        </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="uf">Estado</label>
+                            </div>
+                            <input class="form-control" name="uf" type="text" id="uf">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label for="bairro">Bairro</label>
+                            </div>
+                            <input class="form-control" name="bairro" type="text" id="bairro">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
@@ -80,6 +109,8 @@
                             </div>
                             <input name="num_casa" class="form-control" type="text" maxlength="5">
                         </div>
+                    </div>
+                    <div class="form-group form-inline">
                         <div class="input-group">
                             <div class="input-group-append">
                                 <label for="complemento">Complemento</label>
