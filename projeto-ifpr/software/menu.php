@@ -20,8 +20,8 @@
         <?php
           if(!isset($_SESSION)) session_start();
           if($_SESSION['nome'] == null){
-          $valida = "Você precisa estar logado";
-          header("Location:sair.php?valida=$valida");
+              $valida = "Você precisa estar logado";
+              header("Location:sair.php?valida=$valida");
           }
         ?>
         <div class="container pedido">
@@ -61,7 +61,7 @@
                         <label name="des_receita" class="fields__title">Descrição da Receita</label>
                         <textarea name="des_receita" class="form-control" rows="8" cols="80"></textarea>
                     </div>
-                    
+
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>

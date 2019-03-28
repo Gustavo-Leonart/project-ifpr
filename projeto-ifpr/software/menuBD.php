@@ -1,7 +1,6 @@
 <?php
-	$obj_mysqli = new mysqli("localhost", "root", "", "banco");
+	include "conexao.php";	
 	$erro = "";
-	mysqli_set_charset($obj_mysqli, 'utf8');
     $nome_receita  = "";
     $des_receita   = "";
     $tempo_preparo = "";
@@ -13,7 +12,7 @@
         $tempo_preparo = $_GET["tempo_preparo"];
     	$data_cadastro = $_GET["data_cadastro"];
 
-		$sql = mysqli_query($obj_mysqli, "insert into `menu` (nome_receita, des_receita, tempo_preparo, data_cadastro)
+		$sql = mysqli_query($conexao, "insert into `menu` (nome_receita, des_receita, tempo_preparo, data_cadastro)
 		VALUES ('$nome_receita', '$des_receita', '$tempo_preparo', '$data_cadastro');");
 	}else if(empty($_GET["nome_receita"])){
 		$erro = "Campo obrigatório";

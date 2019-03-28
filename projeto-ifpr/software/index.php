@@ -21,12 +21,21 @@
 <body style="background-color:#ECEFF1 !important;">
     <!-- Navigation bar -->
     <?php
+    include "conexao.php";
         if(!isset($_SESSION)) session_start();
         if(isset($_SESSION['nome'])){
             echo "<section id=\"navbar\"></section>";
       }
         else {
       echo "<section id=\"navbar1\"></section>";
+
+    }
+    if(isset($_GET['valida'])){
+     $valida = $_GET['valida'];
+     echo $valida = '<div class="container-fluid alert alert-danger" style="max-width:60%;font-size:1.1em;">
+           Email ou senha <strong>Inválidos!</strong>
+           <button type="button" class="close" data-dismiss="alert">&times;</strong>
+         </div>';
     }
     ?>
 

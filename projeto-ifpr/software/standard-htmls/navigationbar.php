@@ -2,8 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
     <link rel="stylesheet" href="css/navigationbar.css" />
-    <link rel="stylesheet" href="css/register.css" />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/modals.css" />
     <link rel="stylesheet" href="css/footer.css">
     <script type="text/javascript" src="js/formmask.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -23,7 +22,7 @@
                 </a>
             </div>
             <div class="dropdown">
-                <span style="margin-right:16px;color:rgba(0,0,0,.54);">
+                <span style="margin-right:16px;color:rgba(0,0,0,.54);text-transform:capitalize;">
                     <?php
                       if(!isset($_SESSION)) session_start();
                       echo 'Olá, '.$_SESSION['nome'];
@@ -69,22 +68,17 @@
                  </div>
                  <div class="modal-body">
                    <form name="formSignUp" action="cadastroBD.php">
-                       <div class="form__sign__container">
-                           <div class="form__fields__container">
-                               <div class="form__fields">
+                       <div class="form__modal__container">
+                           <div class="modal__fields">
+                               <div class="fields__block">
                                    <label for="email">E-mail</label>
                                    <input type="email" name="email"  placeholder="exemplo@hotmail.com..." required>
                                </div>
-                               <div class="form__fields">
+                               <div class="fields__block">
                                    <label for="nome">Nome <span style="font-size:.8em;color:#E53935;">*</span></label>
                                    <input type="text" name= "nome"  placeholder="Insira o nome completo..." required>
                                </div>
-                               <!-- <div class="form__fields">
-                                   <label for="celular">Celular <span style="font-size:.8em;color:#E53935;">*</span></label>
-                                   <input type="text" name="cel" placeholder="Ex:(41) 99999-9999" maxlength="15" onkeypress="mascaraCelular(formSignUp.cel)" onblur="validaCelular(formSignUp.cel)" required>
-                                   <p class="alert" style="display:none;">Celular Inválido</p>
-                               </div> -->
-                               <div class="form__fields">
+                               <div class="fields__block">
                                    <label for="senha">Senha <small style="font-weight:normal;font-size:.75em;">( 6 à 32 caractéres )</small> <span style="font-size:.8em;color:#E53935;">*</span></label>
                                    <input type="password" min="6" maxlength="32" name = "senha" placeholder="Digite uma senha..." required>
                                </div>
@@ -92,15 +86,13 @@
                        </div>
                        <!-- buttons area -->
                        <div class="buttons__area">
-                           <div class="form__buttons">
-                               <button type="reset" class="form__button__reset"><span> Limpar</span></button>
+                           <div class="modal__button">
+                               <button type="reset" class="button__clean"><span> Limpar</span></button>
                            </div>
-                           <div class="form__buttons">
-                               <button type="submit" class="form__button__next" ><span> Concluir</span></button>
+                           <div class="modal__button">
+                               <button type="submit" class="button__submit" ><span> Concluir</span></button>
                            </div>
                        </div>
-                       <!-- Message -->
-
                    </form>
                </div>
            </div>

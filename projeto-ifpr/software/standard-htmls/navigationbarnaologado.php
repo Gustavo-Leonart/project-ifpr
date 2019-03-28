@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <link rel="stylesheet" href="css/login.css" />
-    <link rel="stylesheet" href="css/register.css" />
     <link rel="stylesheet" href="css/navigationbar.css" />
+    <link rel="stylesheet" href="css/modals.css" />
     <link rel="stylesheet" href="css/footer.css">
     <script type="text/javascript" src="js/formmask.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- Font awesome -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" > -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -41,21 +40,21 @@
                    </button>
                </div>
                <div class="modal-body">
-                   <form class="form__login__container" action="loginBD.php" >
-                       <div class="form__fields__login">
-                           <label for="login">Email</label>
-                           <div class="form__fields__input">
+                   <form class="form__modal__container" action="loginBD.php" >
+                       <div class="modal__fields">
+                           <div class="fields__block">
+                               <label for="login">Email</label>
                                <input type="text" name="email" placeholder="Insira seu email..." required>
                            </div>
-                       </div>
-                       <div class="form__fields__login">
-                           <label for="password">Senha</label>
-                           <div class="form__fields__input">
+                           <div class="fields__block">
+                               <label for="password">Senha</label>
                                <input type="password" name="senha" value="" placeholder="Insira sua senha..." required>
                            </div>
-                       </div>
-                       <div class="form__buttons__login">
-                           <button type="submit" class="form__button__next"><span> Continuar</span></button>
+                           <div class="buttons__area">
+                               <div class="modal__button">
+                                   <button type="submit" class="button__submit" ><span> Continuar</span></button>
+                               </div>
+                           </div>
                        </div>
                    </form>
                </div>
