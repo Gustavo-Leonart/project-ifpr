@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Mar-2019 às 20:45
--- Versão do servidor: 10.1.37-MariaDB
--- versão do PHP: 7.2.12
+-- Generation Time: 24-Maio-2019 às 14:48
+-- Versão do servidor: 10.1.38-MariaDB
+-- versão do PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -5560,6 +5560,10 @@ CREATE TABLE `cliente` (
   `dataNasc` date NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `cep` char(11) DEFAULT NULL,
+  `cidade` char(50) NOT NULL,
+  `rua` char(75) NOT NULL,
+  `uf` char(50) NOT NULL,
+  `bairro` char(50) NOT NULL,
   `num_casa` int(10) NOT NULL,
   `complemento` varchar(20) DEFAULT NULL,
   `telefone` char(15) NOT NULL
@@ -5569,10 +5573,10 @@ CREATE TABLE `cliente` (
 -- Extraindo dados da tabela `cliente`
 --
 
-INSERT INTO `cliente` (`id_cliente`, `nome`, `rg`, `cpf`, `dataNasc`, `email`, `cep`, `num_casa`, `complemento`, `telefone`) VALUES
-(7, 'Marccus Zavadzki', '12.345.678-9', '099.857.219-50', '2019-03-15', 'asghd@yegegguy', '12.121-212', 3333, 'nha', '(41) 98765-4321'),
-(8, 'Hum', '22.222.222-2', '222.222.222-22', '2019-03-15', '1@b.c', '22.222-222', 22222, 'sla', '(22) 22222-2222'),
-(9, 'Victor Ozil', '11.111.111-1', '211.111.111-11', '2000-04-25', 'ozil@yahoo.com', '82.810-410', 191, '', '(11) 11111-1111');
+INSERT INTO `cliente` (`id_cliente`, `nome`, `rg`, `cpf`, `dataNasc`, `email`, `cep`, `cidade`, `rua`, `uf`, `bairro`, `num_casa`, `complemento`, `telefone`) VALUES
+(8, 'Hum', '22.222.222-2', '222.222.222-22', '2019-03-15', '1@b.c', '22.222-222', '', '', '', '', 22222, 'sla', '(22) 22222-2222'),
+(9, 'Victor Ozil', '11.111.111-1', '211.111.111-11', '2000-04-25', 'ozil@yahoo.com', '82.810-410', '', '', '', '', 191, '', '(11) 11111-1111'),
+(10, 'Lucas Cavalli', '99.999.999-9', '000.000.000-00', '2019-05-24', 'a@b.c', '82.810-410', 'Curitiba', 'Rua Clotilde Gaspar Riquelme', 'PR', 'Capão da Imbuia', 137, 'sobrado 1111', '12222222222');
 
 -- --------------------------------------------------------
 
@@ -5635,6 +5639,10 @@ CREATE TABLE `fornecedor` (
   `dataNasc` date NOT NULL,
   `email` varchar(50) DEFAULT NULL,
   `cep` char(10) NOT NULL,
+  `cidade` char(50) NOT NULL,
+  `rua` char(75) NOT NULL,
+  `uf` char(50) NOT NULL,
+  `bairro` char(50) NOT NULL,
   `num_casa` int(10) NOT NULL,
   `complemento` varchar(20) DEFAULT NULL,
   `telefone` char(15) NOT NULL
@@ -5644,9 +5652,8 @@ CREATE TABLE `fornecedor` (
 -- Extraindo dados da tabela `fornecedor`
 --
 
-INSERT INTO `fornecedor` (`id_fornecedor`, `nome`, `rg`, `cnpj`, `cpf`, `dataNasc`, `email`, `cep`, `num_casa`, `complemento`, `telefone`) VALUES
-(8, 'Marccus Zavadzki', '12.345.678-0', '11.111.111/1111-11', '121.212.125-50', '2019-03-15', 'marc@gmail.com', '12.345-678', 12233, '?', '(41) 99999-5555'),
-(9, 'Victor Amorim distribuidora', '91.291.387-0', '', '123.123.123-12', '2019-03-15', 'ozil@yahoo.com', '12.121-121', 12312, 'Não tenho certeza', '(41) 99999-9999');
+INSERT INTO `fornecedor` (`id_fornecedor`, `nome`, `rg`, `cnpj`, `cpf`, `dataNasc`, `email`, `cep`, `cidade`, `rua`, `uf`, `bairro`, `num_casa`, `complemento`, `telefone`) VALUES
+(10, 'Lucas Cavalli', '99.999.999-9', '99.999.999/9999-99', '000.000.000-00', '2000-12-01', 'a@b.c', '82.810-410', 'Curitiba', 'Rua Clotilde Gaspar Riquelme', 'PR', 'Capão da Imbuia', 191, '', '(12) 22222-2222');
 
 -- --------------------------------------------------------
 
@@ -5730,15 +5737,10 @@ CREATE TABLE `produto` (
   `preco` double NOT NULL,
   `data_validade` date DEFAULT NULL,
   `data_compra` date DEFAULT NULL,
-  `quantidade` int(11) DEFAULT NULL
+  `quantidade` double DEFAULT NULL,
+  `prod_ml` int(6) DEFAULT NULL,
+  `prod_g` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `produto`
---
-
-INSERT INTO `produto` (`id_produto`, `id_tipo_produto`, `id_fornecedor`, `des_produto`, `marca`, `preco`, `data_validade`, `data_compra`, `quantidade`) VALUES
-(8, 10, 8, 'sdysisdghisdhisd', 'asbuhasd', 12334, '2019-04-04', '2019-03-15', 1);
 
 -- --------------------------------------------------------
 
@@ -5809,7 +5811,8 @@ INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`) VALUES
 (9, '1231234', 'tdasdbs@asdas.com', 'af43f4ef20cf9f221c9b89066255de27'),
 (10, '?', 'a@b.c', '202cb962ac59075b964b07152d234b70'),
 (11, 'Um nome', 'c@b.a', '202cb962ac59075b964b07152d234b70'),
-(12, 'Victor Ozil', 'ozil@yahoo.com', '827ccb0eea8a706c4c34a16891f84e7b');
+(12, 'Victor Ozil', 'ozil@yahoo.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(13, 'Lucas Cavalli', 'lucas@gmail.com', 'e10adc3949ba59abbe56e057f20f883e');
 
 --
 -- Indexes for dumped tables
@@ -5897,13 +5900,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_cliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `id_fornecedor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_fornecedor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -5939,7 +5942,7 @@ ALTER TABLE `tipo_produto`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
