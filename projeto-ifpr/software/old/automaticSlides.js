@@ -1,14 +1,7 @@
 //window.alert("hello!");
 var slideIndex = 0;
-showSlides(slideIndex);
+showSlides();
 
-$(document).ready(function(n){ //mostra apenas uma imagem do "slide" na tela por vez
-    showSlides(slideIndex += n);
-});
-
-function forwardSlides(n){
-  showSlides(slideIndex += n);
-}
 function showSlides(n){
   var s = document.getElementsByClassName("plusSlides"); //pega as classes com o nome "plusSlides"
   var i;
@@ -22,5 +15,5 @@ function showSlides(n){
   		slideIndex = 1;
   	}
   	s[slideIndex-1].style.display = "block";
-  	setTimeout(showSlides, 8500); //tempo de mudança dos slides
+  	setTimeout(showSlides, 500); //tempo de mudança dos slides
 }

@@ -7,9 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-                crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <!-- Roboto Font  -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/btns_style.css">
@@ -63,13 +61,13 @@
                             <div class="input-group-append">
                                 <label for="cpf">CPF</label>
                             </div>
-                            <input class="form-control " name="cpf" type="text" required  maxlength="14" onkeypress="mascaraCPF(form__produtos.cpf)">
+                            <input class="form-control " name="cpf" type="text" required  maxlength="11" onchange="VerificaCPF(this.value)" onblur="mascaraCPF(form__produtos.cpf);">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
                                 <label for="cnpj">CNPJ</label>
                             </div>
-                            <input class="form-control" name="cnpj" type="text" maxlength="18" onkeypress="mascaraCNPJ(form__produtos.cnpj);">
+                            <input class="form-control" name="cnpj" type="text" maxlength="14" onchange="validarCNPJ()" onblur="mascaraCNPJ(form__produtos.cnpj);">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">

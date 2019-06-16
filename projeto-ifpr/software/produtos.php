@@ -89,6 +89,26 @@
                             <input class="form-control" name= "quantidade" type="number" required>
                         </div>
                     </div>
+                    <div class="form-group form-inline">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label name="preco" class="fields__title">Preço do produto</label>
+                            </div>
+                            <input class="form-control" name = "preco" type="text">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label name="prod_ml" class="fields__title">Peso liquído</label>
+                            </div>
+                            <input class="form-control" name = "prod_ml" type="number">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <label name="prod_g" class="fields__title">Peso em gramas</label>
+                              </div>
+                            <input class="form-control" name = "prod_g" type="number">
+                        </div>
+                    </div>
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>

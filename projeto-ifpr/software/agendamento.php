@@ -95,7 +95,7 @@
                             $atraso = mysqli_fetch_assoc($sql2);
                             if($atraso["data_entrega"] && $atraso["status_pedido"] == 1 ||
                             $atraso["data_entrega"] && $atraso["status_pedido"] == 3){
-                                echo '<div class="alert alert-info fade show" style="width:25% !important;">
+                                echo '<div class="alert alert-info fade show" style="max-width:45% !important;">
                                     <div class="alert__header">
                                         <strong class="text-secondary" style="font-size:1.1em;"">Há pedidos atrasados!</strong>
                                         <button type="button" class="close" data-dismiss="alert">&times;</strong>

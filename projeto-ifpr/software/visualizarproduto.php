@@ -52,6 +52,7 @@
                             <th>Preço</th>
                             <th>Validade</th>
                             <th>Quantidade</th>
+                            <th>Edição</th>
                         </tr>
                     </thead>
                     <tbody class="tableBody">
@@ -65,6 +66,11 @@
                           echo "<td>$ver[2]</td>";
                           echo "<td>$ver[3]</td>";
                           echo "<td>$ver[4]</td>";
+                          echo '<td style="background:transparent !important;border:none !important;">
+                                <a class="btn btn-outline-primary text-primary fas fa-edit" href="editProduto.php?id_produto='.$exibe["id_produto"].'"> editar</a>';
+                          echo '<a class="btn btn-outline-danger text-danger fas fa-times-circle" href="delete.php?id_produto='.$exibe["id_produto"].'"> Excluir</a>';
+
+                          echo '</td>';
                           echo "<tr>";
                       }
                          ?>

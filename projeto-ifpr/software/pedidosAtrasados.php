@@ -73,7 +73,7 @@
                                 JOIN menu m ON m.id_menu = p.id_menu
                                 ORDER BY data_entrega");
                             while ($exibe = mysqli_fetch_assoc($sql)) {
-                                if ($exibe["data_entrega"] < date("d/m/Y")) {
+                                if ($exibe["data_entrega"] < date("d/m/Y") && $exibe["status_pedido"] == 1 || $exibe["status_pedido"] == 3) {
                                     echo "<tr>
                                     <td>".$exibe['nome']."</td>
                                     <td>".$exibe['telefone']."</td>

@@ -61,7 +61,7 @@
                             <div class="input-group-append">
                                 <label for="cpf">CPF</label>
                             </div>
-                            <input class="form-control " name="cpf" type="text" required  maxlength="14" onkeypress="mascaraCPF(form__produtos.cpf)">
+                            <input class="form-control " name="cpf" type="text" required  maxlength="11" onchange="VerificaCPF(this.value)" onblur="mascaraCPF(form__produtos.cpf);" >
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">

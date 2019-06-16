@@ -46,16 +46,16 @@
             <h1 class="infos__title">Informações</h1>
             <div class="block__infos">
                 <p class="infos">
-
-               </p>
-           </div>
-           <div class="block__infos">
-               <p class="infos">
+                  Software criado para facilitar um gerenciamento de uma confeitaria!
                </p>
            </div>
            <h1 class="infos__title">Detalhes</h1>
            <div class="block__infos">
                <p class="infos">
+                 Para saber mais sobre nós, acesse o link abaixo:
+                 <ul class="infos__links">
+                     <li><a href="sobre&contato.php">Sobre Nós!</a></li>
+                 </ul>
                </p>
            </div>
            <h1 class="infos__title">Ações</h1>
@@ -66,7 +66,7 @@
                        <li><a href="agendamento.php">Ver pedidos agendados</a></li>
                        <li><a href="menu.php">Adicionar receitas</a></li>
                        <li><a href="produtos.php">Adicionar novos produtos</a></li>
-                       <li><a href="produtos.php">Adicionar tipos de produto</a></li>
+                       <li><a href="tipo_produto.php">Adicionar tipos de produto</a></li>
                    </ul>
                </p>
            </div>
