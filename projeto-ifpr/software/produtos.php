@@ -45,7 +45,7 @@
                         <label name="id_fornecedor" class="fields__title">Fornecedor</label>
                         <?php
                         if (!isset($_SESSION)){ session_start();}
-                        $conexao = new mysqli("localhost", "root", "", "banco");
+                        include "conexao.php";
                         $busca = mysqli_query($conexao, "select id_fornecedor, nome from fornecedor order by nome");
                         ?>
                         <select class = "form-control" name="id_fornecedor"  required>
@@ -58,7 +58,7 @@
                         <label name="id_tipo_produto" class="fields__title">Tipo Produto</label>
                         <?php
                         if (!isset($_SESSION)){ session_start();}
-                        $conexao = new mysqli("localhost", "root", "", "banco");
+                        include "conexao.php";
                         $busca = mysqli_query($conexao, "select id_tipo_produto, des_tipo_produto from tipo_produto order by des_tipo_produto");
                         ?>
                         <select class = "form-control" name="id_tipo_produto"  required>

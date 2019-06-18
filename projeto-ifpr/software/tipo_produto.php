@@ -27,7 +27,7 @@
         <div class="container produtos" style="height:100vh;">
             <form class="form__produtos" name="form__produtos" action="tipo_produtoBD.php">
                 <div class="fields__container">
-                    <h4>Cadastro de Produtos</h4>
+                    <h4>Cadastro de Tipos de Produtos</h4>
                     <?php if(isset($_GET['valida'])){
                       $valida = $_GET['valida'];
                       echo "<div class=\"alert alert-success\">

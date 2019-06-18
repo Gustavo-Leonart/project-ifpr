@@ -70,7 +70,7 @@
                           echo "<td>$ver[5]</td>";
                           echo '<td style="background:transparent !important;border:none !important;">
                                 <a class="btn btn-outline-primary text-primary fas fa-edit" href="editProduto.php?id_produto='.$ver[0].'"> editar</a>';
-                          echo '<a class="btn btn-outline-danger text-danger fas fa-times-circle" href="delete.php?id_produto='.$ver[0].'"> Excluir</a>';
+                          echo '<a class="btn btn-outline-danger text-danger fas fa-times-circle" href="deleteProduto.php?id_produto='.$ver[0].'"> Excluir</a>';
 
                           echo '</td>';
                           echo "<tr>";

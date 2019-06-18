@@ -60,14 +60,6 @@
                         </div>
                     </div>
                     <div class="form-group block__fields">
-                        <?php
-                         include "conexao.php";
-                          $id_produto = $_GET["id_produto"];
-                          $query = mysqli_query($conexao, "SELECT *
-                            FROM produto WHERE id_produto = $id_produto");
-                          $value = mysqli_fetch_array($query);
-
-                        ?>
                         <label name="des_receita" class="fields__title">Descrição da Receita</label>
                         <textarea id="des_produto" name="des_receita" class="form-control" rows="8" cols="80" value="<?php echo $value['des_produto']; ?>"></textarea>
                     </div>
