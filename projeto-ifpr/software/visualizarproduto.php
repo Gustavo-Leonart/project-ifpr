@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Agendametos</title>
+    <title>Produtos Cadastrados</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/agendamento.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
@@ -44,7 +44,7 @@
             <!-- Infos -->
             <h4 class="container__title">Produtos Cadastrados</h4>
             <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table table">
                     <thead class="tableHead">
                         <tr>
                             <th>Descrição</th>
@@ -55,20 +55,22 @@
                             <th>Edição</th>
                         </tr>
                     </thead>
-                    <tbody class="tableBody">
+                    <tbody name="table" class="tableBody">
                       <?php
-                      $entra = new mysqli("localhost", "root", "", "banco");
-                      $busca = mysqli_query($entra, "select des_produto,marca, preco,date_format(data_validade, '%d/%m/%y'),quantidade from produto order by des_produto");
+                      include "conexao.php";
+                      $busca = mysqli_query($conexao, "SELECT id_produto, des_produto, marca,
+                        preco, date_format(data_validade, '%d/%m/%Y') as data_validade, quantidade
+                      FROM produto ORDER BY quantidade");
                       while($ver = mysqli_fetch_row($busca)){
                           echo "<tr>";
-                          echo "<td>$ver[0]</td>";
                           echo "<td>$ver[1]</td>";
                           echo "<td>$ver[2]</td>";
                           echo "<td>$ver[3]</td>";
                           echo "<td>$ver[4]</td>";
+                          echo "<td>$ver[5]</td>";
                           echo '<td style="background:transparent !important;border:none !important;">
-                                <a class="btn btn-outline-primary text-primary fas fa-edit" href="editProduto.php?id_produto='.$exibe["id_produto"].'"> editar</a>';
-                          echo '<a class="btn btn-outline-danger text-danger fas fa-times-circle" href="delete.php?id_produto='.$exibe["id_produto"].'"> Excluir</a>';
+                                <a class="btn btn-outline-primary text-primary fas fa-edit" href="editProduto.php?id_produto='.$ver[0].'"> editar</a>';
+                          echo '<a class="btn btn-outline-danger text-danger fas fa-times-circle" href="delete.php?id_produto='.$ver[0].'"> Excluir</a>';
 
                           echo '</td>';
                           echo "<tr>";

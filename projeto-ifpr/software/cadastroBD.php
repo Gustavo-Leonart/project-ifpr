@@ -23,7 +23,7 @@
 		$erro = "Campo senha obrigatório";
 	}
 	if($erro == ""){
-		$valida = "Usuario cadastrado com sucesso";
+		echo $valida = '<script type="text/javascript">alert("Usuario cadastrado com sucesso!");</script>';
 		header("Location:index.php?valida=$valida");
 	}else{
 		header("Location:index.php?valida=$erro");

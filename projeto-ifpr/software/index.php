@@ -30,13 +30,21 @@
       echo "<section id=\"navbar1\"></section>";
 
     }
+
     if(isset($_GET['valida'])){
+        $valida = $_GET['valida'];
+        echo $valida = '<script type="text/javascript">
+                          alert("Usuario cadastrdo com sucesso");
+                        </script>';
+    }
+
+    /*if(isset($_GET['valida'])){
         $valida = $_GET['valida'];
         echo $valida = '<div class="container-fluid alert alert-danger" style="max-width:60%;font-size:1.1em;">
             Email ou senha <strong>Inválidos!</strong>
             <button type="button" class="close" data-dismiss="alert">&times;</strong>
         </div>';
-    }
+    }*/
     ?>
 
     <!-- Main content -->

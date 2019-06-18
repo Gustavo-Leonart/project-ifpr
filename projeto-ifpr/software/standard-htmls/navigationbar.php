@@ -46,7 +46,8 @@
                     <li class="menu__item"><a class="dropdown-item" href="agendamento.php">Agendamentos</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="fornecedor.php">Fornecedores</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="cliente.php">Clientes</a></li>
-                    <li class="menu__item"><a class="dropdown-item" href="menu.php">Receita</a></li>
+                    <li class="menu__item"><a class="dropdown-item" href="menu.php">Adiconar Receitas</a></li>
+                    <li class="menu__item"><a class="dropdown-item" href="visualizarReceitas.php">Consultar Receitas</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="pedido.php">Pedidos</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="sobre&contato.php">Sobre</a></li>
                     <li class="menu__item"><a class="dropdown-item" href="sair.php">Sair <span class="fas fa-sign-out-alt"></span></a></li>
@@ -78,8 +79,8 @@
                                    <input type="text" name= "nome"  placeholder="Insira o nome completo..." required>
                                </div>
                                <div class="fields__block">
-                                   <label for="senha">Senha <small style="font-weight:normal;font-size:.75em;">( 6 à 32 caractéres )</small> <span style="font-size:.8em;color:#E53935;">*</span></label>
-                                   <input type="password" min="6" maxlength="32" name = "senha" placeholder="Digite uma senha..." required>
+                                   <label for="senha">Senha <small style="font-weight:normal;font-size:.75em;">( 4 à 16 caractéres )</small> <span style="font-size:.8em;color:#E53935;">*</span></label>
+                                   <input type="password" pattern=".{4,16}" name = "senha" placeholder="Digite uma senha..." required>
                                </div>
                            </div>
                        </div>

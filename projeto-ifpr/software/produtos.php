@@ -35,27 +35,30 @@
                                 Produto cadastrado com <strong>sucesso</strong>!
                                 <button class=\"close\" type=\"button\" data-dismiss=\"alert\">&times;</button>
                             </div>";
+
                     } ?>
                     <div class="form-group block__fields">
-                        <label name="desc" class="fields__title">Descrição</label>
+                        <label name="des_produto" class="fields__title">Descrição</label>
                         <input class="form-control"  name = "des_produto" type="text" required>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="desc" class="fields__title">Fornecedor</label>
+                        <label name="id_fornecedor" class="fields__title">Fornecedor</label>
                         <?php
                         if (!isset($_SESSION)){ session_start();}
+                        $conexao = new mysqli("localhost", "root", "", "banco");
                         $busca = mysqli_query($conexao, "select id_fornecedor, nome from fornecedor order by nome");
                         ?>
-                        <select class = "form-control" name="fornecedor"  required>
+                        <select class = "form-control" name="id_fornecedor"  required>
                         <?php while($ver = mysqli_fetch_row($busca))  { ?>
                         <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
                       <?php } ?>
                     </select>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="desc" class="fields__title">Tipo Produto</label>
+                        <label name="id_tipo_produto" class="fields__title">Tipo Produto</label>
                         <?php
                         if (!isset($_SESSION)){ session_start();}
+                        $conexao = new mysqli("localhost", "root", "", "banco");
                         $busca = mysqli_query($conexao, "select id_tipo_produto, des_tipo_produto from tipo_produto order by des_tipo_produto");
                         ?>
                         <select class = "form-control" name="id_tipo_produto"  required>
@@ -72,19 +75,19 @@
                     <div class="form-group form-inline">
                         <div class="input-group">
                             <div class="input-group-append">
-                                <label name="dtaComp" class="fields__title">Data da Compra</label>
+                                <label name="data_compra" class="fields__title">Data da Compra</label>
                             </div>
                             <input class="form-control" name = "data_compra" type="date" required>
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
-                                <label name="dtaVali" class="fields__title">Data de Validade</label>
+                                <label name="data_validade" class="fields__title">Data de Validade</label>
                             </div>
                             <input class="form-control" name = "data_validade" type="date" required>
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
-                                <label name="qtde" class="fields__title">Quantidade</label>
+                                <label name="quantidade" class="fields__title">Quantidade</label>
                             </div>
                             <input class="form-control" name= "quantidade" type="number" required>
                         </div>
@@ -94,7 +97,7 @@
                             <div class="input-group-append">
                                 <label name="preco" class="fields__title">Preço do produto</label>
                             </div>
-                            <input class="form-control" name = "preco" type="text">
+                            <input class="form-control" name = "preco" type="number">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
@@ -109,6 +112,7 @@
                             <input class="form-control" name = "prod_g" type="number">
                         </div>
                     </div>
+
                     <button class="btn__submit" type="submit" name="button">Enviar</button>
                     <button class="btn__clean" type="reset" name="button">Limpar</button>
                 </div>

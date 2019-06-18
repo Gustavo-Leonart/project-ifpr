@@ -69,7 +69,7 @@
                                 echo "<tr>
                                     <td>".$exibe['nome']."</td>
                                     <td>".$exibe['telefone']."</td>
-                                    <td>".$exibe['nome_receita']."</td>
+                                    <td> <a href=\"receita.php?id_menu='.exibe[\"id_menu\"].'\">".$exibe['nome_receita']."</td>
                                     <td>".$exibe['data_entrega']."</td>";
                                     if($exibe['status_pedido'] == 1)
                                         echo "<td style=\"color:#005fc1;background-color:#cce5ff;\">Aguardando Entrega <span class=\"spinner-grow spinner-grow-sm\"></span></td>";

@@ -23,7 +23,7 @@
 	  $id_fornecedor    = $_GET['id_fornecedor'];
 	  $id_tipo_produto = $_GET['id_tipo_produto'];
     $prod_ml       = $_GET['prod_ml'];
-		$prod_g        = $GET['prod_g'];
+		$prod_g        = $_GET['prod_g'];
 
 		$sql = mysqli_query($conexao , "insert into `produto` (id_tipo_produto, id_fornecedor, des_produto, marca, preco, data_validade, data_compra, quantidade, prod_ml, prod_g)
 		VALUES ($id_tipo_produto, $id_fornecedor, '$des_produto', '$marca', '$preco', '$data_validade', '$data_compra' , $quantidade, $prod_ml, $prod_g);");
@@ -45,7 +45,7 @@
   		$erro = "Campo de id_produto obrigatório";
   	}
 	if($erro == ""){
-		$valida = $valida." "."Produto cadastrado com sucesso";
+		$valida = "Produto cadastrado com sucesso";
 		header("Location:produtos.php?valida=$valida");
 	}else{
 		header("Location:produtos.php?valida=$valida");

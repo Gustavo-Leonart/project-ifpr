@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/forms_style.css">
     <link rel="stylesheet" href="css/btns_style.css">
     <script type="text/javascript" src="js/formmask.js"></script>
+    <script type="text/javascript" src="js/preenchimentoProduto.js"></script>
+
 </head>
 <body>
     <section id="navbar"></section>
@@ -58,8 +60,16 @@
                         </div>
                     </div>
                     <div class="form-group block__fields">
+                        <?php
+                         include "conexao.php";
+                          $id_produto = $_GET["id_produto"];
+                          $query = mysqli_query($conexao, "SELECT *
+                            FROM produto WHERE id_produto = $id_produto");
+                          $value = mysqli_fetch_array($query);
+
+                        ?>
                         <label name="des_receita" class="fields__title">Descrição da Receita</label>
-                        <textarea name="des_receita" class="form-control" rows="8" cols="80"></textarea>
+                        <textarea id="des_produto" name="des_receita" class="form-control" rows="8" cols="80" value="<?php echo $value['des_produto']; ?>"></textarea>
                     </div>
 
                     <button class="btn__submit" type="submit" name="button">Enviar</button>

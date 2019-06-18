@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
     <!-- Bootstrap  -->
-    <title>Edição de agendamentos</title>
+    <title>Edição de produtos</title>
     <link rel="icon" type="image/jpg" href="images/home.jpg">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
@@ -26,44 +26,40 @@
         <?php
             include "conexao.php";
             $id = $_GET["id_produto"];
-            $sql = mysqli_query($conexao, "SELECT m.id_menu, m.nome_receita,
-                DATE_FORMAT(p.data_entrega, '%d/%m/%Y'), p.status_pedido, sp.desc_status,
-                p.valor
-            FROM pedido p
-            JOIN menu m ON p.id_menu = m.id_menu
-            JOIN status_pedido sp ON p.status_pedido = sp.id_status_pedido
+            $sql = mysqli_query($conexao, "SELECT tp.id_tipo_produto, tp.des_tipo_produto,
+                f.id_fornecedor, f.nome, pd.marca, pd.preco, DATE_FORMAT(pd.data_validade, '%d/%m/%Y'),
+                DATE_FORMAT(pd.data_compra, '%d/%m/%Y'), pd.quantidade, pd.prod_ml, pd.prod_g
+                FROM produto pd
+                JOIN tipo_produto tp ON pd.id_tipo_produto = tp.id_tipo_produto
+                JOIN fornecedor f ON pd.id_fornecedor = f.id_fornecedor
             WHERE id_pedido = $id");
 
             while ($edit = mysqli_fetch_row($sql)) {
         ?>
         <div class="container pedido">
-            <a class="btn btn-info text-light" href="agendamento.php" style="margin-bottom:1rem;">Voltar a Agendamentos</a>
+            <a class="btn btn-info text-light" href="visualizarproduto.php" style="margin-bottom:1rem;">Voltar ao Estoque</a>
             <form class="form__produtos" name="form__produtos" action="updatePedido.php" method="post">
                 <div class="fields__container">
-                    <h4>Edição de Pedidos</h4>
+                    <h4>Edição de Produtos</h4>
                     <div class="form-inline">
                         <div class="form-group">
                             <label for="id_pedido">ID de Agendamento</label>
-                            <input class="form-control" type="int" name="id_pedido" value="<?php echo $id;?>" readonly>
+                            <input class="form-control" type="int" name="id_produto" value="<?php echo $id;?>" readonly>
                         </div>
                     </div>
                     <div class="form-group block__fields">
-                        <label name="dtaEnt" class="fields__title">Data da Entrega</label>
-                        <div class="input-group data_entrega">
-                            <input class="form-control" name="data_entrega" type="date" required>
-                            <div class="input-group-prepend">
-                              <span class="input-group-text text-dark"><strong>Data atual: <?php echo $edit[2] ?></strong></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group block__fields">
-                        <label name="valor" class="fields__title">Valor</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text">R$</span>
-                            </div>
-                            <input class="form-control" name="valor" type="int" value="<?php echo $edit[5]; ?>" maxlength="8">
-                        </div>
+                        <label name="id_tipo_produto" class="fields__title">Encomenda</label>
+                        <?php
+                        if (!isset($_SESSION)){ session_start();}
+                        $conexao = new mysqli("localhost", "root", "", "banco");
+                        $busca = mysqli_query($conexao, "select id_tipo_produto, des_tipo_produto from tipo_produto order by des_tipo_produto");
+                        ?>
+                        <select class = "form-control" name="id_tipo_produto" required>
+                            <option class="btn-success" value="<?php echo $edit[0]; ?>"><?php echo $edit[1]; ?></option>
+                            <?php while($ver = mysqli_fetch_row($busca))  { ?>
+                            <option value="<?php echo $ver[0]; ?>"><?php echo $ver[1]; ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <button class="btn__submit" type="submit" name="button">Salvar</button>
                     <button class="btn__submit" type="reset" name="button">Limpar</button>
