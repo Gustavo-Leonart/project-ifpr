@@ -25,27 +25,43 @@
     <section style="height:100vh;">
         <?php
             include "conexao.php";
-            $id_menu = $_GET["id_menu"];
-            $sql = mysqli_query($conexao, "SELECT id_menu, nome_receita, des_receita
-            FROM menu WHERE id_menu = $id_menu");
+            $id = $_GET["id_menu"];
+            $sql = mysqli_query($conexao, "SELECT nome_receita, des_receita, tempo_preparo, DATE_FORMAT(data_cadastro, '%d/%m/%Y')
+            FROM menu WHERE id_menu = $id");
 
-            while ($exibe = mysqli_fetch_array($sql)) {
+            while ($exibe = mysqli_fetch_row($sql)) {
         ?>
         <div class="container pedido">
-            <a class="btn btn-info text-light" href="visualizarReceita.php" style="margin-bottom:1rem;">Visualizar Outras Receitas</a>
-            <div class="fields__container">
-                <h4>Receita Cadastrada</h4>
-                <div class="form-inline">
-                    <div class="form-group">
-                        <label for="id_pedido">ID da Receita</label>
-                        <input class="form-control" type="int" name="id_menu" value="<?php echo $id_menu;?>" readonly>
+            <a class="btn btn-info text-light" href="agendamento.php" style="margin-bottom:1rem;">Voltar a Agendamentos</a>
+            <form class="form__produtos" name="form__produtos" action="visualizarReceitas.php" method="post">
+                <div class="fields__container">
+                    <h4>Receita Cadastrada</h4>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label for="id_produto">ID da Receita</label>
+                            <input class="form-control" type="int" name="id_menu" value="<?php echo $id;?>" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group block__fields">
+                        <label name="nome_receita" class="fields__title">Nome da Receita/label>
+                          <input class="form-control" name="nome_receita" type="text" value="<?php echo $exibe[0]; ?>">
+                    </div>
+                    <div class="form-group block__fields">
+                        <label name="des_receita" class="fields__title">Descrição da Receita/label>
+                        <div class="input-group nome_receita">
+                            <textarea class="form-control" name="des_receita"><?php echo $exibe[1]; ?></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group block__fields">
+                        <label name="nome_receita" class="fields__title">Nome da Receita/label>
+                        <input class="form-control" name="tempo_preparo" type="text" value="<?php echo $exibe[2]; ?>">
+                    </div>
+                    <div class="form-group block__fields">
+                        <label name="nome_receita" class="fields__title">Nome da Receita/label>
+                        <input class="form-control" name="data_cadastro" type="text" value="<?php echo $exibe[3]; ?>">
                     </div>
                 </div>
-                <?php echo $exibe['nome_receita']; ?>
-
-                <button class="btn__submit" type="submit" name="button">Salvar</button>
-                <button class="btn__submit" type="reset" name="button">Limpar</button>
-            </div>
+            </form>
         </div>
         <?php } ?>
     </section>
