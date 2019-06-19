@@ -101,13 +101,13 @@
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
-                                <label name="prod_ml" class="fields__title">Peso liquído</label>
+                                <label name="prod_ml" class="fields__title">Peso Líquido</label>
                             </div>
                             <input class="form-control" name = "prod_ml" type="number">
                         </div>
                         <div class="input-group">
                             <div class="input-group-append">
-                                <label name="prod_g" class="fields__title">Peso em gramas</label>
+                                <label name="prod_g" class="fields__title">Peso em Gramas</label>
                               </div>
                             <input class="form-control" name = "prod_g" type="number">
                         </div>

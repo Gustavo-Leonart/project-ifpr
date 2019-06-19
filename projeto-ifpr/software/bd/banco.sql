@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: 24-Maio-2019 às 14:48
--- Versão do servidor: 10.1.38-MariaDB
--- versão do PHP: 7.3.3
+-- Host: localhost
+-- Tempo de geração: 19/06/2019 às 02:17
+-- Versão do servidor: 10.3.15-MariaDB
+-- Versão do PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `banco`
+-- Banco de dados: `banco`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cidade`
+-- Estrutura para tabela `cidade`
 --
 
 CREATE TABLE `cidade` (
@@ -35,7 +35,7 @@ CREATE TABLE `cidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `cidade`
+-- Despejando dados para a tabela `cidade`
 --
 
 INSERT INTO `cidade` (`cod_cidade`, `cod_estado`, `nom_cidade`) VALUES
@@ -5549,7 +5549,7 @@ INSERT INTO `cidade` (`cod_cidade`, `cod_estado`, `nom_cidade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cliente`
+-- Estrutura para tabela `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -5570,18 +5570,19 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `cliente`
+-- Despejando dados para a tabela `cliente`
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome`, `rg`, `cpf`, `dataNasc`, `email`, `cep`, `cidade`, `rua`, `uf`, `bairro`, `num_casa`, `complemento`, `telefone`) VALUES
 (8, 'Hum', '22.222.222-2', '222.222.222-22', '2019-03-15', '1@b.c', '22.222-222', '', '', '', '', 22222, 'sla', '(22) 22222-2222'),
 (9, 'Victor Ozil', '11.111.111-1', '211.111.111-11', '2000-04-25', 'ozil@yahoo.com', '82.810-410', '', '', '', '', 191, '', '(11) 11111-1111'),
-(10, 'Lucas Cavalli', '99.999.999-9', '000.000.000-00', '2019-05-24', 'a@b.c', '82.810-410', 'Curitiba', 'Rua Clotilde Gaspar Riquelme', 'PR', 'Capão da Imbuia', 137, 'sobrado 1111', '12222222222');
+(10, 'Lucas Cavalli', '99.999.999-9', '000.000.000-00', '2019-05-24', 'a@b.c', '82.810-410', 'Curitiba', 'Rua Clotilde Gaspar Riquelme', 'PR', 'Capão da Imbuia', 137, 'sobrado 1111', '12222222222'),
+(11, 'Gustavo Leonart', '99.999.999-9', '099.857.219-50', '2019-06-16', 'gustavo@leonart.com', '82.820-420', 'Curitiba', 'Rua Paulo Friebe', 'PR', 'Bairro Alto', 191, '', '(41) 99999-9999');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `estado`
+-- Estrutura para tabela `estado`
 --
 
 CREATE TABLE `estado` (
@@ -5592,7 +5593,7 @@ CREATE TABLE `estado` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `estado`
+-- Despejando dados para a tabela `estado`
 --
 
 INSERT INTO `estado` (`cod_estado`, `cod_pais`, `sgl_estado`, `nom_estado`) VALUES
@@ -5627,7 +5628,7 @@ INSERT INTO `estado` (`cod_estado`, `cod_pais`, `sgl_estado`, `nom_estado`) VALU
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `fornecedor`
+-- Estrutura para tabela `fornecedor`
 --
 
 CREATE TABLE `fornecedor` (
@@ -5649,16 +5650,17 @@ CREATE TABLE `fornecedor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `fornecedor`
+-- Despejando dados para a tabela `fornecedor`
 --
 
 INSERT INTO `fornecedor` (`id_fornecedor`, `nome`, `rg`, `cnpj`, `cpf`, `dataNasc`, `email`, `cep`, `cidade`, `rua`, `uf`, `bairro`, `num_casa`, `complemento`, `telefone`) VALUES
-(10, 'Lucas Cavalli', '99.999.999-9', '99.999.999/9999-99', '000.000.000-00', '2000-12-01', 'a@b.c', '82.810-410', 'Curitiba', 'Rua Clotilde Gaspar Riquelme', 'PR', 'Capão da Imbuia', 191, '', '(12) 22222-2222');
+(10, 'Lucas Cavalli', '99.999.999-9', '99.999.999/9999-99', '000.000.000-00', '2000-12-01', 'a@b.c', '82.810-410', 'Curitiba', 'Rua Clotilde Gaspar Riquelme', 'PR', 'Capão da Imbuia', 191, '', '(12) 22222-2222'),
+(11, 'Miguel dos Santos Nowakowski', '11.111.111-1', '11.111.111/1111-11', '099.857.219-50', '2019-06-16', 'sei@la.com', '82.810-410', 'Curitiba', 'Rua Clotilde Gaspar Riquelme', 'PR', 'Capão da Imbuia', 1, 'sobrado 01', '(12) 12121-2121');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `menu`
+-- Estrutura para tabela `menu`
 --
 
 CREATE TABLE `menu` (
@@ -5670,7 +5672,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `menu`
+-- Despejando dados para a tabela `menu`
 --
 
 INSERT INTO `menu` (`id_menu`, `nome_receita`, `des_receita`, `tempo_preparo`, `data_cadastro`) VALUES
@@ -5681,7 +5683,7 @@ INSERT INTO `menu` (`id_menu`, `nome_receita`, `des_receita`, `tempo_preparo`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pais`
+-- Estrutura para tabela `pais`
 --
 
 CREATE TABLE `pais` (
@@ -5691,7 +5693,7 @@ CREATE TABLE `pais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `pais`
+-- Despejando dados para a tabela `pais`
 --
 
 INSERT INTO `pais` (`cod_pais`, `sgl_pais`, `nom_pais`) VALUES
@@ -5700,7 +5702,7 @@ INSERT INTO `pais` (`cod_pais`, `sgl_pais`, `nom_pais`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pedido`
+-- Estrutura para tabela `pedido`
 --
 
 CREATE TABLE `pedido` (
@@ -5711,21 +5713,21 @@ CREATE TABLE `pedido` (
   `data_cadastro` datetime DEFAULT NULL,
   `data_entrega` datetime DEFAULT NULL,
   `valor` double DEFAULT NULL,
-  `status_pedido` int(11) UNSIGNED NOT NULL DEFAULT '3'
+  `status_pedido` int(11) UNSIGNED NOT NULL DEFAULT 3
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `pedido`
+-- Despejando dados para a tabela `pedido`
 --
 
 INSERT INTO `pedido` (`id_pedido`, `id_cliente`, `id_menu`, `id_usuario`, `data_cadastro`, `data_entrega`, `valor`, `status_pedido`) VALUES
 (20, 8, 4, 4, '2019-03-22 00:00:00', '2019-03-29 00:00:00', 12, 3),
-(21, 9, 4, 4, '2019-03-20 00:00:00', '2019-03-27 00:00:00', 1212, 3);
+(21, 9, 4, 4, '2019-03-20 00:00:00', '2018-06-16 00:00:00', 1212, 2);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto`
+-- Estrutura para tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -5735,17 +5737,25 @@ CREATE TABLE `produto` (
   `des_produto` varchar(100) NOT NULL,
   `marca` varchar(50) NOT NULL,
   `preco` double NOT NULL,
-  `data_validade` date DEFAULT NULL,
-  `data_compra` date DEFAULT NULL,
+  `data_validade` date NOT NULL,
+  `data_compra` date NOT NULL,
   `quantidade` double DEFAULT NULL,
-  `prod_ml` int(6) DEFAULT NULL,
-  `prod_g` int(6) DEFAULT NULL
+  `prod_ml` double DEFAULT NULL,
+  `prod_g` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`id_produto`, `id_tipo_produto`, `id_fornecedor`, `des_produto`, `marca`, `preco`, `data_validade`, `data_compra`, `quantidade`, `prod_ml`, `prod_g`) VALUES
+(10, 13, 11, 'arroz integral', 'Tio joao', 22, '2019-06-22', '2019-06-16', 22, 22, 22),
+(11, 4, 10, 'aaaa', 'aaaaa', 12, '2019-06-23', '2019-06-23', 12, 12, 12);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `status_pedido`
+-- Estrutura para tabela `status_pedido`
 --
 
 CREATE TABLE `status_pedido` (
@@ -5754,7 +5764,7 @@ CREATE TABLE `status_pedido` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `status_pedido`
+-- Despejando dados para a tabela `status_pedido`
 --
 
 INSERT INTO `status_pedido` (`id_status_pedido`, `desc_status`) VALUES
@@ -5766,7 +5776,7 @@ INSERT INTO `status_pedido` (`id_status_pedido`, `desc_status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_produto`
+-- Estrutura para tabela `tipo_produto`
 --
 
 CREATE TABLE `tipo_produto` (
@@ -5775,7 +5785,7 @@ CREATE TABLE `tipo_produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `tipo_produto`
+-- Despejando dados para a tabela `tipo_produto`
 --
 
 INSERT INTO `tipo_produto` (`id_tipo_produto`, `des_tipo_produto`) VALUES
@@ -5783,13 +5793,13 @@ INSERT INTO `tipo_produto` (`id_tipo_produto`, `des_tipo_produto`) VALUES
 (4, 'arroz'),
 (6, 'banana'),
 (10, 'desconhecido'),
-(11, 'nhaaaaaaaaaaaaa'),
-(12, 'macarrão');
+(12, 'macarrão'),
+(13, 'feijão');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -5800,7 +5810,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`) VALUES
@@ -5812,52 +5822,55 @@ INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`) VALUES
 (10, '?', 'a@b.c', '202cb962ac59075b964b07152d234b70'),
 (11, 'Um nome', 'c@b.a', '202cb962ac59075b964b07152d234b70'),
 (12, 'Victor Ozil', 'ozil@yahoo.com', '827ccb0eea8a706c4c34a16891f84e7b'),
-(13, 'Lucas Cavalli', 'lucas@gmail.com', 'e10adc3949ba59abbe56e057f20f883e');
+(13, 'Lucas Cavalli', 'lucas@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(21, 'teste', 'teste@teste.com', '698dc19d489c4e4db73e28a713eab07b'),
+(22, 'asdads', 'sadasdasd@adasd', 'a8f5f167f44f4964e6c998dee827110c'),
+(23, 'asdfgh', 'dsfbhjgfd@sfdgh', '912ec803b2ce49e4a541068d495ab570');
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `cidade`
+-- Índices de tabela `cidade`
 --
 ALTER TABLE `cidade`
   ADD PRIMARY KEY (`cod_cidade`),
   ADD KEY `fk_cod_estado_cidade` (`cod_estado`);
 
 --
--- Indexes for table `cliente`
+-- Índices de tabela `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Indexes for table `estado`
+-- Índices de tabela `estado`
 --
 ALTER TABLE `estado`
   ADD PRIMARY KEY (`cod_estado`),
   ADD KEY `fk_cod_pais_estado` (`cod_pais`);
 
 --
--- Indexes for table `fornecedor`
+-- Índices de tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
   ADD PRIMARY KEY (`id_fornecedor`);
 
 --
--- Indexes for table `menu`
+-- Índices de tabela `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id_menu`);
 
 --
--- Indexes for table `pais`
+-- Índices de tabela `pais`
 --
 ALTER TABLE `pais`
   ADD PRIMARY KEY (`cod_pais`);
 
 --
--- Indexes for table `pedido`
+-- Índices de tabela `pedido`
 --
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id_pedido`),
@@ -5867,7 +5880,7 @@ ALTER TABLE `pedido`
   ADD KEY `fk_pedido_status` (`status_pedido`);
 
 --
--- Indexes for table `produto`
+-- Índices de tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id_produto`),
@@ -5875,93 +5888,93 @@ ALTER TABLE `produto`
   ADD KEY `fk_produto_tipo_produto1_idx` (`id_tipo_produto`);
 
 --
--- Indexes for table `status_pedido`
+-- Índices de tabela `status_pedido`
 --
 ALTER TABLE `status_pedido`
   ADD PRIMARY KEY (`id_status_pedido`);
 
 --
--- Indexes for table `tipo_produto`
+-- Índices de tabela `tipo_produto`
 --
 ALTER TABLE `tipo_produto`
   ADD PRIMARY KEY (`id_tipo_produto`);
 
 --
--- Indexes for table `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `cliente`
+-- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_cliente` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `fornecedor`
+-- AUTO_INCREMENT de tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `id_fornecedor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_fornecedor` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `menu`
+-- AUTO_INCREMENT de tabela `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id_menu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `pedido`
+-- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
   MODIFY `id_pedido` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `produto`
+-- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id_produto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_produto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `status_pedido`
+-- AUTO_INCREMENT de tabela `status_pedido`
 --
 ALTER TABLE `status_pedido`
   MODIFY `id_status_pedido` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tipo_produto`
+-- AUTO_INCREMENT de tabela `tipo_produto`
 --
 ALTER TABLE `tipo_produto`
-  MODIFY `id_tipo_produto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_tipo_produto` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_usuario` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- Constraints for dumped tables
+-- Restrições para dumps de tabelas
 --
 
 --
--- Limitadores para a tabela `cidade`
+-- Restrições para tabelas `cidade`
 --
 ALTER TABLE `cidade`
   ADD CONSTRAINT `fk_cod_estado_cidade` FOREIGN KEY (`cod_estado`) REFERENCES `estado` (`cod_estado`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `estado`
+-- Restrições para tabelas `estado`
 --
 ALTER TABLE `estado`
   ADD CONSTRAINT `fk_cod_pais_estado` FOREIGN KEY (`cod_pais`) REFERENCES `pais` (`cod_pais`) ON DELETE CASCADE;
 
 --
--- Limitadores para a tabela `pedido`
+-- Restrições para tabelas `pedido`
 --
 ALTER TABLE `pedido`
   ADD CONSTRAINT `fk_pedido_cliente1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -5970,7 +5983,7 @@ ALTER TABLE `pedido`
   ADD CONSTRAINT `fk_pedido_usuario1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `produto`
+-- Restrições para tabelas `produto`
 --
 ALTER TABLE `produto`
   ADD CONSTRAINT `fk_produto_fornecedor` FOREIGN KEY (`id_fornecedor`) REFERENCES `fornecedor` (`id_fornecedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
