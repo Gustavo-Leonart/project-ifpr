@@ -107,6 +107,11 @@
                                 </div>';
                             }
                          ?>
+                         <div class="imp__container">
+                             <button class="btn__imp" type="button" onclick="window.print();">Imprimir tela de agendamentos</button>
+                             <a class="btn__atual" href="agendaDiaAtual.php">Visualizar agendamentos do dia</a>
+                         </div>
+
                     </tbody>
                 </table>
             </div>
