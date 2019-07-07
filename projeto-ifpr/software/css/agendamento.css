@@ -64,6 +64,28 @@ td a.btn + a.btn{
 	transition: all ease-in-out .2s;
 	border-color: #BDBDBD;
 }
+.imp__container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 32px 16px;
+}
+.imp__container .btn__imp{
+	border: none;
+	background-color: rgba(0, 0, 0, 0.43);
+	color: #ffffff;
+	padding: 4px 8px;
+	border-radius: 4px;
+}
+.imp__container .btn__atual{
+	border: 1px solid rgba(0, 0, 0, 0.43);
+	background-color: #ffffff;
+	color: rgba(0, 0, 0, 0.54);
+	padding: 3px 7px;
+	border-radius: 4px;
+	text-decoration: none !important;
+}
+
 @media screen and (min-width: 600px) and (max-width: 959px){
 	.table-responsive{
 		margin: 32px 8px;
