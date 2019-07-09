@@ -76,6 +76,9 @@
                           echo "<tr>";
                       }
                          ?>
+                         <div class="imp__container">
+                             <button class="btn__imp" type="button" onclick="window.print();">Imprimir produtos</button>
+                         </div>
                     </tbody>
                 </table>
             </div>

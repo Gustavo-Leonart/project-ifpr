@@ -42,8 +42,7 @@
                 </form>
             </div>
             <!-- Infos -->
-            <h4 class="container__title">Agendamentos</h4>
-            <a class="" href="pedidosAtrasados.php"></a>
+            <h4 class="container__title">Agendamentos do Dia</h4>
             <div class="table-responsive" id="tableAgenda">
                 <table class="table">
                     <thead class="tableHead">
@@ -66,8 +65,11 @@
                             FROM cliente c
                                 JOIN pedido p ON c.id_cliente = p.id_cliente
                                 JOIN menu m ON m.id_menu = p.id_menu
-                                ORDER BY data_entrega
-                                WHERE data_entrega = CURDATE('%d/%m/%Y')");
+                                WHERE data_entrega = CURDATE()
+                                ORDER BY data_entrega");
+                                if($sql === FALSE) {
+                                   die(mysqli_error($conexao));
+                                }
                             while ($exibe = mysqli_fetch_assoc($sql)) {
                                 echo "<tr>
                                     <td>".$exibe['nome']."</td>

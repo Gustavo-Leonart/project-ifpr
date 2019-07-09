@@ -31,12 +31,7 @@
 
     }
 
-    if(isset($_GET['valida'])){
-        $valida = $_GET['valida'];
-        echo $valida = '<script type="text/javascript">
-                          alert("Usuario cadastrdo com sucesso");
-                        </script>';
-    }
+    
 
     /*if(isset($_GET['valida'])){
         $valida = $_GET['valida'];
